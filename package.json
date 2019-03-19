@@ -1,9 +1,10 @@
 {
   "name": "hackathon",
   "version": "0.0.0",
-  "main":"app.js",
+  "main": "app.js",
   "private": true,
   "dependencies": {
+    "client-oauth2": "^4.2.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
