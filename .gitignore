@@ -60,8 +60,12 @@ typings/
 # next.js build output
 .next
 
+# visio files
 *.vsdx
 *.~vsdx
 
 # phpstorm files
 .idea/*
+
+# config with passwords n stuff.
+config.json
