@@ -3,13 +3,14 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import database from './database';
-import config from "../config";
+import config = require("../config");
 import APIEndpoint from "./APIEndpoint";
 import CoursesEndpoint from "./api/CoursesEndpoint";
+import authEndpoint from "./api/authEndpoint";
 new database(config.database.username, config.database.password, config.database.host);
 
 // a list with all endpoints.
-const endpoints: APIEndpoint[] = [new CoursesEndpoint()];
+const endpoints: APIEndpoint[] = [new CoursesEndpoint(), new authEndpoint()];
 
 let app = express();
 
@@ -33,7 +34,7 @@ app.use(express.static('public'));
 
 
 app.use((req, res) => {
-  res.status(404).send("help");
+  res.status(404).send("#Define Me = Depressed after trying to find this bug for 2 weeks");
 });
 
 console.log("Started server on port: 8080");
