@@ -28,7 +28,7 @@ endpoints.forEach(x => {
 //host the static files. apache should handle this but it is a fail safe and for localhost
 app.use(express.static('public'));
 app.use((req, res) => {
-    res.status(404).send("help");
+    res.status(404).send("#Define Me = Depressed after trying to find this bug for 2 weeks");
 });
 console.log("Started server on port: 8080");
 app.listen(8080);
