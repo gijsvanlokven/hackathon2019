@@ -43,7 +43,7 @@ class database {
                         resolve({ count: results.length, columns: fields, results: result });
                     }
                     else
-                        resolve();
+                        resolve({ count: 0, results: [], columns: [] });
                 }
             });
         });
