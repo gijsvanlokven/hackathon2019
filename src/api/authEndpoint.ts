@@ -1,16 +1,27 @@
-let express = require('express');
-let axios = require('axios');
+import express = require('express');
+import axios from 'axios';
 import APIEndpoint from '../APIEndpoint';
 import config = require("../../config");
 import database from '../database';
+
+import googleapis, { google } from "googleapis";
+
+let auth;
 export default class authEndpoint implements APIEndpoint {
   Name = "auth";
   get Router() {
     return express.Router().
-      get("/:provider", (req, res) => {
-        console.log(config);
+      get("/:provider", (req: express.Request, res: express.Response) => {
         if (req.params["provider"] == "github")
-          res.redirect(`https://github.com/login/oauth/authorize?client_id=${config.github.ClientID}&redirect_uri=http://localhost:8080/api/auth/github/redirect&scope=read:user user:email`)
+          res.redirect(`https://github.com/login/oauth/authorize?client_id=${config.github.ClientID}&redirect_uri=http://localhost:8080/api/auth/github/redirect&scope=read:user user:email`);
+        if (req.params["provider"] == "google") {
+
+          auth = new google.auth.OAuth2(config.google.ClientID, config.google.ClientSecret, process.env.NODE_ENV != 'development' ? "http://localhost:8080/api/auth/google/redirect" : "https://eventlog.nl/api/auth/google/redirect")
+          res.redirect(auth.generateAuthUrl({
+            scope: ["profile", "email"],
+            prompt: "select_account"
+          }))
+        }
       })
       .get('/github/redirect', async (req, res) => {
         // The req.query object has the query params that
@@ -30,7 +41,6 @@ export default class authEndpoint implements APIEndpoint {
         // Once we get the response, extract the access token from
         // the response body
         const accessToken = response.data.access_token;
-        console.log(accessToken);
 
         response = await axios({
           method: 'get',
@@ -41,8 +51,41 @@ export default class authEndpoint implements APIEndpoint {
           }
         });
 
-        // let existingUser = database.query(/*sql*/`INSERT INTO UserAccount VALUES (null, '${response.id}', 0, '${response.login}'', '${response.avatar_url || response.gravatar_id}' ) WHERE NOT EXIST (SELECT 1 FROM UserAccount WHERE GithubID = '${response.id}');`);
+        let data = response.data;
+        let existingUser = await database.query(`SELECT UserID FROM UserAccount WHERE GithubID = '${data.id}' OR Email = '${data.email}';`);
+        if (existingUser.count == 0) {
+          await database.query(`INSERT INTO UserAccount (GithubID,UserID,ProfilePicture, Email) VALUES ('${data.id}', '${data.login}', '${data.avatar_url || data.gravatar_id}', '${data.email}');`);
+          existingUser = await database.query(`SELECT UserID FROM UserAccount WHERE UserName = '${data.login}';`);
+        }
 
+        res.cookie("UserID", existingUser.results[0].UserID);
+        res.redirect("/");
       })
+      .get("/google/redirect/", async (req, res) => {
+        const { tokens } = await auth.getToken(req.query["code"]);
+        auth.setCredentials(tokens);
+        const oauth = google.oauth2({
+          version: 'v1',
+          auth
+        });
+        let me;
+        try {
+          me = await oauth.userinfo.get();
+        }
+        catch (error) {
+          console.error(error);
+          res.send({ error: "not logged in." });
+          return;
+        }
+        console.log(me);
+        let existingUser = await database.query(`SELECT UserID FROM UserAccount WHERE GoogleID = '${me.data.id}' OR Email = '${me.data.email}';`);
+        if (existingUser.count == 0) {
+          await database.query(`INSERT INTO UserAccount (GoogleID,UserID,ProfilePicture, Email) VALUES ('${me.data.id}', '${me.data.given_name}', '${me.data.picture}', '${me.data.email}');`);
+          existingUser = await database.query(`SELECT UserID FROM UserAccount WHERE UserName = '${me.data.given_name}';`);
+        }
+
+        res.cookie("UserID", existingUser.results[0].UserID);
+        res.redirect("/");
+      });
   }
 }

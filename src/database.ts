@@ -16,7 +16,7 @@ export default class database {
             else throw new TypeError("Trying to create database without parameters.");
         }
     }
-    public static query(query: string): Promise<{ count: number, columns: FieldInfo[], results: {}[] }> {
+    public static query(query: string): Promise<{ count: number, columns: FieldInfo[], results: any[] }> {
         return new Promise((resolve, reject) => {
             let result: any[] = [];
             database.engine.query(query, (err, results, fields: FieldInfo[]) => {
