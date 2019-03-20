@@ -16,7 +16,7 @@ export default class database {
             else throw new TypeError("Trying to create database without parameters.");
         }
     }
-    public static query(query: string): Promise<{ count: number, columns: FieldInfo[], results: {}[] } | undefined> {
+    public static query(query: string): Promise<{ count: number, columns: FieldInfo[], results: {}[] }> {
         return new Promise((resolve, reject) => {
             let result: any[] = [];
             database.engine.query(query, (err, results, fields: FieldInfo[]) => {
@@ -38,7 +38,7 @@ export default class database {
                         });
                         resolve({ count: results.length as number, columns: fields as any[], results: result });
                     }
-                    else resolve();
+                    else resolve({ count: 0, results: [], columns: [] });
                 }
             });
         });
