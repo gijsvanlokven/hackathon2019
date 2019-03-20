@@ -49,13 +49,82 @@
         <div></div>
     </div>
     <section id='contentSection'>
-        <h1>
-            Welcome to Learn2gether!
-        </h1>
-        <p>
-            Learn2gether is an website where you can learn programming by making excercises that everyone can publish on the website. 
-            We as Learn2gether want everyone to be able to learn programming withouth a problem. 
-        </p>
+        <section>
+            <h1>
+                Welcome to Learn2gether!
+            </h1>
+            <p>
+                Learn2gether is an website where you can learn programming by making excercises that everyone can publish on the website. 
+                We as Learn2gether want everyone to be able to learn programming withouth a problem. 
+            </p>
+        </section>
+        <section id="suggestedCourses">
+            <h1>
+                Suggested Courses
+            </h1>
+            <div class="responsive-flex">
+                <div class="courseBox">
+                    <div class="grid-y">
+                        <div class="grid-x">
+                            <div class="cell">
+                                <img class="float-center" src="../img/html_logo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="grid-x">
+                            <div class="cell">
+                                <h1>
+                                    HTML
+                                </h1>
+                                <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis, erat id molestie aliquam.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="courseBox">
+                    <div class="grid-y">
+                        <div class="grid-x">
+                            <div class="cell">
+                                <img class="float-center" src="../img/css_logo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="grid-x">
+                            <div class="cell">
+                                <h1>
+                                    CSS
+                                </h1>
+                                <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis, erat id molestie aliquam.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="courseBox">
+                    <div class="grid-y">
+                        <div class="grid-x">
+                            <div class="cell">
+                                <img class="float-center" src="../img/javascript_logo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="grid-x">
+                            <div class="cell">
+                                <h1>
+                                    Javascript
+                                </h1>
+                                <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis, erat id molestie aliquam.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
+    <footer>
+
+    </footer>
 </body>
 </html>
