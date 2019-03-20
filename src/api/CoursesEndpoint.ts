@@ -59,7 +59,6 @@ export default class CoursesEndpoint implements APIEndpoint {
 			Language: req.body["Language"],
 			Difficulty: req.body["Difficulty"]
 		}
-		console.log(req.body);
 
 		if (!Object.values(course).includes(undefined)) {
 			try {

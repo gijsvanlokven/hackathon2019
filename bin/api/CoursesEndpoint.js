@@ -61,7 +61,6 @@ class CoursesEndpoint {
             Language: req.body["Language"],
             Difficulty: req.body["Difficulty"]
         };
-        console.log(req.body);
         if (!Object.values(course).includes(undefined)) {
             try {
                 await database_1.default.query(`UPDATE Course SET Name = '${course.Name}', Description = '${course.Description}', Language = '${course.Language}', Difficulty = '${course.Difficulty}' WHERE CourseID = ${req.params["id"]};`);

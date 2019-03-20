@@ -9,10 +9,11 @@ const morgan_1 = __importDefault(require("morgan"));
 const database_1 = __importDefault(require("./database"));
 const config = require("../config");
 const CoursesEndpoint_1 = __importDefault(require("./api/CoursesEndpoint"));
+const QuestionsEndpoint_1 = __importDefault(require("./api/QuestionsEndpoint"));
 const authEndpoint_1 = __importDefault(require("./api/authEndpoint"));
 new database_1.default(config.database.username, config.database.password, config.database.host);
 // a list with all endpoints.
-const endpoints = [new CoursesEndpoint_1.default(), new authEndpoint_1.default()];
+const endpoints = [new CoursesEndpoint_1.default(), new authEndpoint_1.default(), new QuestionsEndpoint_1.default()];
 let app = express();
 //setup with different middlewares
 app.use(morgan_1.default('dev'), express.json(), express.urlencoded({
