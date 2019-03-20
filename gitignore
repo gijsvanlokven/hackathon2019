@@ -65,7 +65,8 @@ typings/
 *.~vsdx
 
 # phpstorm files
-.idea/*
+.idea/
 
 # config with passwords n stuff.
+settings.js
 config.js
