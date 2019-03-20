@@ -3,7 +3,7 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import database from './database';
-import config from "../config";
+import config = require("../config");
 import APIEndpoint from "./APIEndpoint";
 import CoursesEndpoint from "./api/CoursesEndpoint";
 import authEndpoint from "./api/authEndpoint";

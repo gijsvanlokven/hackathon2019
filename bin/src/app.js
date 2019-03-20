@@ -7,10 +7,10 @@ const express = require("express");
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const morgan_1 = __importDefault(require("morgan"));
 const database_1 = __importDefault(require("./database"));
-const config = require("../config");
+const config_1 = __importDefault(require("../config"));
 const CoursesEndpoint_1 = __importDefault(require("./api/CoursesEndpoint"));
 const authEndpoint_1 = __importDefault(require("./api/authEndpoint"));
-new database_1.default(config.database.username, config.database.password, config.database.host);
+new database_1.default(config_1.default.database.username, config_1.default.database.password, config_1.default.database.host);
 // a list with all endpoints.
 const endpoints = [new CoursesEndpoint_1.default(), new authEndpoint_1.default()];
 let app = express();

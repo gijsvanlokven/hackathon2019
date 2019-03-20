@@ -1,20 +1,18 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 let express = require('express');
 let axios = require('axios');
-const config = require("../../config");
+const config_1 = __importDefault(require("../../config"));
 class authEndpoint {
     constructor() {
         this.Name = "auth";
     }
     get Router() {
-        return express.Router().
-            get("/:provider", (req, res) => {
-            console.log(config);
-            if (req.params["provider"] == "github")
-                res.redirect(`https://github.com/login/oauth/authorize?client_id=${config.github.ClientID}&redirect_uri=http://localhost:8080/api/auth/github/redirect&scope=read:user user:email`);
-        })
-            .get('/github/redirect', async (req, res) => {
+        return express.Router()
+            .get('/redirect', async (req, res) => {
             // The req.query object has the query params that
             // were sent to this route. We want the `code` param
             const requestToken = req.query.code;
@@ -23,7 +21,7 @@ class authEndpoint {
                 method: 'post',
                 // to the Github authentication API, with the client ID, client secret
                 // and request token
-                url: `https://github.com/login/oauth/access_token?client_id=${config.github.ClientID}&client_secret=${config.github.ClientSecret}&code=${requestToken}`,
+                url: `https://github.com/login/oauth/access_token?client_id=${config_1.default..clientID}&client_secret=${clientSecret}&code=${requestToken}`,
                 // Set the content type header, so that we get the response in JSOn
                 headers: {
                     accept: 'application/json'
@@ -32,16 +30,15 @@ class authEndpoint {
             // Once we get the response, extract the access token from
             // the response body
             const accessToken = response.data.access_token;
-            console.log(accessToken);
             response = await axios({
-                method: 'get',
+                method: 'post',
                 url: 'https://api.github.com/user',
                 headers: {
-                    "Content-Type": 'application/json',
-                    Authorization: `token ${accessToken}`
+                    accept: 'application/json',
+                    Authorization: `Basic ${accessToken}`
                 }
             });
-            // let existingUser = database.query(/*sql*/`INSERT INTO UserAccount VALUES (null, '${response.id}', 0, '${response.login}'', '${response.avatar_url || response.gravatar_id}' ) WHERE NOT EXIST (SELECT 1 FROM UserAccount WHERE GithubID = '${response.id}');`);
+            console.log(response);
         });
     }
 }
