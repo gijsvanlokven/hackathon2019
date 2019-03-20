@@ -34,7 +34,7 @@ app.use(express.static('public'));
 
 
 app.use((req, res) => {
-  res.status(404).send("$Define Me = Depressed after trying to find this bug for 2 weeks");
+  res.status(404).send("#Define Me = Depressed after trying to find this bug for 2 weeks");
 });
 
 console.log("Started server on port: 8080");
