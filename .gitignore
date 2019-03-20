@@ -69,5 +69,3 @@ typings/
 
 # config with passwords n stuff.
 config.js
-
-*sconfig.json
