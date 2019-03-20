@@ -3,7 +3,7 @@ let axios = require('axios');
 import APIEndpoint from '../APIEndpoint';
 
 export default class authEndpoint implements APIEndpoint {
-  name = "auth";
+  Name = "auth";
 
   get Router() {
     return express.Router()
