@@ -10,6 +10,9 @@ export default class CoursesEndpoint implements APIEndpoint {
 	}
 
 	async get(req: express.Request, res: express.Response) {
-		res.send(await database.query("SELECT * FROM Course;"));
+		let result = await database.query("SELECT * FROM Course;");
+		if (result && result.results.length > 0)
+			res.send(result.results);
+		else res.sendStatus(404);
 	}
 }

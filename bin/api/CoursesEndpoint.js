@@ -14,7 +14,12 @@ class CoursesEndpoint {
             .get('/', this.get);
     }
     async get(req, res) {
-        res.send(await database_1.default.query("SELECT * FROM Course;"));
+        let result = await database_1.default.query("SELECT * FROM Course;");
+        if (result && result.results.length > 0)
+            res.send(result.results);
+        else
+            res.sendStatus(404);
     }
 }
 exports.default = CoursesEndpoint;
+//# sourceMappingURL=CoursesEndpoint.js.map

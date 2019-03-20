@@ -17,14 +17,18 @@ let app = express();
 app.use(morgan_1.default('dev'), express.json(), express.urlencoded({
     extended: false
 }), cookie_parser_1.default());
+//register each endpoint to the server.
+app.get('/api/', (req, res) => {
+    res.send(endpoints.map(x => x.Name).join());
+});
+endpoints.forEach(x => {
+    app.use("/api/" + x.Name, x.Router);
+});
 //host the static files. apache should handle this but it is a fail safe and for localhost
 app.use(express.static('public'));
-//register each endpoint to the server.
-endpoints.forEach(x => {
-    app.use(x.Name, x.Router);
-});
 app.use((req, res) => {
     res.status(404).send("help");
 });
 console.log("Started server on port: 8080");
 app.listen(8080);
+//# sourceMappingURL=app.js.map
