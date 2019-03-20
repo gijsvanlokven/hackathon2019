@@ -3,9 +3,9 @@ let express = require('express'),
   cookieParser = require('cookie-parser'),
   logger = require('morgan'),
   database = require('./src/database'),
-  config = require("./config.js");
+  config = require("./config");
 
-  new database(config.database.username, config.database.password, config.database.host);
+new database(config.database.username, config.database.password, config.database.host);
 
 // a list with all endpoints.
 const endpoints = [require("./src/api/CoursesEndpoint")];
@@ -13,7 +13,9 @@ const endpoints = [require("./src/api/CoursesEndpoint")];
 let app = express();
 
 //setup with different middlewares
-app.use(logger('dev'),express.json(),express.urlencoded({ extended: false }),cookieParser());
+app.use(logger('dev'), express.json(), express.urlencoded({
+  extended: false
+}), cookieParser());
 
 
 //register each endpoint to the server.

@@ -68,4 +68,6 @@ typings/
 .idea/*
 
 # config with passwords n stuff.
-settings.js
+config.js
+
+*sconfig.json
