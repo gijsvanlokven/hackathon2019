@@ -75,7 +75,7 @@ class CoursesEndpoint {
     async GetRecommended(req, res) {
         let result = await database_1.default.query(`SELECT * FROM Course ORDER BY Rating DESC LIMIT 5;`);
         if (result && result.count > 0)
-            res.send(result.results[0]);
+            res.send(result.results);
         else
             res.status(404).send({ error: "Not found.", errorCode: 404 });
     }

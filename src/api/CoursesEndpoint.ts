@@ -74,7 +74,7 @@ export default class CoursesEndpoint implements APIEndpoint {
 	async GetRecommended(req: express.Request, res: express.Response) {
 		let result = await database.query(`SELECT * FROM Course ORDER BY Rating DESC LIMIT 5;`);
 		if (result && result.count > 0)
-			res.send(result.results[0]);
+			res.send(result.results);
 		else res.status(404).send({ error: "Not found.", errorCode: 404 })
 	}
 
