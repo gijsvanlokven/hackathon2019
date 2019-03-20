@@ -6,17 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learn2Gether</title>
     <link rel="stylesheet" href="../foundation6.5.1/css/foundation.css" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
 </head>
 <body>
 <script src="../foundation6.5.1/js/vendor/jquery.js"></script>
 <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
 <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
 <script src="../script/randomize.js" defer></script>
+<script src="../script/parralax.js" defer></script>
 <script>
     $(document).foundation();
 </script>
+    <div id="parallax-container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <h1>
         <span class="randomizeAnimation ltr">Learn</span> 2 <span class="randomizeAnimation rtl">Gether</span>
     </h1>
+    <div class="grid-x grid-margin-x" style="z-index: 5; color: white; position: relative">
+        <div class="cell small-4">4 cells</div>
+        <div class="cell auto">Whatever's left!</div>
+        <div class="cell auto">Whatever's left!</div>
+    </div>
 </body>
 </html>
