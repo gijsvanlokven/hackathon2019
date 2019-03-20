@@ -41,7 +41,7 @@ export default class CoursesEndpoint implements APIEndpoint {
 
 		if (!Object.values(course).includes(undefined)) {
 			try {
-				await database.query(`INSERT INTO Course VALUES ('${course.Name}', '${course.Description}','${course.Language}',0,${req.cookies["UserID"] || 0});`);
+				await database.query(`INSERT INTO Course (Name, Description, Language, Difficulty, OwnerID) VALUES ('${course.Name}', '${course.Description}','${course.Language}',0,${req.cookies["UserID"] || 0});`);
 				res.send(course);
 			}
 			catch (err) {
@@ -58,6 +58,7 @@ export default class CoursesEndpoint implements APIEndpoint {
 			Language: req.body["Language"],
 			Difficulty: req.body["Difficulty"]
 		}
+		console.log(req.body);
 
 		if (!Object.values(course).includes(undefined)) {
 			try {
@@ -68,7 +69,7 @@ export default class CoursesEndpoint implements APIEndpoint {
 				res.sendStatus(400);
 			}
 		}
-		else res.sendStatus(400)
+		else res.status(401).send(Object.keys(course).filter(x=>!course[x]))
 	}
 
 	async GetRecommended(req: express.Request, res: express.Response) {
