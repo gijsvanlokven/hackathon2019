@@ -1,0 +1,10 @@
+body{
+    background-color: #031041;
+}
+.contact-text,.contactName{
+    color: white;
+    text-align: center;
+}
+.contactPicture{
+    border-radius: 50%;
+}

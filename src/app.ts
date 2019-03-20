@@ -6,12 +6,14 @@ import database from './database';
 import config = require("../config");
 import APIEndpoint from "./APIEndpoint";
 import CoursesEndpoint from "./api/CoursesEndpoint";
+import QuestionsEndpoint from "./api/QuestionsEndpoint";
 import authEndpoint from "./api/authEndpoint";
 import AchievementsEndpoint from "./api/AchievementsEndpoint";
 new database(config.database.username, config.database.password, config.database.host);
 
 // a list with all endpoints.
-const endpoints: APIEndpoint[] = [new CoursesEndpoint(), new authEndpoint(), new AchievementsEndpoint()];
+
+const endpoints: APIEndpoint[] = [new CoursesEndpoint(), new authEndpoint(), new QuestionsEndpoint(), new AchievementsEndpoint()];
 
 let app = express();
 

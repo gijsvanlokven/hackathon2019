@@ -39,11 +39,12 @@ class CoursesEndpoint {
         let course = {
             Name: req.body["Name"],
             Description: req.body["Description"],
-            Language: req.body["Language"]
+            Language: req.body["Language"],
+            Difficulty: req.body["Difficulty"]
         };
         if (!Object.values(course).includes(undefined)) {
             try {
-                await database_1.default.query(`INSERT INTO Course (Name, Description, Language, Difficulty, OwnerID) VALUES ('${course.Name}', '${course.Description}','${course.Language}',0,${req.cookies["UserID"] || 0});`);
+                await database_1.default.query(`INSERT INTO Course (Name, Description, Language, Difficulty, OwnerID) VALUES ('${course.Name}', '${course.Description}','${course.Language}',${course.Difficulty},${req.cookies["UserID"] || 1});`);
                 res.send(course);
             }
             catch (err) {
@@ -60,7 +61,6 @@ class CoursesEndpoint {
             Language: req.body["Language"],
             Difficulty: req.body["Difficulty"]
         };
-        console.log(req.body);
         if (!Object.values(course).includes(undefined)) {
             try {
                 await database_1.default.query(`UPDATE Course SET Name = '${course.Name}', Description = '${course.Description}', Language = '${course.Language}', Difficulty = '${course.Difficulty}' WHERE CourseID = ${req.params["id"]};`);
@@ -71,7 +71,7 @@ class CoursesEndpoint {
             }
         }
         else
-            res.status(401).send(Object.keys(course).filter(x => !course[x]));
+            res.sendStatus(400);
     }
     async GetRecommended(req, res) {
         let result = await database_1.default.query(`SELECT * FROM Course ORDER BY Rating DESC LIMIT 5;`);
