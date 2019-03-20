@@ -1,0 +1,23 @@
+body{
+    background-color: #031041;
+}
+.login-container{
+    height: 30%;
+    margin-top: 20%;
+}
+input{
+    width: 200px;
+}
+label{
+    margin-bottom: 20px;
+}
+label,button{
+    color: white;
+    font-size: 120%;
+    text-align: center;
+}
+.button{
+    border-radius: 10px;
+    width: 50%;
+    margin-top: 20px;
+}
