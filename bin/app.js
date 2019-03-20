@@ -10,9 +10,10 @@ const database_1 = __importDefault(require("./database"));
 const config = require("../config");
 const CoursesEndpoint_1 = __importDefault(require("./api/CoursesEndpoint"));
 const authEndpoint_1 = __importDefault(require("./api/authEndpoint"));
+const AchievementsEndpoint_1 = __importDefault(require("./api/AchievementsEndpoint"));
 new database_1.default(config.database.username, config.database.password, config.database.host);
 // a list with all endpoints.
-const endpoints = [new CoursesEndpoint_1.default(), new authEndpoint_1.default()];
+const endpoints = [new CoursesEndpoint_1.default(), new authEndpoint_1.default(), new AchievementsEndpoint_1.default()];
 let app = express();
 //setup with different middlewares
 app.use(morgan_1.default('dev'), express.json(), express.urlencoded({
