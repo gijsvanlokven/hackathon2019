@@ -188,10 +188,14 @@
                             </div>
                             <div class="cell grid-x small-up-1 addOrRemoveBox">
                                 <div class="cell">
-                                    <img class="buttonAdd" src="../img/plus.svg" alt=""> Add a new awnser
+                                    <div class="clickContainer">
+                                        <img class="buttonAdd" src="../img/plus.svg" alt=""> Add a new awnser
+                                    </div>
                                 </div>
                                 <div class="cell">
-                                <img class="buttonAdd" src="../img/minus.svg" alt=""> Remove an awnser
+                                    <div class="clickContainer">
+                                    <img class="buttonRemove" src="../img/minus.svg" alt=""> Remove an awnser
+                                    </div>
                                 </div>
                             </div>
                         </div>
