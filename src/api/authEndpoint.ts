@@ -14,7 +14,7 @@ export default class authEndpoint implements APIEndpoint {
     return express.Router().
       get("/:provider", (req: express.Request, res: express.Response) => {
         if (req.params["provider"] == "github")
-          res.redirect(`https://github.com/login/oauth/authorize?client_id=${config.github.ClientID}&redirect_uri=http://localhost:8080/api/auth/github/redirect&scope=read:user user:email`);
+          res.redirect(`https://github.com/login/oauth/authorize?client_id=${config.github.ClientID}&redirect_uri=http://energylog.nl/api/auth/github/redirect&scope=read:user user:email`);
         if (req.params["provider"] == "google") {
 
           auth = new google.auth.OAuth2(config.google.ClientID, config.google.ClientSecret, process.env.NODE_ENV != 'development' ? "http://localhost:8080/api/auth/google/redirect" : "https://eventlog.nl/api/auth/google/redirect")
@@ -60,7 +60,7 @@ export default class authEndpoint implements APIEndpoint {
         }
 
         res.cookie("UserID", existingUser.results[0].UserID);
-        res.redirect("/");
+        res.redirect("/pages/index.php");
       })
       .get("/google/redirect/", async (req, res) => {
         const { tokens } = await auth.getToken(req.query["code"]);

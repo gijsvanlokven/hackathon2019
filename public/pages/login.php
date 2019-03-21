@@ -24,10 +24,10 @@
         <div class="grid-container">
             <form class="grid-x grid-margin-x align-center login-container">
                 <div class="large-4 large-offset-4 medium-4 medium-offset-4 small-12 float-center">
-                    <button type="submit" name="lGoogle" class="button float-center">Login Google</button>
+                    <a href="/api/auth/google/" name="lGoogle" class="button float-center">Login Google</a>
                 </div>
                 <div class="large-4 large-offset-4 medium-4 medium-offset-4 small-12 float-center">
-                    <button type="submit" name="lGithub" class="button float-center">Login Github</button>
+                    <a href="/api/auth/github/" name="lGithub" class="button float-center">Login Github</a>
                 </div>
             </form>
         </div>
