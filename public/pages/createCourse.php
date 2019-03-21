@@ -22,7 +22,10 @@
         <section id="errorBox">
         </section>
         <header>
-            <?php include "../partials/header.html" ?>
+            <?php
+                include '../partials/footerP1.html';
+                include "../partials/header.html";
+            ?>
         </header>
         <section id='contentSection'>
             <form id="createForm">
@@ -220,40 +223,8 @@
                 </div>
             </form>
         </section>
-        <footer id="grid-container">
-            <div class="grid-x grid-margin-x">
-                <div class="cell large-4 medium-4 small-12">
-                    <img src="../img/hackaton_logo.png" class="float-center">
-                </div>
-                <div class="grid-y cell large-4 medium-4 small-6">
-                    <div class="cell large-3 medium-3 small-3">
-                        Test
-                    </div>
-                    <div class="cell large-3 medium-3 small-3">
-                        Test
-                    </div>
-                    <div class="cell large-3 medium-3 small-3">
-                        Test
-                    </div>
-                    <div class="cell large-3 medium-3 small-3">
-                        Test
-                    </div>
-                </div>
-                <div class="grid-y cell large-4 medium-4 small-6">
-                    <div class="cell large-3 medium-3 small-3">
-                        Test
-                    </div>
-                    <div class="cell large-3 medium-3 small-3">
-                        Test
-                    </div>
-                    <div class="cell large-3 medium-3 small-3">
-                        Test
-                    </div>
-                    <div class="cell large-3 medium-3 small-3">
-                        Test
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <?php
+            include '../partials/footerP2.html';
+        ?>
     </body>
 </html>

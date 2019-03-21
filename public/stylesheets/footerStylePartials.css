@@ -1,13 +1,19 @@
+.footer-content{
+    min-height: calc(100vh - 5vh);
+}
 .footer-credits{
     font-family: VCR_OSD_MONO;
-    font-size:  2.4vh;
+    height: 2.5vh;
+    font-size: 2vh  ;
     color: white;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    margin: 1vh 0;
+    float: right;
+    padding-right: 5vw;
 }
 .footer-container{
     background-color: #1e3a5f;
+    position: relative;
     bottom: 0;
-    position: absolute;
     width: 100%;
+    height: fit-content ;
 }

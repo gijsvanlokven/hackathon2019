@@ -18,7 +18,10 @@
     <body>
         <link rel="stylesheet" href="../stylesheets/headerStylePartials.css" />
         <header>
-            <?php include "../partials/header.html" ?>
+            <?php
+                include '../partials/footerP1.html';
+                include "../partials/header.html";
+            ?>
         </header>
         <section id='contentSection'>
             <section id="coursesContainer">
@@ -28,13 +31,13 @@
                         <div class="cell"></div>
                         <div class="cell">
                             <div class="clickContainer">
-                                <img src="../img/plus.svg"> 
+                                <img src="../img/plus.svg">
                                 <a href="createCourse.php">Create a course</a>
                             </div>
                         </div>
                         <div class="cell">
                             <div class="clickContainer">
-                                <img src="../img/question.svg"> 
+                                <img src="../img/question.svg">
                                 Suggest a course
                             </div>
                         </div>
@@ -153,5 +156,8 @@
                 </div>
             </section>
         </section>
+        <?php
+            include '../partials/footerP2.html';
+        ?>
     </body>
 </html>

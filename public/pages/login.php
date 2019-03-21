@@ -18,6 +18,7 @@
     </head>
     <body>
         <?php
+                include '../partials/footerP1.html';
                 include '../partials/header.html';
         ?>
         <div class="grid-container">
@@ -30,5 +31,8 @@
                 </div>
             </form>
         </div>
+        <?php
+            include '../partials/footerP2.html'
+        ?>
     </body>
 </html>

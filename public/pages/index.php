@@ -19,6 +19,9 @@
     <script>
         $(document).foundation();
     </script>
+    <?php
+        include '../partials/footerP1.html';
+    ?>
 </head>
 <body>
     <link rel="stylesheet" href="../stylesheets/footerStylePartials.css" />
