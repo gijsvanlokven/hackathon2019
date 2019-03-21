@@ -18,7 +18,7 @@
     <script>
         $(document).foundation();
     </script>
-    <link rel="stylesheet" href="../stylesheets/headerStylePartials.css" />
+    <link rel="stylesheet" href="../stylesheets/footerStylePartials.css" />
     <header>
         <div class="grid-x">
             <div class="cell large-4"></div>
@@ -183,40 +183,5 @@
             </div>
         </section>
     </section>
-    <footer id="grid-container">
-        <div class="grid-x grid-margin-x">
-            <div class="cell large-4 medium-4 small-12">
-                <img src="../img/hackaton_logo.png" class="float-center">
-            </div>
-            <div class="grid-y cell large-4 medium-4 small-6">
-                <div class="cell large-3 medium-3 small-3">
-                    Test
-                </div>
-                <div class="cell large-3 medium-3 small-3">
-                    Test
-                </div>
-                <div class="cell large-3 medium-3 small-3">
-                    Test
-                </div>
-                <div class="cell large-3 medium-3 small-3">
-                    Test
-                </div>
-            </div>
-            <div class="grid-y cell large-4 medium-4 small-6">
-                <div class="cell large-3 medium-3 small-3">
-                    Test
-                </div>
-                <div class="cell large-3 medium-3 small-3">
-                    Test
-                </div>
-                <div class="cell large-3 medium-3 small-3">
-                    Test
-                </div>
-                <div class="cell large-3 medium-3 small-3">
-                    Test
-                </div>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>

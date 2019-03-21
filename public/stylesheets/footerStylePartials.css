@@ -1,0 +1,12 @@
+.footer-credits{
+    font-family: VCR_OSD_MONO;
+    font-size:  3vh;
+    color: white;
+    height: 5vh;
+}
+.footer-container{
+    background-color: #1e3a5f;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

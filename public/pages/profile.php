@@ -14,7 +14,6 @@
 <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
 <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
 <script src="../script/tabs.js" defer></script>
-<link rel="import" href="../partials/header.html">
 </body>
 <?php
 include '../partials/header.html';
@@ -68,4 +67,7 @@ include '../partials/header.html';
         </div>
     </div>
 </div>
+<?php
+include '../partials/footer.html';
+?>
 </html>
