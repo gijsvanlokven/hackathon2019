@@ -8,17 +8,17 @@
         <link rel="stylesheet" href="../foundation6.5.1/css/foundation.css" />
         <link rel="stylesheet" href="../stylesheets/main.css" />
         <link rel="stylesheet" href="../stylesheets/createCourse.css" />
-    </head>
-    <body>
         <script src="../foundation6.5.1/js/vendor/jquery.js"></script>
         <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
         <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
-        <script src="../script/randomize.js" defer></script>
-        <script src="../script/parralax.js" defer></script>
+        <script src="../script/monaco.js"></script>
+        <script src="../script/createCourse.js" defer></script>
         <script>
             $(document).foundation();
         </script>
         <link rel="stylesheet" href="../stylesheets/headerStylePartials.css" />
+    </head>
+    <body>
         <header>
             <?php
                 include '../partials/footerP1.html';
@@ -142,6 +142,62 @@
                                                 <span></span>
                                             </label>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell">
+                        <div class="cell">
+                            <h3>
+                                Question 2:
+                            </h3>
+                            </div>
+                            <div class="cell">
+                                <label for="">Question type</label>
+                            </div>
+                            <div class="cell">
+                                <select name="" id="">
+                                    <option value="">Code</option>
+                                    <option value="">Multiple choice</option>
+                                </select>
+                            </div>
+                            <div class="cell">
+                                <label for="">Code editor</label>
+                            </div>
+                            <div class="cell grid-x medium-up-2 small-up-1 codeQuestion">
+                                <div class="cell">
+                                    <textarea name="">In here you can write your article</textarea>
+                                </div>
+                                <div class="cell editorWindow"></div>
+                            </div>
+                            <div class="cell">
+                                <label for="">Awnser</label>
+                            </div>
+                            <div class="cell">
+                                <label for="" class="lowerLabel">Awnser Type</label>
+                            </div>
+                            <div class="cell">
+                                <select name="" id="">
+                                    <option value="">Error</option>
+                                    <option value="">Log</option>
+                                    <option value="">Warning</option>
+                                </select>
+                            </div>
+                            <div class="cell">
+                                <label for="" class="lowerLabel">Expected Awnser</label>
+                            </div>
+                            <div class="cell">
+                                <input type="text" placeholder="Fill here the awnser that you expect to see in the console..">
+                            </div>
+                            <div class="cell grid-x small-up-1 addOrRemoveBox">
+                                <div class="cell">
+                                    <div class="clickContainer">
+                                        <img class="buttonAdd" src="../img/plus.svg" alt=""> Add a new awnser
+                                    </div>
+                                </div>
+                                <div class="cell">
+                                    <div class="clickContainer">
+                                    <img class="buttonRemove" src="../img/minus.svg" alt=""> Remove an awnser
                                     </div>
                                 </div>
                             </div>
