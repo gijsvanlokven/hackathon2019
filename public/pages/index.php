@@ -7,6 +7,7 @@
     <title>Learn2Gether</title>
     <link rel="stylesheet" href="../foundation6.5.1/css/foundation.css" />
     <link rel="stylesheet" href="../stylesheets/index.css" />
+    <link rel="shortcut icon" href="../img/favicon.ico" />
 </head>
 <body>
     <script src="../foundation6.5.1/js/vendor/jquery.js"></script>
@@ -56,8 +57,8 @@
                 Welcome to Learn2gether!
             </h1>
             <p>
-                Learn2gether is an website where you can learn programming by making excercises that everyone can publish on the website. 
-                We as Learn2gether want everyone to be able to learn programming withouth a problem. 
+                Learn2gether is an website where you can learn programming by making excercises that everyone can publish on the website.
+                We as Learn2gether want everyone to be able to learn programming withouth a problem.
             </p>
         </section>
         <section id="suggestedCoursesContainer">
