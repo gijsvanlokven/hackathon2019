@@ -153,3 +153,130 @@ footer .grid-y .cell
 {
   transform: translateY(-2px);
 }
+
+/*
+  Custom checkbox
+*/
+.customCheckbox
+{
+  position: relative;
+  width: 39px;
+  height: 39px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: block;
+}
+
+.customCheckbox input
+{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.customCheckbox span
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #016EA6;
+  border-radius: 50%;
+  transition: background-color .2s;
+}
+
+.customCheckbox:hover input ~ span {
+  background-color: #0a8fd3;
+}
+
+.customCheckbox input:checked ~ span {
+  background-color: #74c14d;
+}
+
+.customCheckbox span:after,
+.customCheckbox span:before 
+{
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.customCheckbox input:checked ~ span:after {
+  display: block;
+}
+
+.customCheckbox span:before 
+{
+  display: block;
+  left: 13px;
+  top: 8px;
+  width: 0.9rem;
+  height: 1.2rem;
+  border: solid #044685;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.customCheckbox span:after {
+  left: 13px;
+  top: 8px;
+  width: 0.9rem;
+  height: 1.2rem;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*
+  Flex Center
+*/
+.flex-center
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+  Upload button
+*/
+.uploadButton input
+{
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  cursor: pointer;
+  height: 0;
+}
+
+.uploadButton
+{
+  color: white;
+  padding: 10px;
+  width: 300px;
+  display: block;
+  background-color: #016EA6;
+  border-radius: 5px;
+  transition: background-color .2s;
+  cursor: pointer;
+}
+
+.uploadButton:hover
+{
+  background-color: #0a8fd3;
+}
+
+.uploadButton img
+{
+  height: 50px;
+}

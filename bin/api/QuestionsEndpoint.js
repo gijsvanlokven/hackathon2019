@@ -29,10 +29,15 @@ class QuestionsEndpoint {
     }
     async GetItem(req, res) {
         let result = await database_1.default.query(`SELECT * FROM Question WHERE QuestionID = ${req.params["id"]}`);
+<<<<<<< HEAD
         if (result && result.count > 0) {
             let data = result.results[0];
             res.send(Object.assign({ Question: data.Question }, data.DATA));
         }
+=======
+        if (result && result.count > 0)
+            res.send(result.results[0]);
+>>>>>>> create-course
         else
             res.status(404).send({ error: "Not found.", errorCode: 404 });
     }
