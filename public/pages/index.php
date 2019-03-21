@@ -188,7 +188,7 @@
             </section>
         </section>
     <?php
-    include '../partials/footer.html';
+    include '../partials/footerP2.html';
     ?>
     </body>
 </html>
