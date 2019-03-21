@@ -5,14 +5,27 @@ Array.from(editorWindows).forEach((editorWindow) => {
     renderCodeBlock(editorWindow);
 });
 
-function renderCodeBlock(editorWindow)
+let ProgrammingLangauges = document.getElementsByClassName("programmingLangauge");
+
+Array.from(ProgrammingLangauges).forEach((element) => {
+    let parent = element.closest("[question]");
+    element.addEventListener("change", () => {
+        parent.querySelector(".editorWindow").innerHTML = "";
+        renderCodeBlock(parent.querySelector(".editorWindow"), element.value);
+    });
+})
+
+function renderCodeBlock(editorWindow, programmingLangauge = "html")
 {
     let editor = monaco.editor.create(editorWindow, {
         theme: 'vs-dark',
-        model: monaco.editor.createModel("Type your code in here!", "HTML"),
+        value: "Type in here your code",
+        language: programmingLangauge,
         minimap: true,
     });
     editor.layout();
+
+    
 }
 
 /*
@@ -23,14 +36,22 @@ let uploadButtons = document.querySelectorAll(".uploadButton")
 Array.from(uploadButtons).forEach((button) => {
     button.addEventListener("change", function(event){
         let file = button.querySelector("input").files[0];
-        console.log(file)
+        
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('.uploadImg').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(file);
+        
         if(file.name.length > 30)
         {
-            this.parentNode.querySelector('.filename').innerHTML = "File <span class='bold'>" + file.name.substr(0, 30) + "..." + file.name.split('.').pop() + "</span> is selected.";
+            button.parentElement.parentElement.querySelector('.filename').innerHTML = "File <span class='bold'>" + file.name.substr(0, 30) + "..." + file.name.split('.').pop() + "</span> is selected.";
         }
         else
         {
-            this.parentNode.querySelector('.filename').innerHTML = "File <span class='bold'>" + file.name + "</span> is selected.";
+            button.parentElement.parentElement.querySelector('.filename').innerHTML = "File <span class='bold'>" + file.name + "</span> is selected.";
         }
         
     });
@@ -83,6 +104,16 @@ function questionChanger(question, i, type)
                 </select>
             </div>
             <div class="cell">
+                <label for="">Programming Langauge</label>
+            </div>
+            <div class="cell">
+                <select name="question${i}Langauge" class="programmingLangauge">
+                    <option selected value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">Javascript</option>
+                </select>
+            </div>
+            <div class="cell">
                 <label for="">Code editor</label>
             </div>
             <div class="cell grid-x medium-up-2 small-up-1 codeQuestion">
@@ -94,15 +125,15 @@ function questionChanger(question, i, type)
                 </div>
             </div>
             <div class="cell">
-                <label for="">Awnser</label>
+                <label for="">Answer</label>
             </div>
-            <div class="cell awnserContainer">
-                <div class="cell awnserBox">
+            <div class="cell answerContainer">
+                <div class="cell answerBox">
                     <div class="cell">
-                        <label for="" class="mediumLabel">Awnser 1</label>
+                        <label for="" class="mediumLabel">Answer 1</label>
                     </div>
                     <div class="cell">
-                        <label for="" class="lowerLabel">Awnser Type</label>
+                        <label for="" class="lowerLabel">Answer Type</label>
                     </div>
                     <div class="cell">
                         <select name="question${i}typeError1">
@@ -112,22 +143,22 @@ function questionChanger(question, i, type)
                         </select>
                     </div>
                     <div class="cell">
-                        <label for="" class="lowerLabel">Expected Awnser</label>
+                        <label for="" class="lowerLabel">Expected Answer</label>
                     </div>
                     <div class="cell">
-                        <input type="text" name="question${i}expectedAwnser1" placeholder="Fill here the awnser that you expect to see in the console..">
+                        <input type="text" name="question${i}expectedAnswer1" placeholder="Fill here the answer that you expect to see in the console..">
                     </div>
                 </div>
             </div>   
             <div class="cell grid-x small-up-1 addOrRemoveBox">
                 <div class="cell">
-                    <div class="clickContainer" onclick="codeAddAwnser(this)">
-                        <img class="buttonAdd" src="../img/plus.svg" alt=""> Add a new awnser
+                    <div class="clickContainer" onclick="codeAddAnswer(this)">
+                        <img class="buttonAdd" src="../img/plus.svg" alt=""> Add a new answer
                     </div>
                 </div>
                 <div class="cell">
                     <div class="clickContainer" onclick="codeRemoveAnswer(this)">
-                        <img class="buttonRemove" src="../img/minus.svg" alt=""> Remove an awnser
+                        <img class="buttonRemove" src="../img/minus.svg" alt=""> Remove an answer
                     </div>
                 </div>
             </div>
@@ -135,7 +166,13 @@ function questionChanger(question, i, type)
         `;
         question.outerHTML = codeSection;
         
+        let programmingLangSelec = document.querySelector(".codeSection[question='" + i + "'] .programmingLangauge");
         let newCodeBlock = document.querySelector(".codeSection[question='" + i + "'] .editorWindow");
+
+        programmingLangSelec.addEventListener("change", () => {
+            newCodeBlock.innerHTML = "";
+            renderCodeBlock(newCodeBlock, programmingLangSelec.value);
+        });
 
         renderCodeBlock(newCodeBlock);
     }
@@ -166,15 +203,15 @@ function questionChanger(question, i, type)
             <div class="cell">
                 <label for="">Answers</label>
             </div>
-            <div class="cell grid-x grid-margin-x medium-up-2 small-up-1 awnserBox">
+            <div class="cell grid-x grid-margin-x medium-up-2 small-up-1 answerBox">
                 <div class="cell grid-x">
                     <div class="cell small-10">
-                        <input type="text" placeholder="Awnser 1.." name="question${i}awnser1">
+                        <input type="text" placeholder="Answer 1.." name="question${i}answer1">
                     </div>
                     <div class="cell small-2 flex-center">
                         <div>
                             <label class="customCheckbox" >
-                                <input type="checkbox" name="question${i}CheckboxAwnser1">
+                                <input type="checkbox" name="question${i}CheckboxAnswer1">
                                 <span></span>
                             </label>
                         </div>
@@ -182,12 +219,12 @@ function questionChanger(question, i, type)
                 </div>
                 <div class="cell grid-x">
                     <div class="cell small-10">
-                        <input type="text" placeholder="Awnser 2.." name="question${i}awnser2">
+                        <input type="text" placeholder="Answer 2.." name="question${i}answer2">
                     </div>
                     <div class="cell small-2 flex-center">
                         <div>
                             <label class="customCheckbox" >
-                                <input type="checkbox" name="question${i}CheckboxAwnser1">
+                                <input type="checkbox" name="question${i}CheckboxAnswer2">
                                 <span></span>
                             </label>
                         </div>
@@ -195,12 +232,12 @@ function questionChanger(question, i, type)
                 </div>
                 <div class="cell grid-x">
                     <div class="cell small-10">
-                        <input type="text" placeholder="Awnser 3.." name="question${i}awnser3">
+                        <input type="text" placeholder="Answer 3.." name="question${i}answer3">
                     </div>
                     <div class="cell small-2 flex-center">
                         <div>
                             <label class="customCheckbox" >
-                                <input type="checkbox" name="question${i}CheckboxAwnser1">
+                                <input type="checkbox" name="question${i}CheckboxAnswer3">
                                 <span></span>
                             </label>
                         </div>
@@ -208,12 +245,12 @@ function questionChanger(question, i, type)
                 </div>
                 <div class="cell grid-x">
                     <div class="cell small-10">
-                        <input type="text" placeholder="Awnser 4.." name="question${i}awnser4">
+                        <input type="text" placeholder="Answer 4.." name="question${i}answer4">
                     </div>
                     <div class="cell small-2 flex-center">
                         <div>
                             <label class="customCheckbox" >
-                                <input type="checkbox" name="question${i}CheckboxAwnser1">
+                                <input type="checkbox" name="question${i}CheckboxAnswer4">
                                 <span></span>
                             </label>
                         </div>
@@ -225,7 +262,6 @@ function questionChanger(question, i, type)
     }
     let newType = document.querySelector("#createForm > div > div > div[question='" + i + "'] .questionType");
     let newQuestion = document.querySelector("#createForm > div > div > div[question='" + i + "']");
-    console.log(newType)
     newType.addEventListener("change", () => { questionChanger(newQuestion, i, newType) }, false);
 }
 
@@ -302,15 +338,15 @@ function createQuestion()
             <div class="cell">
                 <label for="">Answers</label>
             </div>
-            <div class="cell grid-x grid-margin-x medium-up-2 small-up-1 awnserBox">
+            <div class="cell grid-x grid-margin-x medium-up-2 small-up-1 answerBox">
                 <div class="cell grid-x">
                     <div class="cell small-10">
-                        <input type="text" placeholder="Awnser 1.." name="question${i}awnser1">
+                        <input type="text" placeholder="Answer 1.." name="question${i}answer1">
                     </div>
                     <div class="cell small-2 flex-center">
                         <div>
                             <label class="customCheckbox" >
-                                <input type="checkbox" name="question${i}CheckboxAwnser1">
+                                <input type="checkbox" name="question${i}CheckboxAnswer1">
                                 <span></span>
                             </label>
                         </div>
@@ -318,12 +354,12 @@ function createQuestion()
                 </div>
                 <div class="cell grid-x">
                     <div class="cell small-10">
-                        <input type="text" placeholder="Awnser 2.." name="question${i}awnser2">
+                        <input type="text" placeholder="Answer 2.." name="question${i}answer2">
                     </div>
                     <div class="cell small-2 flex-center">
                         <div>
                             <label class="customCheckbox" >
-                                <input type="checkbox" name="question${i}CheckboxAwnser1">
+                                <input type="checkbox" name="question${i}CheckboxAnswer2">
                                 <span></span>
                             </label>
                         </div>
@@ -331,12 +367,12 @@ function createQuestion()
                 </div>
                 <div class="cell grid-x">
                     <div class="cell small-10">
-                        <input type="text" placeholder="Awnser 3.." name="question${i}awnser3">
+                        <input type="text" placeholder="Answer 3.." name="question${i}answer3">
                     </div>
                     <div class="cell small-2 flex-center">
                         <div>
                             <label class="customCheckbox" >
-                                <input type="checkbox" name="question${i}CheckboxAwnser1">
+                                <input type="checkbox" name="question${i}CheckboxAnswer3">
                                 <span></span>
                             </label>
                         </div>
@@ -344,12 +380,12 @@ function createQuestion()
                 </div>
                 <div class="cell grid-x">
                     <div class="cell small-10">
-                        <input type="text" placeholder="Awnser 4.." name="question${i}awnser4">
+                        <input type="text" placeholder="Answer 4.." name="question${i}answer4">
                     </div>
                     <div class="cell small-2 flex-center">
                         <div>
                             <label class="customCheckbox" >
-                                <input type="checkbox" name="question${i}CheckboxAwnser1">
+                                <input type="checkbox" name="question${i}CheckboxAnswer4">
                                 <span></span>
                             </label>
                         </div>
@@ -384,60 +420,60 @@ function removeQuestion()
 }
 
 /*
-    Function for adding a code block awnser
+    Function for adding a code block answer
 
     button = button that was clicked
 */
-function codeAddAwnser(button)
+function codeAddAnswer(button)
 {
     let parent = button.closest(".codeSection");
-    let awnserBoxes = parent.querySelectorAll(".awnserContainer .awnserBox");
-    let awnserContainer = parent.querySelector(".awnserContainer");
-    let awnserBoxesAmount = Array.from(awnserBoxes).length;
+    let answerBoxes = parent.querySelectorAll(".answerContainer .answerBox");
+    let answerContainer = parent.querySelector(".answerContainer");
+    let answerBoxesAmount = Array.from(answerBoxes).length;
     let html = `
-        <div class="cell awnserBox">
+        <div class="cell answerBox">
             <div class="cell">
-                <label for="" class="mediumLabel">Awnser ${awnserBoxesAmount + 1}</label>
+                <label for="" class="mediumLabel">Answer ${answerBoxesAmount + 1}</label>
             </div>
             <div class="cell">
-                <label for="" class="lowerLabel">Awnser Type</label>
+                <label for="" class="lowerLabel">Answer Type</label>
             </div>
             <div class="cell">
-                <select name="question${parent.getAttribute("question")}typeError${awnserBoxesAmount + 1}">
+                <select name="question${parent.getAttribute("question")}typeError${answerBoxesAmount + 1}">
                     <option value="error">Error</option>
                     <option value="log">Log</option>
                     <option value="warning">Warning</option>
                 </select>
             </div>
             <div class="cell">
-                <label for="" class="lowerLabel">Expected Awnser</label>
+                <label for="" class="lowerLabel">Expected Answer</label>
             </div>
             <div class="cell">
-                <input type="text" name="question${parent.getAttribute("question")}expectedAwnser${awnserBoxesAmount + 1}" placeholder="Fill here the awnser that you expect to see in the console..">
+                <input type="text" name="question${parent.getAttribute("question")}expectedAnswer${answerBoxesAmount + 1}" placeholder="Fill here the answer that you expect to see in the console..">
             </div>
         </div>`;
 
-    awnserContainer.innerHTML += html;
+    answerContainer.innerHTML += html;
 }
 
 /*
-    Function for removing a code block awnser
+    Function for removing a code block answer
 
     button = button that was clicked
 */
 function codeRemoveAnswer(button)
 {
     let parent = button.closest(".codeSection");
-    let awnserBoxes = parent.querySelectorAll(".awnserContainer .awnserBox");
-    let awnserContainer = parent.querySelector(".awnserContainer");
-    let awnserBoxesAmount = Array.from(awnserBoxes).length;
+    let answerBoxes = parent.querySelectorAll(".answerContainer .answerBox");
+    let answerContainer = parent.querySelector(".answerContainer");
+    let answerBoxesAmount = Array.from(answerBoxes).length;
 
-    if(awnserBoxesAmount > 1)
+    if(answerBoxesAmount > 1)
     {
-        awnserContainer.removeChild(awnserContainer.querySelector(".awnserBox:last-child"));
+        answerContainer.removeChild(answerContainer.querySelector(".answerBox:last-child"));
     }
     else
     {
-        showErrorBox("You need to have atleast one awnser");
+        showErrorBox("You need to have atleast one answer");
     }
 }

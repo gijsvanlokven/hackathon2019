@@ -247,6 +247,12 @@ footer .grid-y .cell
   align-items: center;
 }
 
+.flex-center-vertical
+{
+  display: flex;
+  align-items: center;
+}
+
 /*
   Upload button
 */
@@ -279,6 +285,11 @@ footer .grid-y .cell
 .uploadButton img
 {
   height: 50px;
+}
+
+.uploadImg
+{
+  height: 200px;
 }
 
 /*
