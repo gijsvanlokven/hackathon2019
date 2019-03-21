@@ -77,7 +77,6 @@ class authEndpoint {
                 res.send({ error: "not logged in." });
                 return;
             }
-            console.log(me);
             let existingUser = await database_1.default.query(`SELECT UserID FROM UserAccount WHERE GoogleID = '${me.data.id}' OR Email = '${me.data.email}';`);
             if (existingUser.count == 0) {
                 await database_1.default.query(`INSERT INTO UserAccount (GoogleID,UserID,ProfilePicture, Email) VALUES ('${me.data.id}', '${me.data.given_name}', '${me.data.picture}', '${me.data.email}');`);
