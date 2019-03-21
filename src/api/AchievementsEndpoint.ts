@@ -1,7 +1,6 @@
 import express = require('express');
 import database from "../database";
 import APIEndpoint from "../APIEndpoint";
-import { relative } from 'path';
 
 export default class AchievementEndpoint implements APIEndpoint {
 	Name = "achievements"

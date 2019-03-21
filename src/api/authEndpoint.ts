@@ -1,12 +1,13 @@
 import express = require('express');
 import axios from 'axios';
 import APIEndpoint from '../APIEndpoint';
+//@ts-ignore
 import config = require("../../config");
 import database from '../database';
 
-import googleapis, { google } from "googleapis";
+import { google } from "googleapis";
 
-let auth;
+let auth: any;
 export default class authEndpoint implements APIEndpoint {
   Name = "auth";
   get Router() {
@@ -68,7 +69,7 @@ export default class authEndpoint implements APIEndpoint {
           version: 'v1',
           auth
         });
-        let me;
+        let me: any;
         try {
           me = await oauth.userinfo.get();
         }
@@ -77,7 +78,6 @@ export default class authEndpoint implements APIEndpoint {
           res.send({ error: "not logged in." });
           return;
         }
-        console.log(me);
         let existingUser = await database.query(`SELECT UserID FROM UserAccount WHERE GoogleID = '${me.data.id}' OR Email = '${me.data.email}';`);
         if (existingUser.count == 0) {
           await database.query(`INSERT INTO UserAccount (GoogleID,UserID,ProfilePicture, Email) VALUES ('${me.data.id}', '${me.data.given_name}', '${me.data.picture}', '${me.data.email}');`);
