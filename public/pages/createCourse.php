@@ -72,7 +72,7 @@
                         <!--
                             Multiple Choice Section
                         -->
-                        <div class="cell multipleChoiceSection">
+                        <div question="1" class="cell multipleChoiceSection">
                             <div class="cell">
                                 <h3>
                                     Question 1:
@@ -82,7 +82,7 @@
                                 <label for="">Question type</label>
                             </div>
                             <div class="cell">
-                                <select name="" id="">
+                                <select name="question1Type" class="questionType">
                                     <option value="multiple-choice">Multiple choice</option>
                                     <option value="code">Code</option>
                                 </select>
@@ -91,7 +91,7 @@
                                 <label for="">Question</label>
                             </div>
                             <div class="cell">
-                                <input type="text" placeholder="Fill here your question in..">
+                                <input type="text" name="question1" placeholder="Fill here your question in..">
                             </div>
                             <div class="cell">
                                 <label for="">Answers</label>
@@ -99,12 +99,12 @@
                             <div class="cell grid-x grid-margin-x medium-up-2 small-up-1 awnserBox">
                                 <div class="cell grid-x">
                                     <div class="cell small-10">
-                                        <input type="text" placeholder="Awnser 1..">
+                                        <input type="text" placeholder="Awnser 1.." name="question1awnser1">
                                     </div>
                                     <div class="cell small-2 flex-center">
                                         <div>
                                             <label class="customCheckbox" >
-                                                <input type="checkbox" name="question2">
+                                                <input type="checkbox" name="question1CheckboxAwnser1">
                                                 <span></span>
                                             </label>
                                         </div>
@@ -112,12 +112,12 @@
                                 </div>
                                 <div class="cell grid-x">
                                     <div class="cell small-10">
-                                        <input type="text" placeholder="Awnser 2..">
+                                        <input type="text" placeholder="Awnser 2.." name="question1awnser2">
                                     </div>
                                     <div class="cell small-2 flex-center">
                                         <div>
                                             <label class="customCheckbox" >
-                                                <input type="checkbox" name="question2">
+                                                <input type="checkbox" name="question1CheckboxAwnser1">
                                                 <span></span>
                                             </label>
                                         </div>
@@ -125,12 +125,12 @@
                                 </div>
                                 <div class="cell grid-x">
                                     <div class="cell small-10">
-                                        <input type="text" placeholder="Awnser 3..">
+                                        <input type="text" placeholder="Awnser 3.." name="question1awnser3">
                                     </div>
                                     <div class="cell small-2 flex-center">
                                         <div>
                                             <label class="customCheckbox" >
-                                                <input type="checkbox" name="question2">
+                                                <input type="checkbox" name="question1CheckboxAwnser1">
                                                 <span></span>
                                             </label>
                                         </div>
@@ -138,12 +138,12 @@
                                 </div>
                                 <div class="cell grid-x">
                                     <div class="cell small-10">
-                                        <input type="text" placeholder="Awnser 4..">
+                                        <input type="text" placeholder="Awnser 4.." name="question1awnser4">
                                     </div>
                                     <div class="cell small-2 flex-center">
                                         <div>
                                             <label class="customCheckbox" >
-                                                <input type="checkbox" name="question2">
+                                                <input type="checkbox" name="question1CheckboxAwnser1">
                                                 <span></span>
                                             </label>
                                         </div>
@@ -154,7 +154,7 @@
                         <!--
                             Code Section
                         -->
-                        <div class="cell codeSection">
+                        <div question="2" class="cell codeSection">
                             <div class="cell">
                                 <h3>
                                     Question 2:
@@ -164,9 +164,9 @@
                                 <label for="">Question type</label>
                             </div>
                             <div class="cell">
-                                <select name="" id="">
-                                    <option value="code">Code</option>
+                                <select name="question2Type" class="questionType">
                                     <option value="multiple-choice">Multiple choice</option>
+                                    <option selected value="code">Code</option>
                                 </select>
                             </div>
                             <div class="cell">
@@ -174,9 +174,11 @@
                             </div>
                             <div class="cell grid-x medium-up-2 small-up-1 codeQuestion">
                                 <div class="cell">
-                                    <textarea name="">In here you can write your article</textarea>
+                                    <textarea name="question2Article">In here you can write your article</textarea>
                                 </div>
-                                <div class="cell editorWindow"></div>
+                                <div class="cell editorWindow" name="question2Editor">
+
+                                </div>
                             </div>
                             <div class="cell">
                                 <label for="">Awnser</label>
@@ -190,7 +192,7 @@
                                         <label for="" class="lowerLabel">Awnser Type</label>
                                     </div>
                                     <div class="cell">
-                                        <select name="typeError" id="">
+                                        <select name="question2typeError1">
                                             <option value="error">Error</option>
                                             <option value="log">Log</option>
                                             <option value="warning">Warning</option>
@@ -200,7 +202,7 @@
                                         <label for="" class="lowerLabel">Expected Awnser</label>
                                     </div>
                                     <div class="cell">
-                                        <input type="text" placeholder="Fill here the awnser that you expect to see in the console..">
+                                        <input type="text" name="question2expectedAwnser1" placeholder="Fill here the awnser that you expect to see in the console..">
                                     </div>
                                 </div>
                             </div>   
@@ -220,6 +222,18 @@
                     </div>
                 </div>
             </form>
+            <div class="cell grid-x small-up-2 addOrRemoveBox addOrRemoveBox-margin">
+                <div class="cell">
+                    <div class="clickContainer" onclick="createQuestion()">
+                        <img class="buttonAdd" src="../img/plus.svg" alt=""> Add a new question
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="clickContainer" onclick="removeQuestion()">
+                        <img class="buttonRemove" src="../img/minus.svg" alt=""> Remove last question
+                    </div>
+                </div>
+            </div>
         </section>
         <?php
             include '../partials/footerP2.html';
