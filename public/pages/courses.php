@@ -31,7 +31,7 @@
                         <div class="cell">
                             <div class="clickContainer">
                                 <img src="../img/plus.svg"> 
-                                Create a course
+                                <a href="createCourse.php">Create a course</a>
                             </div>
                         </div>
                         <div class="cell">

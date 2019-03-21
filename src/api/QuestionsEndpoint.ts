@@ -12,7 +12,7 @@ export default class QuestionsEndpoint implements APIEndpoint {
 			.put("/:id", this.EditItem);
 	}
 
-	async GetList(req: express.Request, res: express.Response) {
+  async GetList(req: express.Request, res: express.Response) {
 		let result: { results: any[], count: number, columns: any[] };
 		if (req.query["course"])
 			result = await database.query(`SELECT * FROM Question WHERE CourseID = '${req.query["course"]}';`)
@@ -75,9 +75,9 @@ export default class QuestionsEndpoint implements APIEndpoint {
 	}
 	}
 
-	async EditItem(req: express.Request, res: express.Response) {
+  async EditItem(req: express.Request, res: express.Response) {
 		let question = {
-			CourseID: req.body["CourseID"],
+      CourseID: req.body["CourseID"],
 			Question: req.body["Question"],
 			DATA: req.body["DATA"]
 		}
