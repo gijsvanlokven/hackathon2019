@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learn2Gether</title>
     <link rel="stylesheet" href="../foundation6.5.1/css/foundation.css" />
+    <link rel="stylesheet" href="../stylesheets/main.css" />
     <link rel="stylesheet" href="../stylesheets/index.css" />
 </head>
 <body>

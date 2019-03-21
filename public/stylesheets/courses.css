@@ -1,0 +1,58 @@
+.scrolling-wrapper img
+{
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+#contentSection
+{
+    width: 95%;
+    margin: 0 auto;
+}
+
+/*
+    Courses wrapper
+*/
+#coursesWrapper
+{
+    width: 100%;
+    margin: -10px;
+}
+
+#coursesWrapper .grid-x
+{
+    margin: 0 auto;
+    width: 100%;
+}
+
+#coursesWrapper .grid-x > div
+{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.16);
+    text-align: center;
+    
+}
+
+#coursesWrapper h6
+{
+    margin-top: 10px;
+}
+
+#coursesWrapper img
+{
+    width: 50%;
+}
+
+/*
+    Courses config bar
+*/
+#coursesConfigBar
+{
+    border-bottom: 1px solid white;
+}
