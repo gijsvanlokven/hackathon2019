@@ -2,7 +2,7 @@ import express = require('express');
 import database from "../database";
 import APIEndpoint from "../APIEndpoint";
 
-export default class QuestionsEndpoint implements APIEndpoint {
+export default class ActivityEndpoint implements APIEndpoint {
 	Name = "activity"
 	get Router() {
 		return express.Router()

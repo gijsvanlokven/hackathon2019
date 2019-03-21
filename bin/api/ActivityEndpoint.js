@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const database_1 = __importDefault(require("../database"));
-class QuestionsEndpoint {
+class ActivityEndpoint {
     constructor() {
         this.Name = "activity";
     }
@@ -40,5 +40,5 @@ class QuestionsEndpoint {
             res.sendStatus(400);
     }
 }
-exports.default = QuestionsEndpoint;
+exports.default = ActivityEndpoint;
 //# sourceMappingURL=ActivityEndpoint.js.map
