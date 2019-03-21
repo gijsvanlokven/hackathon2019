@@ -98,6 +98,11 @@ h3
     height: 30px;
 }
 
+#coursesConfigBar a
+{
+    color: white;
+}
+
 @media print, screen and (max-width: 1023px)
 {
     #coursesConfigBar > div > div:nth-child(-n+2)

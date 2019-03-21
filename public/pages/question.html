@@ -11,11 +11,12 @@
 	<style>
 		body {
 			margin: 0;
+			background-color: #1E1E1E;
+			color: #FFF;
 		}
 
 		.output {
 			font-family: consolas, Courier, monospace;
-			background-color: #1E1E1E;
 		}
 
 		.output p {
@@ -33,17 +34,34 @@
 		.output .warning {
 			color: orange;
 		}
+
+		div.hidden {
+			display: none;
+		}
+
+		.code {
+			display: flex;
+			opacity: 0;
+		}
+
+		.multiplechoice>button {
+			display: block;
+			margin: 1em;
+		}
 	</style>
 </head>
 
 <body>
 	<p class="question"></p>
-	<div class="code" style="display: flex;">
+	<em class="explanation"></em>
+	<div class="code" style="opacity: 1;">
 		<div class="editor" style="height: 100vh; flex: 1;"></div>
 		<button class="compile">Compile</button>
 		<div class="output" style="min-width: 25vw;"></div>
+		<button class="next" disabled>next</button>
 	</div>
 	<div class="multiplechoice">
+		<button class="next" disabled>next</button>
 	</div>
 </body>
 

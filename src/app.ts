@@ -1,5 +1,4 @@
 import express = require('express');
-import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import database from './database';
@@ -25,6 +24,11 @@ app.use(logger('dev'), express.json(), express.urlencoded({
   extended: false
 }), cookieParser());
 
+app.use("/api/", (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+
+  next();
+})
 //register each endpoint to the server.
 app.get('/api/', (req, res) => {
   res.send(endpoints.map(x => x.Name).join());

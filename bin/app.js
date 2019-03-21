@@ -23,6 +23,10 @@ let app = express();
 app.use(morgan_1.default('dev'), express.json(), express.urlencoded({
     extended: false
 }), cookie_parser_1.default());
+app.use("/api/", (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    next();
+});
 //register each endpoint to the server.
 app.get('/api/', (req, res) => {
     res.send(endpoints.map(x => x.Name).join());

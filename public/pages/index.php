@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learn2Gether</title>
     <link rel="stylesheet" href="../foundation6.5.1/css/foundation.css" />
+    <link rel="stylesheet" href="../stylesheets/main.css" />
     <link rel="stylesheet" href="../stylesheets/index.css" />
     <link rel="shortcut icon" href="../img/favicon.ico" />
 </head>
@@ -14,6 +15,7 @@
     <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
     <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
     <script src="../script/randomize.js" defer></script>
+    <script src="../script/index.js" defer></script>
     <script src="../script/parralax.js" defer></script>
     <script>
         $(document).foundation();
@@ -65,35 +67,8 @@
             <h3>
                 Suggested Courses
             </h3>
-            <div class="grid-container" id="suggestedCourses">
-                <div class="grid-x grid-margin-x">
-                    <div class="cell large-4 medium-6 small-12 courseBox">
-                        <img src="../img/html_logo.png" class="float-center">
-                        <h4>
-                            HTML
-                        </h4>
-                        <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lacus non vulputate commodo. Phasellus elit est, luctus non tempor quis, faucibus eget nisi. Ut vel risus in augue rutrum ullamcorper sed quis nibh.
-                        </p>
-                    </div>
-                    <div class="cell large-4 medium-6 small-12 courseBox">
-                        <img src="../img/css_logo.png" class="float-center">
-                        <h4>
-                            CSS
-                        </h4>
-                        <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lacus non vulputate commodo. Phasellus elit est, luctus non tempor quis, faucibus eget nisi. Ut vel risus in augue rutrum ullamcorper sed quis nibh.
-                        </p>
-                    </div>
-                    <div class="cell large-4 large-offset-0 medium-6 medium-offset-3 small-12 courseBox">
-                        <img src="../img/javascript_logo.png" class="float-center">
-                        <h4>
-                            Javascript
-                        </h4>
-                        <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lacus non vulputate commodo. Phasellus elit est, luctus non tempor quis, faucibus eget nisi. Ut vel risus in augue rutrum ullamcorper sed quis nibh.
-                        </p>
-                    </div>
+            <div class="grid-container" >
+                <div class="grid-x grid-margin-x" id="suggestedCourses">
                 </div>
             </div>
         </section>

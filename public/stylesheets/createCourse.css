@@ -1,0 +1,61 @@
+/*
+    Html, body
+*/
+html, body
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+    Header
+*/
+header
+{
+    flex: 0 0 auto;
+}
+
+/*
+    Content Section
+*/
+#contentSection
+{
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex: 1 0 auto;
+}
+
+/*
+    Create Form
+*/
+#createForm > div > div > div
+{
+    padding: 40px 0;
+    border-bottom: 2px solid white;
+}
+
+/*
+    Awnser box
+*/
+.awnserBox > .cell
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.awnserBox input[type=text]
+{
+    margin: 0;
+}
+
+/*
+    Label
+*/
+label
+{
+    color: white;
+    font-size: 20px;
+}
+
