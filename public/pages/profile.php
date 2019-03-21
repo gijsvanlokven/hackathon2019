@@ -37,15 +37,67 @@
                         <img src="../img/anonymous.jpg" class="achievementPicture">
                     </div>
                 </div>
-                <div class="radio-tabs large-6 medium-10 medium-offset-1 small-12" role="tablist">
-                    <h3>
+                <div class="radio-tabs large-6 medium-10 medium-offset-1 small-12 completed" role="tablist">
+                    <h3 class="text-center">
                         Completed Courses
                     </h3>
-                    <div>
-
+                    <div class="align-center">
+                        <div class="float-right completed-holder">
+                            <img src="../img/anonymous.jpg" class="completed-img">
+                            <h4 class="completed-text">
+                                HTML
+                            </h4>
+                            <h6 class="completed-text">
+                                FORM Basics
+                            </h6>
+                        </div>
+                        <div class="float-right completed-holder">
+                            <img src="../img/anonymous.jpg" class="completed-img">
+                            <h4 class="completed-text">
+                                HTML
+                            </h4>
+                            <h6 class="completed-text">
+                                FORM Advanced
+                            </h6>
+                        </div>
+                        <div class="float-right completed-holder">
+                            <img src="../img/anonymous.jpg" class="completed-img">
+                            <h4 class="completed-text">
+                                CSS
+                            </h4>
+                            <h6 class="completed-text">
+                                Selectors
+                            </h6>
+                        </div>
+                        <div class="float-right completed-holder">
+                            <img src="../img/anonymous.jpg" class="completed-img">
+                            <h4 class="completed-text">
+                                HTML
+                            </h4>
+                            <h6 class="completed-text">
+                                FORM Basics
+                            </h6>
+                        </div>
+                        <div class="float-right completed-holder">
+                            <img src="../img/anonymous.jpg" class="completed-img">
+                            <h4 class="completed-text">
+                                HTML
+                            </h4>
+                            <h6 class="completed-text">
+                                FORM Advanced
+                            </h6>
+                        </div>
+                        <div class="float-right completed-holder">
+                            <img src="../img/anonymous.jpg" class="completed-img">
+                            <h4 class="completed-text">
+                                CSS
+                            </h4>
+                            <h6 class="completed-text">
+                                Selectors
+                            </h6>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
         <?php
             include '../partials/footerP2.html';
