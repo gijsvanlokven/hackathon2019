@@ -8,7 +8,7 @@ const QuestionText = document.querySelector(".question"),
 	CodeEditor = document.querySelector(".editor"),
 	NextButtons = document.querySelectorAll(".next"),
 	explanation = document.querySelector(".explanation");
-const url = `${location.protocol}//${location.host}/api/`;
+	const url = `${location.protocol}//${location.host}/api/`;
 
 
 let expectedOutput = [];

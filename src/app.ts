@@ -25,6 +25,11 @@ app.use(logger('dev'), express.json(), express.urlencoded({
   extended: false
 }), cookieParser());
 
+app.use("/api/", (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+
+  next();
+})
 //register each endpoint to the server.
 app.get('/api/', (req, res) => {
   res.send(endpoints.map(x => x.Name).join());
