@@ -5,14 +5,16 @@ const QuestionText = document.querySelector(".question"),
 	Output = document.querySelector(".output"),
 	CompileButton = document.querySelector(".compile"),
 	MultipleChoiceScreen = document.querySelector(".multiplechoice"),
-	CodeEditor = document.querySelector(".editor");
+	CodeEditor = document.querySelector(".editor"),
+	NextButtons = document.querySelectorAll(".next"),
+	explanation = document.querySelector(".explanation");
 const url = `${location.protocol}//${location.host}/api/`;
 
 
 let expectedOutput = [];
-let NextQuestionID = 2;
+let NextQuestionID = 1;
 let Language = "javascript";
-
+let explanationText = "";
 let editor = monaco.editor.create(CodeEditor, {
 	theme: 'vs-dark',
 	model: monaco.editor.createModel("test();", Language),
@@ -23,7 +25,7 @@ editor.layout();
 
 
 CompileButton.addEventListener("click", CompileCode);
-
+NextButtons.forEach(x => x.addEventListener("click", NextQuestion));
 
 
 async function NextQuestion() {
@@ -32,30 +34,70 @@ async function NextQuestion() {
 		let body = await fetch(url + "questions/" + NextQuestionID);
 		let question = await body.json();
 		QuestionChange(question);
-	} else console.log("End of course reached");
+	} else location.href = "/index.php";
 }
 
 function QuestionChange(question) {
-	QuestionText.textContent = question.question;
+	DisableNext();
+	QuestionText.textContent = question.Question;
+	explanation.textContent = "";
 
 	if (question.Type == "Code") {
+		MultipleChoiceScreen.classList.add("hidden");
+		CodeScreen.classList.remove("hidden");
+
 		editor.getModel().setValue(question.Template.join("\n"));
 		expectedOutput = question.CorrectOutput;
+		explanationText = question.explanation;
+
 		if (question.NextQuestion)
 			NextQuestionID = question.NextQuestion;
 		else NextQuestionID = "END";
+	}
+
+	if (question.Type == "Question") {
+		MultipleChoiceScreen.classList.remove("hidden");
+		CodeScreen.classList.add("hidden");
+		question.Answers.forEach(answer => {
+			let button = document.createElement("button");
+			button.classList.add("choice");
+			button.textContent = answer.value;
+
+			if (answer.GotoQuestion)
+				button.addEventListener("click", () => {
+					NextQuestionID = answer.GotoQuestion;
+					EnableNext();
+				});
+			if (answer.explanation)
+				button.addEventListener("click", () => {
+					DisableNext();
+					explanation.textContent = answer.explanation;
+				});
+			if (answer.EndCourse)
+				button.addEventListener("click", () => {
+					NextQuestionID = "END";
+					EnableNext();
+				});
+
+			MultipleChoiceScreen.insertAdjacentElement("afterbegin", button);
+		});
 	}
 }
 
 
 function CompileCode() {
 	if (Language == "javascript") {
-		let compiler = new Function(`let Output = [];
+		let compiler = new Function(`
+		window ={};
+		let Output = [];
 		let console = {};
-		console.log = (...args) => Output.push({
+		console.log = (...args) => {
+			if(args.length>0)
+			Output.push({
 			type: 'log',
 			line: args.join(' ')
 		});
+	}
 		console.error = (...args) => Output.push({
 			type: 'error',
 			line: args.join(' ')
@@ -77,22 +119,33 @@ function CompileCode() {
 
 		console.log(result);
 		console.log(expectedOutput);
-		Output.innerHTML = result.map(x => `<p class="${x.type}">${x.line}</p>`).join("")
+		let htmlOutput = result.map(x => `<p class="${x.type}">${x.line}</p>`).join("");
+		Output.innerHTML = htmlOutput == "" ? "<strong>No output.</strong>" : htmlOutput;
 		if (Equals(result, expectedOutput))
-			NextQuestion();
-		else console.warn("Wrong answer");
+			EnableNext();
+		else explanation.textContent = explanationText;
 	}
 }
 
+function EnableNext() {
+	NextButtons.forEach(x => x.removeAttribute("disabled"))
+}
+
+function DisableNext() {
+	NextButtons.forEach(x => x.setAttribute("disabled", true))
+}
+
 function Equals(arr1, arr2) {
+	console.log(arr1, arr2)
 	if (arr1.length != arr2.length)
 		return false;
 	for (var i = arr1.length; i--;) {
-		if (arr1[i].type == arr2[i] && arr1[i].line == arr2[i].line)
+		if (arr1[i].type != arr2[i].type || arr1[i].line != arr2[i].line)
 			return false;
 	}
 
 	return true;
 }
+window.Equals = Equals;
 window.NextQuestion = NextQuestion;
 NextQuestion();
