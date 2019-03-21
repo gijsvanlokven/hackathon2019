@@ -88,39 +88,45 @@ function QuestionChange(question) {
 function CompileCode() {
 	if (Language == "javascript") {
 		let compiler = new Function(`
-		window ={};
-		let Output = [];
-		let console = {};
-		console.log = (...args) => {
-			if(args.length>0)
-			Output.push({
+		window = {};
+let Output = [];
+let console = {};
+console.log = (...args) => {
+	if (args.length > 0)
+		Output.push({
 			type: 'log',
 			line: args.join(' ')
 		});
-	}
-		console.error = (...args) => Output.push({
+}
+console.error =(...args) => {
+	if (args.length > 0)
+		Output.push({
 			type: 'error',
 			line: args.join(' ')
 		});
-		console.warn = (...args) => Output.push({
+}
+console.warn = (...args) => {
+	if (args.length > 0)
+		Output.push({
 			type: 'warning',
 			line: args.join(' ')
 		});
-		
-		try {
-			${editor.getModel().getValue()}
-		} catch (error) {
-			console.error(error);
-		}
-		
-		return Output;`);
+}
+
+try {
+	${editor.getModel().getValue()}
+} catch (error) {
+	console.error(error);
+}
+
+return Output;`);
 
 		let result = compiler();
 
 		console.log(result);
 		console.log(expectedOutput);
 		let htmlOutput = result.map(x => `<p class="${x.type}">${x.line}</p>`).join("");
-		Output.innerHTML = htmlOutput == "" ? "<strong>No output.</strong>" : htmlOutput;
+		Output.innerHTML = htmlOutput == "" ? "<strong>(No output)</strong>" : htmlOutput;
 		if (Equals(result, expectedOutput))
 			EnableNext();
 		else explanation.textContent = explanationText;
