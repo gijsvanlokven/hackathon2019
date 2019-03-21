@@ -137,3 +137,19 @@ footer .grid-y .cell
 {
   padding: 10px 0;
 }
+
+/*
+  Click container
+*/
+.clickContainer
+{
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+  transition: .5s;
+}
+
+.clickContainer:hover
+{
+  transform: translateY(-2px);
+}
