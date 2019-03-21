@@ -106,3 +106,8 @@ label
     margin-right: 10px;
     width: 50px;
 }
+
+.addOrRemoveBox-margin
+{
+    margin: 20px 0;
+}
