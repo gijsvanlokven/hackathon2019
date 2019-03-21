@@ -1,11 +1,21 @@
-window.addEventListener('scroll', () => {
-   let parent = document.getElementById('parallax-container');
-   let children = parent.getElementsByTagName('div');
+let parent = document.getElementById('parallax-container');
+let children = parent.getElementsByTagName('div');
+
+for(let i = 0; i < children.length; i++) {
+  children[i].style.transform = 'translateY(-' + (window.pageYOffset * (children.length - i) / children.length * 2) + 'px)';
+}
+
+  window.addEventListener('scroll', () => {
    for(let i = 0; i < children.length; i++) {
-     children[i].style.transform = 'translateY(-' + (window.pageYOffset * (children.length - i) / children.length * 2) + 'px)';
-   }
-   if(parent.offsetHeight > window.pageYOffset)
-   {
-    parent.style.height = (window.innerHeight - window.pageYOffset) + 'px';
+     if(parent.offsetHeight > window.pageYOffset)
+     {
+      children[i].style.transform = 'translateY(-' + (window.pageYOffset * (children.length - i) / children.length * 2) + 'px)';
+     }
    }
 }, false)
+
+window.addEventListener('resize', () => {
+  for(let i = 0; i < children.length; i++) {
+    children[i].style.transform = 'translateY(-' + (window.pageYOffset * (children.length - i) / children.length * 2) + 'px)';
+  }
+});

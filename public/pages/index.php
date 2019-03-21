@@ -18,27 +18,29 @@
         $(document).foundation();
     </script>
     <link rel="stylesheet" href="../stylesheets/headerStylePartials.css" />
-    <div class="grid-x">
-        <div class="cell large-4"></div>
-        <div class="cell large-4 medium-6 small-12">
-        </div>
-        <div class="cell large-4 medium-6 small-12 menu-container">
-            <div class = align-middle>
-                <ul class="menu float-center align-center">
-                    <li class="menu-item"><a href="#">HOME</a></li>
-                    <li class="menu-item"><a href="#">CONTACT</a></li>
-                    <li class="menu-item"><a href="#">PROFILE</a></li>
-                    <li class="menu-item"><a href="#">COURSES</a></li>
-                </ul>
+    <header>
+        <div class="grid-x">
+            <div class="cell large-4"></div>
+            <div class="cell large-4 medium-6 small-12">
+            </div>
+            <div class="cell large-4 medium-6 small-12 menu-container">
+                <div class = align-middle>
+                    <ul class="menu float-center align-center">
+                        <li class="menu-item"><a href="#">HOME</a></li>
+                        <li class="menu-item"><a href="#">CONTACT</a></li>
+                        <li class="menu-item"><a href="#">PROFILE</a></li>
+                        <li class="menu-item"><a href="#">COURSES</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
+    </header>
     <div id="parallax-container">
         <div></div>
         <div id="parallax-overlay">
             <h1>
                 <span class="randomizeAnimation ltr">Learn</span>
-                <img src="../img/hackerton_logo.png">
+                <img src="../img/hackaton_logo.png">
                 <span class="randomizeAnimation rtl">Gether</span>
             </h1>
         </div>
@@ -49,7 +51,7 @@
         <div></div>
     </div>
     <section id='contentSection'>
-        <section>
+        <section id="welcomeContainer">
             <h1>
                 Welcome to Learn2gether!
             </h1>
@@ -58,73 +60,162 @@
                 We as Learn2gether want everyone to be able to learn programming withouth a problem. 
             </p>
         </section>
-        <section id="suggestedCourses">
-            <h1>
+        <section id="suggestedCoursesContainer">
+            <h3>
                 Suggested Courses
-            </h1>
-            <div class="responsive-flex">
-                <div class="courseBox">
-                    <div class="grid-y">
-                        <div class="grid-x">
-                            <div class="cell">
-                                <img class="float-center" src="../img/html_logo.png" alt="">
-                            </div>
-                        </div>
-                        <div class="grid-x">
-                            <div class="cell">
-                                <h1>
-                                    HTML
-                                </h1>
-                                <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis, erat id molestie aliquam.
-                                </p>
-                            </div>
-                        </div>
+            </h3>
+            <div class="grid-container" id="suggestedCourses">
+                <div class="grid-x grid-margin-x">
+                    <div class="cell large-4 medium-6 small-12 courseBox">
+                        <img src="../img/html_logo.png" class="float-center">
+                        <h4>
+                            HTML
+                        </h4>
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lacus non vulputate commodo. Phasellus elit est, luctus non tempor quis, faucibus eget nisi. Ut vel risus in augue rutrum ullamcorper sed quis nibh.
+                        </p>
                     </div>
-                </div>
-                <div class="courseBox">
-                    <div class="grid-y">
-                        <div class="grid-x">
-                            <div class="cell">
-                                <img class="float-center" src="../img/css_logo.png" alt="">
-                            </div>
-                        </div>
-                        <div class="grid-x">
-                            <div class="cell">
-                                <h1>
-                                    CSS
-                                </h1>
-                                <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis, erat id molestie aliquam.
-                                </p>
-                            </div>
-                        </div>
+                    <div class="cell large-4 medium-6 small-12 courseBox">
+                        <img src="../img/css_logo.png" class="float-center">
+                        <h4>
+                            CSS
+                        </h4>
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lacus non vulputate commodo. Phasellus elit est, luctus non tempor quis, faucibus eget nisi. Ut vel risus in augue rutrum ullamcorper sed quis nibh.
+                        </p>
                     </div>
-                </div>
-                <div class="courseBox">
-                    <div class="grid-y">
-                        <div class="grid-x">
-                            <div class="cell">
-                                <img class="float-center" src="../img/javascript_logo.png" alt="">
-                            </div>
-                        </div>
-                        <div class="grid-x">
-                            <div class="cell">
-                                <h1>
-                                    Javascript
-                                </h1>
-                                <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis, erat id molestie aliquam.
-                                </p>
-                            </div>
-                        </div>
+                    <div class="cell large-4 large-offset-0 medium-6 medium-offset-3 small-12 courseBox">
+                        <img src="../img/javascript_logo.png" class="float-center">
+                        <h4>
+                            Javascript
+                        </h4>
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lacus non vulputate commodo. Phasellus elit est, luctus non tempor quis, faucibus eget nisi. Ut vel risus in augue rutrum ullamcorper sed quis nibh.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
+        <section id="userReviewsContainer">
+            <h3>
+                User reviews
+            </h3>
+            <div class="scrolling-wrapper" id="userReviews">
+                <div class="grid-container">
+                    <div class="grid-x">
+                        <div class="cell large-3 medium-3 small-3 flex-center">
+                            <img src="../img/hackaton_logo.png">
+                        </div>
+                        <h6 class="cell large-9 medium-9 small-9">
+                            Test
+                        </h6>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lacus non vulputate commodo. Phasellus elit est, luctus non tempor quis, faucibus eget nisi. Ut vel risus in augue rutrum ullamcorper sed quis nibh.
+                    </p>
+                </div>
+                <div class="grid-container">
+                    <div class="grid-x">
+                        <div class="cell large-3 medium-3 small-3 flex-center">
+                            <img src="../img/hackaton_logo.png">
+                        </div>
+                        <h6 class="cell large-9 medium-9 small-9">
+                            Test
+                        </h6>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lacus non vulputate commodo. Phasellus elit est, luctus non tempor quis, faucibus eget nisi. Ut vel risus in augue rutrum ullamcorper sed quis nibh.
+                    </p>
+                </div>
+                <div class="grid-container">
+                    <div class="grid-x">
+                        <div class="cell large-3 medium-3 small-3 flex-center">
+                            <img src="../img/hackaton_logo.png">
+                        </div>
+                        <h6 class="cell large-9 medium-9 small-9">
+                            Test
+                        </h6>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lacus non vulputate commodo. Phasellus elit est, luctus non tempor quis, faucibus eget nisi. Ut vel risus in augue rutrum ullamcorper sed quis nibh.
+                    </p>
+                </div>
+                <div class="grid-container">
+                    <div class="grid-x">
+                        <div class="cell large-3 medium-3 small-3 flex-center">
+                            <img src="../img/hackaton_logo.png">
+                        </div>
+                        <h6 class="cell large-9 medium-9 small-9">
+                            Test
+                        </h6>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lacus non vulputate commodo. Phasellus elit est, luctus non tempor quis, faucibus eget nisi. Ut vel risus in augue rutrum ullamcorper sed quis nibh.
+                    </p>
+                </div>
+                <div class="grid-container">
+                    <div class="grid-x">
+                        <div class="cell large-3 medium-3 small-3 flex-center">
+                            <img src="../img/hackaton_logo.png">
+                        </div>
+                        <h6 class="cell large-9 medium-9 small-9">
+                            Test
+                        </h6>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lacus non vulputate commodo. Phasellus elit est, luctus non tempor quis, faucibus eget nisi. Ut vel risus in augue rutrum ullamcorper sed quis nibh.
+                    </p>
+                </div>
+                <div class="grid-container">
+                    <div class="grid-x">
+                        <div class="cell large-3 medium-3 small-3 flex-center">
+                            <img src="../img/hackaton_logo.png">
+                        </div>
+                        <h6 class="cell large-9 medium-9 small-9">
+                            Test
+                        </h6>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lacus non vulputate commodo. Phasellus elit est, luctus non tempor quis, faucibus eget nisi. Ut vel risus in augue rutrum ullamcorper sed quis nibh.
+                    </p>
+                </div>
+            </div>
+        </section>
     </section>
-    <footer>
-
+    <footer id="grid-container">
+        <div class="grid-x grid-margin-x">
+            <div class="cell large-4 medium-4 small-12">
+                <img src="../img/hackaton_logo.png" class="float-center">
+            </div>
+            <div class="grid-y cell large-4 medium-4 small-6">
+                <div class="cell large-3 medium-3 small-3">
+                    Test
+                </div>
+                <div class="cell large-3 medium-3 small-3">
+                    Test
+                </div>
+                <div class="cell large-3 medium-3 small-3">
+                    Test
+                </div>
+                <div class="cell large-3 medium-3 small-3">
+                    Test
+                </div>
+            </div>
+            <div class="grid-y cell large-4 medium-4 small-6">
+                <div class="cell large-3 medium-3 small-3">
+                    Test
+                </div>
+                <div class="cell large-3 medium-3 small-3">
+                    Test
+                </div>
+                <div class="cell large-3 medium-3 small-3">
+                    Test
+                </div>
+                <div class="cell large-3 medium-3 small-3">
+                    Test
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
