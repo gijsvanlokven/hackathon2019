@@ -32,7 +32,7 @@ header
 {
     width: 95%;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
     flex: 1 0 auto;
 }
 

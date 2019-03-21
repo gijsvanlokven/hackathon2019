@@ -21,12 +21,10 @@
     <body>
         <section id="errorBox">
         </section>
-        <header>
-            <?php
-                include '../partials/footerP1.html';
-                include "../partials/header.html";
-            ?>
-        </header>
+        <?php
+            include '../partials/footerP1.html';
+            include "../partials/header.html";
+        ?>
         <section id='contentSection'>
             <form id="createForm">
                 <div class="grid-container full">
