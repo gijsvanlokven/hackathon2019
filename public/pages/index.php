@@ -27,7 +27,12 @@
     <link rel="stylesheet" href="../stylesheets/footerStylePartials.css" />
     <header>
         <div class="grid-x">
-            <div class="cell large-4"></div>
+            <div class="cell large-4">
+                <img src="../img/anonymous.jpg" class="headerProfilePic float-left">
+                <h4 class="float-left headerUserName">
+                    USERNAME
+                </h4>
+            </div>
             <div class="cell large-4 medium-6 small-12">
             </div>
             <div class="cell large-4 medium-6 small-12 menu-container">
@@ -35,7 +40,10 @@
                     <ul class="menu float-center align-center">
                         <li class="menu-item"><a href="index.php">HOME</a></li>
                         <li class="menu-item"><a href="contact.php">CONTACT</a></li>
-                        <li class="menu-item"><a href="login.php">LOGIN</a></li>
+                        <!--<li class="menu-item"><a href="login.php">LOGIN</a></li>-->
+                        <li class="menu-item"><a href="courses.php">COURSES</a></li>
+                        <li class="menu-item"><a href="profile.php">PROFILE</a></li>
+                        <li class="menu-item"><img src="../img/anonymous.jpg" class="headerProfilePicMenu"></li>
                     </ul>
                 </div>
             </div>
