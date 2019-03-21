@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../stylesheets/main.css" />
     <link rel="stylesheet" href="../stylesheets/index.css" />
     <link rel="shortcut icon" href="../img/favicon.ico" />
+    <link rel="stylesheet" href="../stylesheets/headerStylePartials.css" />
 </head>
 <body>
     <script src="../foundation6.5.1/js/vendor/jquery.js"></script>
@@ -31,8 +32,7 @@
                     <ul class="menu float-center align-center">
                         <li class="menu-item"><a href="index.php">HOME</a></li>
                         <li class="menu-item"><a href="contact.php">CONTACT</a></li>
-                        <li class="menu-item"><a href="profile.php">PROFILE</a></li>
-                        <li class="menu-item"><a href="courses.php">COURSES</a></li>
+                        <li class="menu-item"><a href="login.php">LOGIN</a></li>
                     </ul>
                 </div>
             </div>

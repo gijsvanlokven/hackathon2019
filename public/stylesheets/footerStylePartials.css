@@ -1,8 +1,9 @@
 .footer-credits{
     font-family: VCR_OSD_MONO;
-    font-size:  3vh;
+    font-size:  2.4vh;
     color: white;
-    height: 5vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 .footer-container{
     background-color: #1e3a5f;
