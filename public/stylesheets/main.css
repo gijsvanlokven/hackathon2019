@@ -151,7 +151,7 @@ footer .grid-y .cell
 
 .clickContainer:hover
 {
-  transform: translateY(-2px);
+  transform: scale(1.1);
 }
 
 /*
