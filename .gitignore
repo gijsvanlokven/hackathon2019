@@ -67,6 +67,12 @@ typings/
 # phpstorm files
 .idea/*
 
+#Vscode files
+.vscode
+
 # config with passwords n stuff.
 settings.js
 config.js
+
+# sourcemap files
+*.map
