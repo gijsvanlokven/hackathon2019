@@ -257,6 +257,9 @@
             </div>
         </section>
     </section>
+    <?php
+    include '../partials/footer.html';
+    ?>
 </body>
 =======
                 </div>
