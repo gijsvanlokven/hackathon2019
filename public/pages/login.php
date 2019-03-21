@@ -20,18 +20,10 @@
 ?>
 <div class="grid-container">
     <form class="grid-x grid-margin-x align-center login-container">
-        <div class="large-4 medium-6 small-12 float-center">
-            <label for="uName"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-        </div>
-        <div class="large-4 medium-6 small-12 float-center">
-            <label for="pWord"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-        </div>
-        <div class="large-6 medium-6 small-12 float-center">
+        <div class="large-4 large-offset-4 medium-4 medium-offset-4 small-12 float-center">
             <button type="submit" name="lGoogle" class="button float-center">Login Google</button>
         </div>
-        <div class="large-6 medium-6 small-12 float-center">
+        <div class="large-4 large-offset-4 medium-4 medium-offset-4 small-12 float-center">
             <button type="submit" name="lGithub" class="button float-center">Login Github</button>
         </div>
     </form>

@@ -5,18 +5,10 @@ body{
     height: 30%;
     margin-top: 20%;
 }
-input{
-    width: 200px;
-}
-label{
-    margin-bottom: 20px;
-}
-label,button{
+.button{
     color: white;
     font-size: 120%;
     text-align: center;
-}
-.button{
     border-radius: 10px;
     width: 50%;
     margin-top: 20px;
