@@ -29,8 +29,10 @@ class QuestionsEndpoint {
     }
     async GetItem(req, res) {
         let result = await database_1.default.query(`SELECT * FROM Question WHERE QuestionID = ${req.params["id"]}`);
-        if (result && result.count > 0)
-            res.send(result.results[0]);
+        if (result && result.count > 0) {
+            let data = result.results[0];
+            res.send(Object.assign({ Question: data.Question }, data.DATA));
+        }
         else
             res.status(404).send({ error: "Not found.", errorCode: 404 });
     }
