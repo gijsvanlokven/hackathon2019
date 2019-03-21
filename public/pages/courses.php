@@ -8,16 +8,14 @@
         <link rel="stylesheet" href="../foundation6.5.1/css/foundation.css" />
         <link rel="stylesheet" href="../stylesheets/main.css" />
         <link rel="stylesheet" href="../stylesheets/courses.css" />
-    </head>
-    <body>
         <script src="../foundation6.5.1/js/vendor/jquery.js"></script>
         <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
         <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
-        <script src="../script/randomize.js" defer></script>
-        <script src="../script/parralax.js" defer></script>
         <script>
             $(document).foundation();
         </script>
+    </head>
+    <body>
         <link rel="stylesheet" href="../stylesheets/headerStylePartials.css" />
         <header>
             <?php include "../partials/header.html" ?>
