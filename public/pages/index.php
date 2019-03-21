@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="../stylesheets/headerStylePartials.css" />
 </head>
 <body>
+    <?php
+    include '../partials/footerP1.html';
+    ?>
     <script src="../foundation6.5.1/js/vendor/jquery.js"></script>
     <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
     <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
@@ -21,6 +24,7 @@
     <script>
         $(document).foundation();
     </script>
+
     <link rel="stylesheet" href="../stylesheets/footerStylePartials.css" />
     <header>
         <div class="grid-x">
@@ -158,5 +162,8 @@
             </div>
         </section>
     </section>
+    <?php
+        include '../partials/footerP2.html';
+    ?>
 </body>
 </html>

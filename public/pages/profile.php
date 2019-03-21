@@ -16,6 +16,7 @@
 <script src="../script/tabs.js" defer></script>
 </body>
 <?php
+include '../partials/footerP1.html';
 include '../partials/header.html';
 ?>
 <div class="grid-container">
@@ -68,6 +69,6 @@ include '../partials/header.html';
     </div>
 </div>
 <?php
-include '../partials/footer.html';
+include '../partials/footerP2.html';
 ?>
 </html>

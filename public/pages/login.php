@@ -17,7 +17,8 @@
 <link rel="import" href="../partials/header.html">
 </body>
 <?php
-        include '../partials/header.html';
+    include '../partials/footerP1.html';
+    include '../partials/header.html';
 ?>
 <div class="grid-container">
     <form class="grid-x grid-margin-x align-center login-container">
@@ -29,4 +30,7 @@
         </div>
     </form>
 </div>
+<?php
+    include '../partials/footerP2.html'
+?>
 </html>
