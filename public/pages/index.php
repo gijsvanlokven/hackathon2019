@@ -38,7 +38,7 @@
     <div id="parallax-container">
         <div></div>
         <div id="parallax-overlay">
-            <h1>
+            <h1 class="text-center">
                 <span class="randomizeAnimation ltr">Learn</span>
                 <img src="../img/hackaton_logo.png">
                 <span class="randomizeAnimation rtl">Gether</span>

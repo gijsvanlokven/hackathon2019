@@ -14,8 +14,6 @@ body
   color: white;
   overflow-x: hidden;
 }
-
-
 /*
   Header
 */
@@ -25,14 +23,16 @@ header
   width: 100%;
   top: 0;
 }
-
+h1 > img{
+  width: 40%;
+}
 /*
   Parallax
 */
 
 #parallax-overlay
 {
-  padding-top: 125px;
+  padding-top: 10%;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -123,7 +123,6 @@ h1,
 h2,
 h3
 {
-  margin-top: 30px;
   margin-bottom: 30px;
 }
 
