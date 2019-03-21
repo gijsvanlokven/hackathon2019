@@ -27,8 +27,9 @@ export default class CoursesEndpoint implements APIEndpoint {
 
 	async GetItem(req: express.Request, res: express.Response) {
 		let result = await database.query(`SELECT * FROM Course WHERE CourseID = ${req.params["id"]}`);
+		let firstQuestion = await database.query(`SELECT QuestionID FROM Question WHERE CourseID = ${req.params["id"]} ORDER BY QuestionID ASC LIMIT 1;`);
 		if (result && result.count > 0)
-			res.send(result.results[0]);
+			res.send({...result.results[0], NextQuestion:firstQuestion.results[0]});
 		else res.status(404).send({ error: "Not found.", errorCode: 404 })
 	}
 

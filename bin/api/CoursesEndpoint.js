@@ -30,8 +30,9 @@ class CoursesEndpoint {
     }
     async GetItem(req, res) {
         let result = await database_1.default.query(`SELECT * FROM Course WHERE CourseID = ${req.params["id"]}`);
+        let firstQuestion = await database_1.default.query(`SELECT QuestionID FROM Question WHERE CourseID = ${req.params["id"]} ORDER BY QuestionID ASC LIMIT 1;`);
         if (result && result.count > 0)
-            res.send(result.results[0]);
+            res.send(Object.assign({}, result.results[0], { NextQuestion: firstQuestion.results[0] }));
         else
             res.status(404).send({ error: "Not found.", errorCode: 404 });
     }

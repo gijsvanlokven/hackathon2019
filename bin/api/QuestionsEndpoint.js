@@ -37,22 +37,44 @@ class QuestionsEndpoint {
             res.status(404).send({ error: "Not found.", errorCode: 404 });
     }
     async AddItem(req, res) {
-        let question = {
-            CourseID: req.body["CourseID"],
-            Question: req.body["Question"],
-            DATA: req.body["DATA"]
-        };
-        if (!Object.values(question).includes(undefined)) {
+        if (Array.isArray(req.body)) {
+            let query = "INSERT INTO Question (CourseID, Question, DATA) VALUES";
+            for (let i = 0; i < req.body.length; i++) {
+                let body = req.body[i];
+                let question = {
+                    CourseID: body["CourseID"],
+                    Question: body["Question"],
+                    DATA: body["DATA"]
+                };
+                query = query + `,(${question.CourseID}, '${question.Question}','${question.DATA}')`;
+            }
+            query = query + ";";
             try {
-                await database_1.default.query(`INSERT INTO Question (CourseID, Question, DATA) VALUES (${question.CourseID}, '${question.Question}','${question.DATA}');`);
-                res.send(question);
+                await database_1.default.query(query);
+                res.sendStatus(200);
             }
             catch (err) {
                 res.sendStatus(400);
             }
         }
-        else
-            res.sendStatus(400);
+        else {
+            let question = {
+                CourseID: req.body["CourseID"],
+                Question: req.body["Question"],
+                DATA: req.body["DATA"]
+            };
+            if (!Object.values(question).includes(undefined)) {
+                try {
+                    await database_1.default.query(`INSERT INTO Question (CourseID, Question, DATA) VALUES (${question.CourseID}, '${question.Question}','${question.DATA}');`);
+                    res.sendStatus(200);
+                }
+                catch (err) {
+                    res.sendStatus(400);
+                }
+            }
+            else
+                res.sendStatus(400);
+        }
     }
     async EditItem(req, res) {
         let question = {
