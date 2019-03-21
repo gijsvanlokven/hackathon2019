@@ -51,6 +51,10 @@ function whichTransitionEvent(){
     }
 }
 
+/*
+    Listener for all questions
+*/
+
 var transitionEnd = whichTransitionEvent();
 var errorTimeout = false;
 
