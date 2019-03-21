@@ -19,6 +19,8 @@
         <link rel="stylesheet" href="../stylesheets/headerStylePartials.css" />
     </head>
     <body>
+        <section id="errorBox">
+        </section>
         <header>
             <?php include "../partials/header.html" ?>
         </header>
@@ -48,23 +50,28 @@
                                 <label for="">Image</label>
                             </div>
                             <div class="cell">
-                                <label class="uploadButton">
-                                    <input type="file" accept=".png,.jpg,.jpeg">
-                                    <div class="grid-container">
-                                        <div class="grid-x">
-                                            <div class="cell small-2">
-                                                <img src="../img/cloud-computing.svg" alt="">
-                                            </div>
-                                            <div class="cell small-10 flex-center">
-                                                <span>Upload a file</span>
+                                <div class="uploadContainer">
+                                    <label class="uploadButton">
+                                        <input type="file" accept=".png,.jpg,.jpeg">
+                                        <div class="grid-container">
+                                            <div class="grid-x">
+                                                <div class="cell small-2">
+                                                    <img src="../img/cloud-computing.svg" alt="">
+                                                </div>
+                                                <div class="cell small-10 flex-center">
+                                                    <span>Upload a file</span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </label>
-                                
+                                    </label>
+                                    <span class="filename"></span>
+                                </div>
                             </div>
                         </div>
-                        <div class="cell">
+                        <!--
+                            Multiple Choice Section
+                        -->
+                        <div class="cell multipleChoiceSection">
                             <div class="cell">
                                 <h3>
                                     Question 1:
@@ -75,8 +82,8 @@
                             </div>
                             <div class="cell">
                                 <select name="" id="">
-                                    <option value="">Multiple choice</option>
-                                    <option value="">Code</option>
+                                    <option value="multiple-choice">Multiple choice</option>
+                                    <option value="code">Code</option>
                                 </select>
                             </div>
                             <div class="cell">
@@ -143,19 +150,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="cell">
-                        <div class="cell">
-                            <h3>
-                                Question 2:
-                            </h3>
+                        <!--
+                            Code Section
+                        -->
+                        <div class="cell codeSection">
+                            <div class="cell">
+                                <h3>
+                                    Question 2:
+                                </h3>
                             </div>
                             <div class="cell">
                                 <label for="">Question type</label>
                             </div>
                             <div class="cell">
                                 <select name="" id="">
-                                    <option value="">Code</option>
-                                    <option value="">Multiple choice</option>
+                                    <option value="code">Code</option>
+                                    <option value="multiple-choice">Multiple choice</option>
                                 </select>
                             </div>
                             <div class="cell">
@@ -170,31 +180,38 @@
                             <div class="cell">
                                 <label for="">Awnser</label>
                             </div>
-                            <div class="cell">
-                                <label for="" class="lowerLabel">Awnser Type</label>
-                            </div>
-                            <div class="cell">
-                                <select name="" id="">
-                                    <option value="">Error</option>
-                                    <option value="">Log</option>
-                                    <option value="">Warning</option>
-                                </select>
-                            </div>
-                            <div class="cell">
-                                <label for="" class="lowerLabel">Expected Awnser</label>
-                            </div>
-                            <div class="cell">
-                                <input type="text" placeholder="Fill here the awnser that you expect to see in the console..">
-                            </div>
+                            <div class="cell awnserContainer">
+                                <div class="cell awnserBox">
+                                    <div class="cell">
+                                        <label for="" class="mediumLabel">Awnser 1</label>
+                                    </div>
+                                    <div class="cell">
+                                        <label for="" class="lowerLabel">Awnser Type</label>
+                                    </div>
+                                    <div class="cell">
+                                        <select name="typeError" id="">
+                                            <option value="error">Error</option>
+                                            <option value="log">Log</option>
+                                            <option value="warning">Warning</option>
+                                        </select>
+                                    </div>
+                                    <div class="cell">
+                                        <label for="" class="lowerLabel">Expected Awnser</label>
+                                    </div>
+                                    <div class="cell">
+                                        <input type="text" placeholder="Fill here the awnser that you expect to see in the console..">
+                                    </div>
+                                </div>
+                            </div>   
                             <div class="cell grid-x small-up-1 addOrRemoveBox">
                                 <div class="cell">
-                                    <div class="clickContainer">
+                                    <div class="clickContainer" onclick="codeAddAwnser(this)">
                                         <img class="buttonAdd" src="../img/plus.svg" alt=""> Add a new awnser
                                     </div>
                                 </div>
                                 <div class="cell">
-                                    <div class="clickContainer">
-                                    <img class="buttonRemove" src="../img/minus.svg" alt=""> Remove an awnser
+                                    <div class="clickContainer" onclick="codeRemoveAnswer(this)">
+                                        <img class="buttonRemove" src="../img/minus.svg" alt=""> Remove an awnser
                                     </div>
                                 </div>
                             </div>
