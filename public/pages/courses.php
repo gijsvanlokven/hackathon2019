@@ -16,13 +16,11 @@
         </script>
     </head>
     <body>
+        <?php
+            include '../partials/footerP1.html';
+            include "../partials/header.html";
+        ?>
         <link rel="stylesheet" href="../stylesheets/headerStylePartials.css" />
-        <header>
-            <?php
-                include '../partials/footerP1.html';
-                include "../partials/header.html";
-            ?>
-        </header>
         <section id='contentSection'>
             <section id="coursesContainer">
                 <div class="grid-container full" id="coursesConfigBar">
