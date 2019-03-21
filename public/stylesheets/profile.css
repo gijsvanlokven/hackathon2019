@@ -1,81 +1,6 @@
 body{
-    background-color: #031041;
+    background-color: #1e3a5f;
 }
-
-/*tabs related css*/
-/* Android 2.3 :checked fix */
-@keyframes fake {
-    from {
-        opacity: 1;
-    }
-    to {
-        opactity: 1
-    }
-}
-body {
-    animation: fake 1s infinite;
-}
-
-.radio-tabs .state {
-    position: absolute;
-    left: -10000px;
-}
-#starks:focus ~ .tabs #starks-tab,
-#lannisters:focus ~ .tabs #lannisters-tab,
-#targaryens:focus ~ .tabs #targaryens-tab {
-    box-shadow: 0 0 3px 3px rgba(0,127,255,.5);
-}
-
-.radio-tabs .tab {
-    display: inline-block;
-    padding: .5em;
-    vertical-align: top;
-    background-color: #eee;
-    cursor: hand;
-    cursor: pointer;
-}
-.radio-tabs .tab:hover {
-    background-color: #fff;
-}
-#starks[aria-selected] ~ .tabs #starks-tab,
-#lannisters[aria-selected] ~ .tabs #lannisters-tab,
-#targaryens[aria-selected] ~ .tabs #targaryens-tab,
-#starks:checked ~ .tabs #starks-tab,
-#lannisters:checked ~ .tabs #lannisters-tab,
-#targaryens:checked ~ .tabs #targaryens-tab {
-    background-color: #fff;
-    border-bottom: .3em solid #fff;
-    cursor: default;
-}
-
-.radio-tabs .panels {
-    background-color: #fff;
-    padding: .5em;
-}
-.radio-tabs .panel {
-    display: none;
-}
-#starks[aria-selected] ~ .panels #starks-panel,
-#lannisters[aria-selected] ~ .panels #lannisters-panel,
-#targaryens[aria-selected] ~ .panels #targaryens-panel,
-#starks:checked ~ .panels #starks-panel,
-#lannisters:checked ~ .panels #lannisters-panel,
-#targaryens:checked ~ .panels #targaryens-panel {
-    display: block;
-}
-.profilePicture{
-
-}
-.achievementPicture{
-    width: 3.333vw;
-}
-.tabs-content{
-    top:  20%
-}
-
-
-/*regular css*/
-
 .achievementPicture{
     float: left;
     position: relative;
@@ -91,4 +16,19 @@ body {
 }
 .text{
     color: white
+}
+.completed{
+    color: white;
+}
+.completed-text{
+    font-size: 60%;
+    text-align: center;
+}
+.completed-holder{
+
+}
+.completed-img{
+    width: 11.1vw;
+    border-radius: 50%;
+    margin: 1vw;
 }
