@@ -42,7 +42,6 @@
                 <div class="radio-tabs large-6 medium-10 medium-offset-1 small-12" role="tablist">
                     <input class="state" type="radio" title="Starks" name="houses-state" id="starks" role="tab" aria-controls="starks-panel" aria-selected="true" checked />
                     <input class="state" type="radio" title="Lanisters" name="houses-state" id="lannisters" role="tab" aria-controls="lannisters-panel" />
-
                     <div class="tabs" aria-hidden="true">
                         <label for="starks" id="starks-tab" class="tab" aria-selected="true">Activity</label>
                         <label for="lannisters" id="lannisters-tab" class="tab">Completed Courses</label>
@@ -54,7 +53,6 @@
                             </h1>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
                             </p>
                         </ul>
                         <ul id="lannisters-panel" class="panel" role="tabpanel" aria-labelledby="lannisters-tab">
