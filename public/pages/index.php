@@ -71,7 +71,7 @@
                 </h1>
                 <p>
                     Learn2gether is an website where you can learn programming by making excercises that everyone can publish on the website.
-                    We as Learn2gether want everyone to be able to learn programming withouth a problem.
+                    We as Learn2gether want everyone to be able to learn programming without a problem.
                 </p>
             </section>
             <section id="suggestedCoursesContainer">

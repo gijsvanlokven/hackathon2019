@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="radio-tabs large-6 medium-12 small-12" role="tablist">
-                        <h4 class="text-center">
+                        <h4 class="text-center font-preset">
                             Completed Courses
                         </h4>
                         <div class="grid-container">
