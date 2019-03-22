@@ -32,7 +32,9 @@
             </div>
             <div class="cell large-2 large-offset-2 medium-2 medium-offset-2 small-6 align-center">
                 <div class="contact-container">
-                    <img src="../img/lachende_pinguin.png" class="contactPicture">
+                    <div class="imageContainer">
+                        <img src="../img/lachende_pinguin.png" class="contactPicture">
+                    </div>
                     <h6 class="contactName">
                         Roy
                     </h6>
@@ -41,7 +43,9 @@
             <div class=""></div>
             <div class="cell large-2 medium-2 small-6 align-center contact-text">
                 <div class="contact-container">
-                    <img src="../img/Glitchy_pinguin.png" class="contactPicture">
+                    <div class="imageContainer">
+                        <img src="../img/Glitchy_pinguin.png" class="contactPicture">
+                    </div>
                     <h6 class="contactName">
                         Frank
                     </h6>
@@ -50,7 +54,9 @@
             </div>
             <div class="cell large-2 medium-2 small-6 align-center">
                 <div class="contact-container">
-                    <img src="../img/typende_pinguin.png" class="contactPicture">
+                    <div class="imageContainer">
+                        <img src="../img/typende_pinguin.png" class="contactPicture">
+                    </div>
                     <h6 class="contactName">
                         Gijs
                     </h6>
@@ -58,7 +64,9 @@
             </div>
             <div class="cell large-2 medium-2 small-6 align-center">
                 <div class="contact-container">
-                    <img src="../img/normal_pinguin.png" class="contactPicture">
+                    <div class="imageContainer">
+                        <img src="../img/normal_pinguin.png" class="contactPicture">
+                    </div>
                     <h6 class="contactName">
                         Robin
                     </h6>
