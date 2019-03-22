@@ -34,7 +34,7 @@ async function NextQuestion() {
 		const urlParams = new URLSearchParams(window.location.search);
 		let response = await fetch("https://www.energylog.nl/api/questions/");
 		let json = await response.json();
-		let result = json.find(x => x.CourseID == urlParams.get('course')).QuestionID;
+		let result = json.find(x => x.CourseID == urlParams.get('course')).NextQuestion;
 		NextQuestionID = result;
 		console.log(NextQuestionID)
 	}
@@ -81,9 +81,9 @@ function QuestionChange(question) {
 			button.classList.add("choice");
 			button.textContent = answer.value;
 
-			if (answer.GotoQuestion)
+			if (answer.NextQuestion)
 				button.addEventListener("click", () => {
-					NextQuestionID = answer.GotoQuestion;
+					NextQuestionID = answer.NextQuestion;
 					EnableNext();
 				});
 			if (answer.explanation)
