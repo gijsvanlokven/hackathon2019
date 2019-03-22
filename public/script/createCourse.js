@@ -319,8 +319,8 @@ function createQuestion() {
             </div>
             <div class="cell">
                 <select name="question${i}Type" class="questionType">
-                    <option selected value="multiple-choice">Multiple choice</option>
-                    <option value="code">Code</option>
+                    <option selected value="Question">Multiple choice</option>
+                    <option value="Code">Code</option>
                 </select>
             </div>
             <div class="cell">
@@ -457,7 +457,7 @@ function codeRemoveAnswer(button) {
     let answerBoxes = parent.querySelectorAll(".answerContainer .answerBox");
     let answerContainer = parent.querySelector(".answerContainer");
     let answerBoxesAmount = Array.from(answerBoxes).length;
-    
+
     if (answerBoxesAmount > 1) {
         answerContainer.removeChild(answerContainer.querySelector(".answerBox:last-child"));
     } else {
@@ -478,7 +478,7 @@ async function SaveCourse() {
             Type: "Question"
         }
 
-        question.Type = x.querySelector(".questionType");
+        question.Type = x.querySelector(".questionType>:checked").value;
         if (question.Type == "Question") {
             question.Question = x.querySelector(`[name=question${i}]`);
             question.Answers = [];
@@ -518,6 +518,8 @@ async function SaveCourse() {
             question.Template = CodeEditors[i];
 
         }
+
+        data.push(question);
     });
 
     console.log(data);
