@@ -39,33 +39,52 @@
                                 <label for="">Course name</label>
                             </div>
                             <div class="cell">
-                                <input type="text" placeholder="Fill here your course name in..">
+                                <input type="text" name="courseName" placeholder="Fill here your course name in..">
+                            </div>
+                            <div class="cell">
+                                <label for="">Course Langauge</label>
+                            </div>
+                            <div class="cell">
+                                <select name="courseLangauge" class="questionType">
+                                    <option value="html">HTML</option>
+                                    <option value="css">CSS</option>
+                                    <option value="Javascript">Javascript</option>
+                                </select>
                             </div>
                             <div class="cell">
                                 <label for="">Course description</label>
                             </div>
                             <div class="cell">
-                                <textarea name="" id="" cols="30" rows="10" placeholder="Fill here your course description in.."></textarea>
+                                <textarea name="courseDescription" cols="10" rows="10" placeholder="Fill here your course description in.."></textarea>
                             </div>
                             <div class="cell">
                                 <label for="">Image</label>
                             </div>
                             <div class="cell">
-                                <div class="uploadContainer">
-                                    <label class="uploadButton">
-                                        <input type="file" accept=".png,.jpg,.jpeg">
-                                        <div class="grid-container">
-                                            <div class="grid-x">
-                                                <div class="cell small-2">
-                                                    <img src="../img/cloud-computing.svg" alt="">
+                                <div class="uploadContainer grid-container full">
+                                    <div class="grid-x">
+                                        <div class="cell small-6 flex-center-vertical">
+                                            <label class="uploadButton">
+                                                <input name="courseImage" type="file" accept=".png,.jpg,.jpeg">
+                                                <div class="grid-container">
+                                                    <div class="grid-x">
+                                                        <div class="cell small-2">
+                                                            <img src="../img/cloud-computing.svg" alt="">
+                                                        </div>
+                                                        <div class="cell small-10 flex-center">
+                                                            <span>Upload a file</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="cell small-10 flex-center">
-                                                    <span>Upload a file</span>
-                                                </div>
-                                            </div>
+                                            </label>
                                         </div>
-                                    </label>
-                                    <span class="filename"></span>
+                                        <div class="cell small-6">
+                                            <img class="uploadImg">
+                                        </div>
+                                        <div class="cell small-12">
+                                            <span class="filename"></span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -96,15 +115,15 @@
                             <div class="cell">
                                 <label for="">Answers</label>
                             </div>
-                            <div class="cell grid-x grid-margin-x medium-up-2 small-up-1 awnserBox">
+                            <div class="cell grid-x grid-margin-x medium-up-2 small-up-1 answerBox">
                                 <div class="cell grid-x">
                                     <div class="cell small-10">
-                                        <input type="text" placeholder="Awnser 1.." name="question1awnser1">
+                                        <input type="text" placeholder="Answer 1.." name="question1answer1">
                                     </div>
                                     <div class="cell small-2 flex-center">
                                         <div>
                                             <label class="customCheckbox" >
-                                                <input type="checkbox" name="question1CheckboxAwnser1">
+                                                <input type="checkbox" name="question1CheckboxAnswer1">
                                                 <span></span>
                                             </label>
                                         </div>
@@ -112,12 +131,12 @@
                                 </div>
                                 <div class="cell grid-x">
                                     <div class="cell small-10">
-                                        <input type="text" placeholder="Awnser 2.." name="question1awnser2">
+                                        <input type="text" placeholder="Answer 2.." name="question1answer2">
                                     </div>
                                     <div class="cell small-2 flex-center">
                                         <div>
                                             <label class="customCheckbox" >
-                                                <input type="checkbox" name="question1CheckboxAwnser1">
+                                                <input type="checkbox" name="question1CheckboxAnswer1">
                                                 <span></span>
                                             </label>
                                         </div>
@@ -125,12 +144,12 @@
                                 </div>
                                 <div class="cell grid-x">
                                     <div class="cell small-10">
-                                        <input type="text" placeholder="Awnser 3.." name="question1awnser3">
+                                        <input type="text" placeholder="Answer 3.." name="question1answer3">
                                     </div>
                                     <div class="cell small-2 flex-center">
                                         <div>
                                             <label class="customCheckbox" >
-                                                <input type="checkbox" name="question1CheckboxAwnser1">
+                                                <input type="checkbox" name="question1CheckboxAnswer1">
                                                 <span></span>
                                             </label>
                                         </div>
@@ -138,12 +157,12 @@
                                 </div>
                                 <div class="cell grid-x">
                                     <div class="cell small-10">
-                                        <input type="text" placeholder="Awnser 4.." name="question1awnser4">
+                                        <input type="text" placeholder="Answer 4.." name="question1answer4">
                                     </div>
                                     <div class="cell small-2 flex-center">
                                         <div>
                                             <label class="customCheckbox" >
-                                                <input type="checkbox" name="question1CheckboxAwnser1">
+                                                <input type="checkbox" name="question1CheckboxAnswer1">
                                                 <span></span>
                                             </label>
                                         </div>
@@ -170,6 +189,16 @@
                                 </select>
                             </div>
                             <div class="cell">
+                                <label for="">Programming Langauge</label>
+                            </div>
+                            <div class="cell">
+                                <select name="question2Type" class="programmingLangauge">
+                                    <option selected value="html">HTML</option>
+                                    <option value="css">CSS</option>
+                                    <option value="javascript">Javascript</option>
+                                </select>
+                            </div>
+                            <div class="cell">
                                 <label for="">Code editor</label>
                             </div>
                             <div class="cell grid-x medium-up-2 small-up-1 codeQuestion">
@@ -181,15 +210,15 @@
                                 </div>
                             </div>
                             <div class="cell">
-                                <label for="">Awnser</label>
+                                <label for="">Answer</label>
                             </div>
-                            <div class="cell awnserContainer">
-                                <div class="cell awnserBox">
+                            <div class="cell answerContainer">
+                                <div class="cell answerBox">
                                     <div class="cell">
-                                        <label for="" class="mediumLabel">Awnser 1</label>
+                                        <label for="" class="mediumLabel">Answer 1</label>
                                     </div>
                                     <div class="cell">
-                                        <label for="" class="lowerLabel">Awnser Type</label>
+                                        <label for="" class="lowerLabel">Answer Type</label>
                                     </div>
                                     <div class="cell">
                                         <select name="question2typeError1">
@@ -199,22 +228,22 @@
                                         </select>
                                     </div>
                                     <div class="cell">
-                                        <label for="" class="lowerLabel">Expected Awnser</label>
+                                        <label for="" class="lowerLabel">Expected Answer</label>
                                     </div>
                                     <div class="cell">
-                                        <input type="text" name="question2expectedAwnser1" placeholder="Fill here the awnser that you expect to see in the console..">
+                                        <input type="text" name="question2expectedAnswer1" placeholder="Fill here the answer that you expect to see in the console..">
                                     </div>
                                 </div>
                             </div>   
                             <div class="cell grid-x small-up-1 addOrRemoveBox">
                                 <div class="cell">
-                                    <div class="clickContainer" onclick="codeAddAwnser(this)">
-                                        <img class="buttonAdd" src="../img/plus.svg" alt=""> Add a new awnser
+                                    <div class="clickContainer" onclick="codeAddAnswer(this)">
+                                        <img class="buttonAdd" src="../img/plus.svg" alt=""> Add a new answer
                                     </div>
                                 </div>
                                 <div class="cell">
                                     <div class="clickContainer" onclick="codeRemoveAnswer(this)">
-                                        <img class="buttonRemove" src="../img/minus.svg" alt=""> Remove an awnser
+                                        <img class="buttonRemove" src="../img/minus.svg" alt=""> Remove an answer
                                     </div>
                                 </div>
                             </div>

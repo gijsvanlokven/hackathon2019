@@ -1,7 +1,7 @@
-.footer-content{
-    min-height: calc(100vh - 5vh);
+.content-container{
+    flex: 1 0 auto;
 }
-.footer-credits{
+footer h6 {
     font-family: VCR_OSD_MONO;
     height: 2.5vh;
     font-size: 2vh  ;
@@ -10,10 +10,10 @@
     float: right;
     padding-right: 5vw;
 }
-.footer-container{
+footer {
     background-color: #1e3a5f;
-    position: static;
-    bottom: 0;
     width: 100%;
-    height: fit-content ;
+    margin-top: 20px;
+    overflow: hidden;
+    flex: 0 0 auto;
 }

@@ -46,14 +46,14 @@ header
 }
 
 /*
-    Awnser box
+    Answer box
 */
-.awnserBox > .cell
+.answerBox > .cell
 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.awnserBox input[type=text]
+.answerBox input[type=text]
 {
     margin: 0;
 }
