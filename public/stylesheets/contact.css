@@ -10,9 +10,20 @@ body{
     text-align: center;
     font-family: VCR_OSD_MONO;
 }
-.contactPicture{
+.contact-container{
+   
+}
+
+.contact-picture
+{
+    max-width: 100%;
+}
+
+.imageContainer
+{
     height: 20vw;
 }
+
 .contact-container{
     border-radius: 10px;
     padding: 10px;
