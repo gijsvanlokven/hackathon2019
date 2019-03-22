@@ -21,6 +21,7 @@
                     <h1>
                         Question
                     </h1>
+                    <hr>
                     <span class="question"></span>
                     <hr>
                     <span class="explanation"></span>
