@@ -97,7 +97,9 @@ body
   box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.16);
   text-align: center;
 }
-
+.font-preset{
+  font-family: VCR_OSD_MONO;
+}
 .courseBox img
 {
   height: 100px;

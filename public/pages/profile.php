@@ -25,13 +25,13 @@
                 <div class="grid-x">
                     <div class="large-6 medium-12 small-12 profileBox">
                         <div class="cell marginBox">
-                            <h4 class="text">
+                            <h4 class="text font-preset">
                                 Username
                             </h4>
                             <img src="../img/anonymous.jpg" class="profilePicture ">
                         </div>
                         <div class="cell marginBox">
-                            <h4 class="text">
+                            <h4 class="text font-preset">
                                 Description
                             </h4>
                             <p class="text">
@@ -39,7 +39,7 @@
                             </p>
                         </div>
                         <div class="cell marginBox">
-                            <h4 class="text">
+                            <h4 class="text font-preset">
                                 Achievements
                             </h4>
                             <div class="grid-container full achievementContainer">
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="radio-tabs large-6 medium-12 small-12" role="tablist">
-                        <h4 class="text-center">
+                        <h4 class="text-center font-preset">
                             Completed Courses
                         </h4>
                         <div class="grid-container">

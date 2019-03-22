@@ -31,15 +31,15 @@ include "../partials/header.html";
                     <div class="grid-x large-up-1">
                         <div class="cell">
                             <div class="cell">
-                                <h3>
+                                <h3 class="font-preset">
                                     New Course
                                 </h3>
                             </div>
                             <div class="cell">
-                                <label for="">Course name</label>
+                                <label class="font-preset" for="">Course name</label>
                             </div>
                             <div class="cell">
-                                <input type="text" name="courseName" placeholder="Fill here your course name in..">
+                                <input type="text" name="courseName" placeholder="Enter course name here..">
                             </div>
                             <div class="cell">
                                 <label for="">Course Langauge</label>
@@ -48,7 +48,7 @@ include "../partials/header.html";
                                 <select name="courseLangauge" class="questionType">
                                     <option value="html">HTML</option>
                                     <option value="css">CSS</option>
-                                    <option value="Javascript">Javascript</option>
+                                    <option value="Javascript">JavaScript</option>
                                 </select>
                             </div>
                             <div class="cell">

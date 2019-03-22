@@ -21,12 +21,12 @@
     ?>
     <div class="grid-container">
         <div class="grid-x grid-margin-x">
-            <div class="cell large-8 large-offset-2 medium-10 medium-offset-1 small-12  contact-text">
-                <h3>
-                    Contacts
+            <div class="cell large-8 large-offset-2 medium-10 medium-offset-1 small-12 text-center">
+                <h3 class="contact-text">
+                    Contact
                 </h3>
-                <p>
-                    About us : Club Pinguin
+                <p class="contact-text">
+                    About us: Club Pinguin
                 </p>
             </div>
             <div class="cell large-2 large-offset-2 medium-2 medium-offset-2 small-6 align-center">
