@@ -1,50 +1,46 @@
 updateVariables();
 
 fetch("https://www.energylog.nl/api/user/me")
-    .then(function(response) {
+    .then(function (response) {
         return response.json();
     })
-    .then(function(responseJson) {
+    .then(function (responseJson) {
         updateVariables(responseJson.UserID, responseJson.Experience, responseJson.UserName, responseJson.ProfilePicture)
     })
-    .catch(function(){
+    .catch(function () {
         updateVariables();
         console.log("a")
     });
-    
-function updateVariables(userID, Experience, UserName, ProfilePicture)
-{
+
+function updateVariables(userID, Experience, UserName, ProfilePicture) {
     let userNames = document.querySelectorAll(".userName");
     let userIDs = document.querySelectorAll(".userID");
     let profilePictures = document.querySelectorAll(".profilePicture");
 
-    Array.from(userNames).forEach((name) => {
-        if(UserName != null)
-        {
+    let profile = document.querySelectorAll(".profile");
+
+    document.querySelectorAll(".login").forEach(x => x.style.display = "none");
+    profile.forEach(x => {
+        x.style.display = "initial";
+    })
+    userNames.forEach((name) => {
+        if (UserName != null) {
             name.innerHTML = UserName;
-        }
-        else
-        {
+        } else {
             name.innerHTML = "No username";
         }
     });
-    Array.from(userIDs).forEach((user) => {
-        if(userIDs != null)
-        {
+    userIDs.forEach((user) => {
+        if (userIDs != null) {
             user.innerHTML = userID;
-        }
-        else
-        {
+        } else {
             name.innerHTML = "No UserID";
         }
     });
     Array.from(profilePictures).forEach((picture) => {
-        if(ProfilePicture != null)
-        {
+        if (ProfilePicture != null) {
             picture.src = ProfilePicture;
-        }
-        else
-        {
+        } else {
             picture.src = "../img/no-image.png";
         }
     });
