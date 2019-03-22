@@ -41,6 +41,7 @@ class QuestionsEndpoint {
         let CourseID = req.params["id"];
         if (Array.isArray(req.body)) {
             let query = "INSERT INTO Question (CourseID, Question, DATA) VALUES";
+            let values = [];
             for (let i = 0; i < req.body.length; i++) {
                 let body = req.body[i];
                 let question = {
@@ -48,11 +49,10 @@ class QuestionsEndpoint {
                     Question: body["Question"],
                     DATA: body
                 };
-                query = query + `,(${question.CourseID}, '${question.Question}','${JSON.stringify(question.DATA)}')`;
+                values.push(`(${question.CourseID}, '${question.Question}','${JSON.stringify(question.DATA)}')`);
             }
-            query = query + ";";
             try {
-                await database_1.default.query(query);
+                await database_1.default.query(query + values.join() + ";");
                 res.sendStatus(200);
             }
             catch (err) {

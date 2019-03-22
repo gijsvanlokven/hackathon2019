@@ -37,7 +37,7 @@ export default class QuestionsEndpoint implements APIEndpoint {
 		let CourseID = req.params["id"];
 		if (Array.isArray(req.body)) {
 			let query = "INSERT INTO Question (CourseID, Question, DATA) VALUES";
-
+			let values: string[] = [];
 			for (let i = 0; i < req.body.length; i++) {
 				let body = req.body[i];
 				let question = {
@@ -45,11 +45,10 @@ export default class QuestionsEndpoint implements APIEndpoint {
 					Question: body["Question"],
 					DATA: body
 				}
-				query = query + `,(${question.CourseID}, '${question.Question}','${JSON.stringify(question.DATA)}')`
+				values.push(`(${question.CourseID}, '${question.Question}','${JSON.stringify(question.DATA)}')`);
 			}
-			query = query + ";"
 			try {
-				await database.query(query);
+				await database.query(query + values.join() + ";");
 				res.sendStatus(200);
 			}
 			catch (err) {
