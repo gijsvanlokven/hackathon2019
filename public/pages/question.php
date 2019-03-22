@@ -14,38 +14,44 @@
     <script src="../script/userdata.js" defer></script>
 </head>
 <body>
-    <?php
-        include '../partials/footerP1.html';
-        include '../partials/header.html';
-    ?>
-    <div class="grid-container full">
-        <div class="grid-x grid-margin-x small-up-3">
-            <div class="cell">
-                <span class="question"></span>
-                <hr>
-                <span class="explanation"></span>
-            </div>
-            <div class="cell">
-                <div class="multiplechoice">
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button class="next">Next</button>
+    <div class="content-container">
+        <div class="grid-container full">
+            <div class="grid-x grid-margin-x small-up-2">
+                <div class="cell">
+                    <h1>
+                        Question
+                    </h1>
+                    <span class="question"></span>
+                    <hr>
+                    <span class="explanation"></span>
                 </div>
-                <div class="code">
-                    <div class="editor"></div>
-                    <div class="output"></div>
+                <div class="cell">
+                    <div class="multiplechoice">
+                        <label class="button">
+                            <button></button>
+                        </label>
+                        <label class="button">
+                            <button></button>
+                        </label>
+                        <label class="button">
+                            <button></button>
+                        </label>
+                        <label class="button">
+                            <button></button>
+                        </label>
+                        <label class="button">
+                            <button class="next">Next</button>
+                        </label>
+                    </div>
+                    <div class="code">
+                        <div class="editor"></div>
+                        <div class="output"></div>
+                    </div>
+                    <button class="compile"></button>
+                    <button class="next"> Next</button>
                 </div>
-            </div>
-            <div class="cell">
-                <button class="compile"></button>
-                <button class="next"> Next</button>
             </div>
         </div>
     </div>
-    <?php
-        include '../partials/footerP2.html';
-    ?>
 </body>
 </html>
