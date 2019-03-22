@@ -30,7 +30,7 @@
         <div class="grid-x">
             <div class="cell large-4">
                 <img src="../img/anonymous.jpg" class="profilePicture headerProfilePic float-left">
-                <h4 class="float-left headerUserName">
+                <h4 class="float-left headerUserName userName">
                     USERNAME
                 </h4>
             </div>
