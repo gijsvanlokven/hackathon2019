@@ -29,7 +29,7 @@
     <header>
         <div class="grid-x">
             <div class="cell large-4">
-                <img src="../img/anonymous.jpg" class="headerProfilePic float-left">
+                <img src="../img/anonymous.jpg" class="profilePicture headerProfilePic float-left">
                 <h4 class="float-left headerUserName">
                     USERNAME
                 </h4>
@@ -44,7 +44,7 @@
                         <!--<li class="menu-item"><a href="login.php">LOGIN</a></li>-->
                         <li class="menu-item"><a href="courses.php">COURSES</a></li>
                         <li class="menu-item"><a href="profile.php">PROFILE</a></li>
-                        <li class="menu-item"><img src="../img/anonymous.jpg" class="headerProfilePicMenu"></li>
+                        <li class="menu-item"><img src="../img/anonymous.jpg" class="profilePicture headerProfilePicMenu"></li>
                     </ul>
                 </div>
             </div>
