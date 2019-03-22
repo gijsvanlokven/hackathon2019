@@ -109,3 +109,9 @@ button
     background-color: #1779ba;
     color: #fefefe;
 }
+
+.buttonCombo button
+{
+    width: 75%;
+    height: 50%;
+}

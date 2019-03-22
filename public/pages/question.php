@@ -42,9 +42,13 @@
                         <div class="cell small-5">
                             <div class="output"></div>
                         </div>
-                        <div class="cell small-2 flex-center">
-                            <button class="compile">Compile</button>
-                            <button class="next">Next</button>
+                        <div class="cell small-2 grid-x grid-marign-x small-up-2 buttonCombo">
+                            <div class="cell flex-center">
+                                <button class="compile">Compile</button>
+                            </div>
+                            <div class="cell flex-center">
+                                <button class="next">Next</button>
+                            </div>
                         </div>
                     </div>
                 </div>
