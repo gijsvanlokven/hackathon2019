@@ -536,7 +536,7 @@ async function SaveCourse() {
         Name: document.querySelector("[name=courseName]").value,
         Language: document.querySelector("[name=courseLangauge]").value,
         Description: document.querySelector("[name=courseDescription]").value,
-        Difficulty: 1
+        Difficulty: 1 
     }
 
     response = await fetch("https://www.energylog.nl/api/courses", {
@@ -548,7 +548,7 @@ async function SaveCourse() {
     });
     let courseID = await response.json();
 
-    response = await fetch("https://www.energylog.nl/api/questions/" + courseID, {
+    response = await fetch("https://www.energylog.nl/api/questions/" + courseID.id, {
         method: "post",
         body: JSON.stringify(data),
         headers: {
