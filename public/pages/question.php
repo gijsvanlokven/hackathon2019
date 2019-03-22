@@ -28,9 +28,6 @@
                 </div>
                 <div class="cell">
                     <div class="multiplechoice">
-                        <h3>
-                            Select an awnser
-                        </h3>
                         <button></button>
                         <button></button>
                         <button></button>
