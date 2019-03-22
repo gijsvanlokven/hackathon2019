@@ -84,3 +84,23 @@ button:hover
 {
     background-color: rgb(79, 79, 79)
 }
+
+button
+{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    padding: 0.85em 1em;
+    border: 1px solid transparent;
+    border-radius: 0;
+    -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-family: inherit;
+    font-size: 0.9rem;
+    -webkit-appearance: none;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #1779ba;
+    color: #fefefe;
+}

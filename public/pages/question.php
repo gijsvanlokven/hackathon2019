@@ -27,11 +27,11 @@
                 </div>
                 <div class="cell">
                     <div class="multiplechoice">
-                        <button class="button"></button>
-                        <button class="button"></button>
-                        <button class="button"></button>
-                        <button class="button"></button>
-                        <button class="next button">Next</button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button class="next">Next</button>
 
                     </div>
                     <div class="code">
