@@ -79,7 +79,7 @@ function whichTransitionEvent() {
     Listener for all questions
 */
 function questionChanger(question, i, type) {
-    if (type.value == "code") {
+    if (type.value == "Code") {
         let codeSection = `
         <!--
             Code Section
@@ -95,8 +95,8 @@ function questionChanger(question, i, type) {
             </div>
             <div class="cell">
                 <select name="question${i}Type" class="questionType">
-                    <option value="code">Code</option>
-                    <option value="multiple-choice">Multiple choice</option>
+                    <option value="Code">Code</option>
+                    <option value="Question">Multiple choice</option>
                 </select>
             </div>
             <div class="cell">
@@ -171,7 +171,7 @@ function questionChanger(question, i, type) {
         });
 
         renderCodeBlock(newCodeBlock);
-    } else if (type.value == "multiple-choice") {
+    } else if (type.value == "Question") {
         let multipleChoiceSection = `
         <div question="${i}" class="cell multipleChoiceSection">
             <div class="cell">
@@ -184,8 +184,8 @@ function questionChanger(question, i, type) {
             </div>
             <div class="cell">
                 <select name="question${i}Type" class="questionType">
-                    <option selected value="multiple-choice">Multiple choice</option>
-                    <option value="code">Code</option>
+                    <option selected value="Question">Multiple choice</option>
+                    <option value="Code">Code</option>
                 </select>
             </div>
             <div class="cell">
@@ -472,51 +472,60 @@ async function SaveCourse() {
     let lastID = (await response.json()).LastID;
     let data = [];
 
-    questions.forEach((x, i) => {
+    document.querySelectorAll(".multipleChoiceSection, .codeSection").forEach((x, i) => {
         lastID++;
         let question = {
             Type: "Question"
         }
 
-        question.Type = x.querySelector(".questionType>:checked").value;
+        question.Type = x.querySelector(".questionType").value;
         if (question.Type == "Question") {
-            question.Question = x.querySelector(`[name=question${i}]`);
+            question.Question = x.querySelector(`[name=question${i+1}]`).value;
             question.Answers = [];
 
             let a1 = {
-                value: x.querySelector(`[name=question${i}answer1]`).value,
+                value: x.querySelector(`[name=question${i + 1}answer1]`).value,
             }
-            if (x.querySelector(`#question${i}CheckboxAnswer1`))
+            if (x.querySelector(`[name='question${i+1}CheckboxAnswer1']`).checked)
                 a1.NextQuestion = lastID;
             else a1.explanation = "This is the wrong answer.";
 
             let a2 = {
-                value: x.querySelector(`[name=question${i}answer2]`).value,
+                value: x.querySelector(`[name=question${i+ 1}answer2]`).value,
             }
-            if (x.querySelector(`#question${i}CheckboxAnswer2`))
+            if (x.querySelector(`[name='question${i+1}CheckboxAnswer2']`).checked)
                 a2.NextQuestion = lastID;
             else a2.explanation = "This is the wrong answer.";
 
             let a3 = {
-                value: x.querySelector(`[name=question${i}answer3]`).value,
+                value: x.querySelector(`[name=question${i+1}answer3]`).value,
             }
-            if (x.querySelector(`#question${i}CheckboxAnswer3`))
+            if (x.querySelector(`[name='question${i+1}CheckboxAnswer3']`).checked)
                 a3.NextQuestion = lastID;
             else a3.explanation = "This is the wrong answer.";
 
 
             let a4 = {
-                value: x.querySelector(`[name=question${i}answer4]`).value,
+                value: x.querySelector(`[name=question${i+1}answer4]`).value,
             }
-            if (x.querySelector(`#question${i}CheckboxAnswer4`))
+            if (x.querySelector(`[name='question${i+1}CheckboxAnswer4']`).checked)
                 a4.NextQuestion = lastID;
             else a4.explanation = "This is the wrong answer.";
 
             question.Answers.push(a1, a2, a3, a4);
         } else if (question.Type == "Code") {
-            question.Question = x.querySelector(`[name=question${i}Article]`).value;
-            question.Template = CodeEditors[i];
+            question.Question = x.querySelector(`[name=question${i+1}Article]`).value;
+            question.Template = CodeEditors[i + 1].getModel().getValue();
 
+            let ExpectedOutput = [];
+
+            x.querySelectorAll(".answerBox").forEach((y, z) => {
+                ExpectedOutput.push({
+                    Type: y.querySelector(`[name=question${i+1}typeError${z+1}]`).value,
+                    Line: y.querySelector(`[name=question${i+1}expectedAnswer${z+1}]`).value
+                });
+            });
+            question.ExpectedOutput = ExpectedOutput;
         }
 
         data.push(question);

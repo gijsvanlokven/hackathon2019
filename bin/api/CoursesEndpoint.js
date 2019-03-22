@@ -45,8 +45,8 @@ class CoursesEndpoint {
         };
         if (!Object.values(course).includes(undefined)) {
             try {
-                await database_1.default.query(`INSERT INTO Course (Name, Description, Language, Difficulty, OwnerID) VALUES ('${course.Name}', '${course.Description}','${course.Language}',${course.Difficulty},${req.cookies["UserID"] || 1});`);
-                res.send(course);
+                let id = await database_1.default.query(`INSERT INTO Course (Name, Description, Language, Difficulty, OwnerID) VALUES ('${course.Name}', '${course.Description}','${course.Language}',${course.Difficulty},${req.cookies["UserID"] || 1}); SELECT CourseID FROM Course ORDER BY CourseID DESC LIMIT 1;`);
+                res.send(id);
             }
             catch (err) {
                 res.sendStatus(400);
