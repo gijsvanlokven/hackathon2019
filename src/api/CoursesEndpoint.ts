@@ -29,7 +29,7 @@ export default class CoursesEndpoint implements APIEndpoint {
 		let result = await database.query(`SELECT * FROM Course WHERE CourseID = ${req.params["id"]}`);
 		let firstQuestion = await database.query(`SELECT QuestionID FROM Question WHERE CourseID = ${req.params["id"]} ORDER BY QuestionID ASC LIMIT 1;`);
 		if (result && result.count > 0)
-			res.send({...result.results[0], NextQuestion:firstQuestion.results[0]});
+			res.send({ ...result.results[0], NextQuestion: firstQuestion.results[0] });
 		else res.status(404).send({ error: "Not found.", errorCode: 404 })
 	}
 
@@ -44,10 +44,11 @@ export default class CoursesEndpoint implements APIEndpoint {
 		if (!Object.values(course).includes(undefined)) {
 			try {
 				await database.query(`INSERT INTO Course (Name, Description, Language, Difficulty, OwnerID) VALUES ('${course.Name}', '${course.Description}','${course.Language}',${course.Difficulty},${req.cookies["UserID"] || 1});`);
-				res.send(course);
+				let courseID = await database.query(`SELECT CourseID FROM Course ORDER BY CourseID DESC LIMIT 1;`);
+				res.send({ id: courseID.results[0].CourseID})
 			}
 			catch (err) {
-				res.sendStatus(400);
+				res.status(400).send(err);
 			}
 		}
 		else res.sendStatus(400);

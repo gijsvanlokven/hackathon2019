@@ -8,12 +8,12 @@
         <link rel="stylesheet" href="../foundation6.5.1/css/foundation.css" />
         <link rel="stylesheet" href="../stylesheets/main.css" />
         <link rel="stylesheet" href="../stylesheets/profile.css" />
-        <link rel="stylesheet" href="../stylesheets/tabs.css" />
         <link rel="shortcut icon" href="../img/favicon.ico" />
         <script src="../foundation6.5.1/js/vendor/jquery.js"></script>
         <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
         <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
-        <script src=-"../script/profile.js"></script>
+        <script src="../script/profile.js" defer></script>
+        <script src="../script/userdata.js" defer></script>
     </head>
     <body>
         <?php
@@ -24,34 +24,26 @@
             <div class="grid-container full">
                 <div class="grid-x">
                     <div class="large-6 medium-12 small-12 profileBox">
-                        <div class="cell marginBox">
-                            <h4 class="text font-preset">
+                        <div class="cell marginBox profilePictureSection">
+                            <h4 class="text userName">
                                 Username
                             </h4>
-                            <img src="../img/anonymous.jpg" class="profilePicture ">
+                            <img class="profilePicture" src="../img/no-image.png" class="profilePicture ">
                         </div>
                         <div class="cell marginBox">
-                            <h4 class="text font-preset">
-                                Description
-                            </h4>
-                            <p class="text">
-                                Right here you can find my profile description!
-                            </p>
-                        </div>
-                        <div class="cell marginBox">
-                            <h4 class="text font-preset">
+                            <h4 class="text">
                                 Achievements
                             </h4>
                             <div class="grid-container full achievementContainer">
                                 <div class="grid-x small-up-6 align-center">
                                     <div class="cell">
-                                        <img src="../img/anonymous.jpg" class="achievementPicture float-center">
+                                        <img src="../img/no-image.png" class="achievementPicture float-center">
                                     </div>
                                     <div class="cell">
-                                        <img src="../img/anonymous.jpg" class="achievementPicture float-center">
+                                        <img src="../img/no-image.png" class="achievementPicture float-center">
                                     </div>
                                     <div class="cell">
-                                        <img src="../img/anonymous.jpg" class="achievementPicture float-center">
+                                        <img src="../img/no-image.png" class="achievementPicture float-center">
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +56,7 @@
                         <div class="grid-container">
                             <div class="grid-x grid-margin-x large-up-3 medium-up-3 small-up-3" id="CompletedCourses">
                             <!--    <div class="cell">
-                                    <img src="../img/anonymous.jpg" class="completed-img float-center">
+                                    <img src="../img/no-image.png" class="completed-img float-center">
                                     <h4 class="completed-text float-center">
                                         HTML
                                     </h4>
@@ -73,7 +65,7 @@
                                     </p>
                                 </div>
                                 <div class="cell">
-                                    <img src="../img/anonymous.jpg" class="completed-img float-center">
+                                    <img src="../img/no-image.png" class="completed-img float-center">
                                     <h4 class="completed-text">
                                         HTML
                                     </h4>
@@ -82,7 +74,7 @@
                                     </p>
                                 </div>
                                 <div class="cell">
-                                    <img src="../img/anonymous.jpg" class="completed-img float-center">
+                                    <img src="../img/no-image.png" class="completed-img float-center">
                                     <h4 class="completed-text">
                                         CSS
                                     </h4>
@@ -91,7 +83,7 @@
                                     </p>
                                 </div>
                                 <div class="cell">
-                                    <img src="../img/anonymous.jpg" class="completed-img float-center">
+                                    <img src="../img/no-image.png" class="completed-img float-center">
                                     <h4 class="completed-text">
                                         HTML
                                     </h4>
@@ -100,7 +92,7 @@
                                     </p>
                                 </div>
                                 <div class="cell">
-                                    <img src="../img/anonymous.jpg" class="completed-img float-center">
+                                    <img src="../img/no-image.png" class="completed-img float-center">
                                     <h4 class="completed-text">
                                         HTML
                                     </h4>
@@ -109,7 +101,7 @@
                                     </p>
                                 </div>
                                 <div class="cell">
-                                    <img src="../img/anonymous.jpg" class="completed-img float-center">
+                                    <img src="../img/no-image.png" class="completed-img float-center">
                                     <h4 class="completed-text">
                                         CSS
                                     </h4>

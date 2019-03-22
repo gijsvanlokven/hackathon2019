@@ -7,8 +7,8 @@ async function FillCompleted() {
   let body = await res.json();
   const wrapper = document.querySelector("#CompletedCourses");
   body.forEach(x => {
-    let course = await fetch(url + "courses/" + x.CourseID);
-    let returned = await course.json();
+    let course = fetch(url + "courses/" + x.CourseID);
+    let returned = course.json();
     wrapper.innerHTML += `<div class="cell">
         <img src="../img/${returned["Language"]}_logo.png" class="completed-img float-center">
         <h4 class="completed-text float-center">
@@ -26,3 +26,4 @@ async function FillCompleted() {
   }
 
   fill();
+}

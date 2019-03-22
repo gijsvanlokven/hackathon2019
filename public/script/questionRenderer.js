@@ -8,7 +8,7 @@ const QuestionText = document.querySelector(".question"),
 	CodeEditor = document.querySelector(".editor"),
 	NextButtons = document.querySelectorAll(".next"),
 	explanation = document.querySelector(".explanation");
-	const url = `${location.protocol}//${location.host}/api/`;
+const url = `${location.protocol}//${location.host}/api/`;
 
 
 let expectedOutput = [];
@@ -30,6 +30,12 @@ NextButtons.forEach(x => x.addEventListener("click", NextQuestion));
 
 async function NextQuestion() {
 	console.log("Next Question: " + NextQuestionID)
+	if (NextQuestionID == -1) {
+		const urlParams = new URLSearchParams(window.location.search);
+		let response = await fetch("https://www.energylog.nl/api/courses/" + urlParams.get('course'));
+		let body = await response.json();
+		NextQuestionID = body.FirstQuestion;
+	}
 	if (NextQuestionID != "END") {
 		let body = await fetch(url + "questions/" + NextQuestionID);
 		let question = await body.json();
@@ -58,6 +64,7 @@ function QuestionChange(question) {
 	if (question.Type == "Question") {
 		MultipleChoiceScreen.classList.remove("hidden");
 		CodeScreen.classList.add("hidden");
+		MultipleChoiceScreen.querySelectorAll(":not(.next)").forEach(x => x.remove());
 		question.Answers.forEach(answer => {
 			let button = document.createElement("button");
 			button.classList.add("choice");

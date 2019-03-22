@@ -9,7 +9,7 @@ export default class QuestionsEndpoint implements APIEndpoint {
 			.get('/', this.GetList)
 			.get("/lastID", this.MaxID)
 			.get("/:id", this.GetItem)
-			.post("/", this.AddItem)
+			.post("/:id", this.AddItem)
 			.put("/:id", this.EditItem);
 	}
 
@@ -34,15 +34,16 @@ export default class QuestionsEndpoint implements APIEndpoint {
 	}
 
 	async AddItem(req: express.Request, res: express.Response) {
+		let CourseID = req.params["id"];
 		if (Array.isArray(req.body)) {
 			let query = "INSERT INTO Question (CourseID, Question, DATA) VALUES";
 
 			for (let i = 0; i < req.body.length; i++) {
 				let body = req.body[i];
 				let question = {
-					CourseID: body["CourseID"],
+					CourseID: CourseID,
 					Question: body["Question"],
-					DATA: body["DATA"]
+					DATA: body
 				}
 				query = query + `,(${question.CourseID}, '${question.Question}','${question.DATA}')`
 			}
@@ -52,20 +53,20 @@ export default class QuestionsEndpoint implements APIEndpoint {
 				res.sendStatus(200);
 			}
 			catch (err) {
-				res.sendStatus(400);
+				res.status(400).send(err);
 			}
 		}
 		else {
 
 			let question = {
-				CourseID: req.body["CourseID"],
+				CourseID: CourseID,
 				Question: req.body["Question"],
-				DATA: req.body["DATA"]
+				DATA: req.body
 			}
 
 			if (!Object.values(question).includes(undefined)) {
 				try {
-					await database.query(`INSERT INTO Question (CourseID, Question, DATA) VALUES (${question.CourseID}, '${question.Question}','${question.DATA}');`);
+					await database.query(`INSERT INTO Question (CourseID, Question, DATA) VALUES (${question.CourseID}, '${question.Question}','${JSON.stringify(question.DATA)}');`);
 					res.sendStatus(200);
 				}
 				catch (err) {
@@ -85,7 +86,7 @@ export default class QuestionsEndpoint implements APIEndpoint {
 
 		if (!Object.values(question).includes(undefined)) {
 			try {
-				await database.query(`UPDATE Question SET CourseID = ${question.CourseID}, Question = '${question.Question}', DATA = '${question.DATA}' WHERE QuestionID = ${req.params["id"]};`);
+				await database.query(`UPDATE Question SET CourseID = ${question.CourseID}, Question = '${question.Question}', DATA = '${JSON.stringify(question.DATA)}' WHERE QuestionID = ${req.params["id"]};`);
 				res.sendStatus(200);
 			}
 			catch (err) {
@@ -95,7 +96,7 @@ export default class QuestionsEndpoint implements APIEndpoint {
 		else res.sendStatus(400);
 	}
 	async MaxID(req, res) {
-		let result = await database.query("SELECT MAX(QuestionID) as LastID FROM Question"));
+		let result = await database.query("SELECT MAX(QuestionID) as LastID FROM Question");
 		res.send(result.results[0]);
 	}
 }

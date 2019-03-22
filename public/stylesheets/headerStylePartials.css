@@ -59,27 +59,17 @@ header
 .menu-item>a{
     color: white;
 }
-@media only screen and (max-width: 639px) {
-    .headerlogo{
-        width: 12vw;
-    }
-    .headerContainer{
-        font-size: 4vw;
-    }
-    .menu{
-        font-size: 3vw;
-    }
-}
-@media only screen and (max-width: 639px) {
+
+@media only screen and (min-width: 639px) {
 
     .headerlogo{
         width: 12vw;
     }
     .headerContainer{
-        font-size: 4vw;
+        font-size: 3vw;
     }
     .menu{
-        font-size: 3vw;
+        font-size: 2vw;
     }
     .headerProfilePicMenu{
         display: none;
