@@ -7,12 +7,13 @@ export default class QuestionsEndpoint implements APIEndpoint {
 	get Router() {
 		return express.Router()
 			.get('/', this.GetList)
+			.get("/lastID", this.MaxID)
 			.get("/:id", this.GetItem)
 			.post("/", this.AddItem)
 			.put("/:id", this.EditItem);
 	}
 
-  async GetList(req: express.Request, res: express.Response) {
+	async GetList(req: express.Request, res: express.Response) {
 		let result: { results: any[], count: number, columns: any[] };
 		if (req.query["course"])
 			result = await database.query(`SELECT * FROM Question WHERE CourseID = '${req.query["course"]}';`)
@@ -32,18 +33,18 @@ export default class QuestionsEndpoint implements APIEndpoint {
 		else res.status(404).send({ error: "Not found.", errorCode: 404 })
 	}
 
-  async AddItem(req: express.Request, res: express.Response) {
-		if (Array.isArray(req.body)){
+	async AddItem(req: express.Request, res: express.Response) {
+		if (Array.isArray(req.body)) {
 			let query = "INSERT INTO Question (CourseID, Question, DATA) VALUES";
 
-			for(let i = 0; i < req.body.length; i++){
-					let body = req.body[i];
-					let question = {
-						CourseID: body["CourseID"],
-						Question: body["Question"],
-						DATA: body["DATA"]
-					}
-					query = query + `,(${question.CourseID}, '${question.Question}','${question.DATA}')`
+			for (let i = 0; i < req.body.length; i++) {
+				let body = req.body[i];
+				let question = {
+					CourseID: body["CourseID"],
+					Question: body["Question"],
+					DATA: body["DATA"]
+				}
+				query = query + `,(${question.CourseID}, '${question.Question}','${question.DATA}')`
 			}
 			query = query + ";"
 			try {
@@ -54,7 +55,7 @@ export default class QuestionsEndpoint implements APIEndpoint {
 				res.sendStatus(400);
 			}
 		}
-		else{
+		else {
 
 			let question = {
 				CourseID: req.body["CourseID"],
@@ -72,12 +73,12 @@ export default class QuestionsEndpoint implements APIEndpoint {
 				}
 			}
 			else res.sendStatus(400);
-	}
+		}
 	}
 
-  async EditItem(req: express.Request, res: express.Response) {
+	async EditItem(req: express.Request, res: express.Response) {
 		let question = {
-      CourseID: req.body["CourseID"],
+			CourseID: req.body["CourseID"],
 			Question: req.body["Question"],
 			DATA: req.body["DATA"]
 		}
@@ -93,5 +94,7 @@ export default class QuestionsEndpoint implements APIEndpoint {
 		}
 		else res.sendStatus(400);
 	}
-
+	async MaxID(req, res) {
+		res.send((await database.query("SELECT MAX(QuestionID) as LastID FROM Question")).results[0]);
+	}
 }

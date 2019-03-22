@@ -12,6 +12,7 @@ class QuestionsEndpoint {
     get Router() {
         return express.Router()
             .get('/', this.GetList)
+            .get("/lastID", this.MaxID)
             .get("/:id", this.GetItem)
             .post("/", this.AddItem)
             .put("/:id", this.EditItem);
@@ -93,6 +94,9 @@ class QuestionsEndpoint {
         }
         else
             res.sendStatus(400);
+    }
+    async MaxID(req, res) {
+        res.send((await database_1.default.query("SELECT MAX(QuestionID) as LastID FROM Question")).results[0]);
     }
 }
 exports.default = QuestionsEndpoint;
