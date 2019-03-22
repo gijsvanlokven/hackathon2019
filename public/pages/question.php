@@ -22,7 +22,7 @@
         <div class="grid-x grid-margin-x">
             <p class="text-center large-6 large-offset-3">
                 <span class="question"></span>
-                <span class="explenation"></span>
+                <span class="explanation"></span>
             </p>
             <div class="code large-12 medium-12 small-12" style="opacity: 1;">
                 <div class="editor large-6" style="height: 100vh; flex: 1;"></div>
