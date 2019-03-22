@@ -1,0 +1,58 @@
+.multiplechoice{
+
+}
+body {
+    margin: 0;
+    background-color: #1E1E1E;
+    color: #FFF;
+}
+
+.output {
+    font-family: consolas, Courier, monospace;
+}
+
+.output p {
+    margin: 0;
+}
+
+.output .log {
+    color: skyblue;
+}
+
+.output .error {
+    color: red;
+}
+
+.output .warning {
+    color: orange;
+}
+
+div.hidden {
+    display: none;
+}
+
+.code {
+    opacity: 0;
+}
+.editor{
+    width: 512px;
+    height: 600px !important;
+    float: left;
+}
+.output{
+    width: 512px;
+    height: 600px !important;
+    float: left;
+    background-color: white;
+}
+.view-lines{
+    height: 600px;
+}
+.multiplechoice>button {
+    display: block;
+    margin: 1em;
+}
+.button{
+    border-radius: 5px;
+    width: 100px ;
+}
