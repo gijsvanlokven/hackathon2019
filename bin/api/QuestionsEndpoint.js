@@ -14,7 +14,7 @@ class QuestionsEndpoint {
             .get('/', this.GetList)
             .get("/lastID", this.MaxID)
             .get("/:id", this.GetItem)
-            .post("/", this.AddItem)
+            .post("/:id", this.AddItem)
             .put("/:id", this.EditItem);
     }
     async GetList(req, res) {
@@ -38,14 +38,15 @@ class QuestionsEndpoint {
             res.status(404).send({ error: "Not found.", errorCode: 404 });
     }
     async AddItem(req, res) {
+        let CourseID = req.params["id"];
         if (Array.isArray(req.body)) {
             let query = "INSERT INTO Question (CourseID, Question, DATA) VALUES";
             for (let i = 0; i < req.body.length; i++) {
                 let body = req.body[i];
                 let question = {
-                    CourseID: body["CourseID"],
+                    CourseID: CourseID,
                     Question: body["Question"],
-                    DATA: body["DATA"]
+                    DATA: body
                 };
                 query = query + `,(${question.CourseID}, '${question.Question}','${question.DATA}')`;
             }
@@ -60,7 +61,7 @@ class QuestionsEndpoint {
         }
         else {
             let question = {
-                CourseID: req.body["CourseID"],
+                CourseID: CourseID,
                 Question: req.body["Question"],
                 DATA: req.body["DATA"]
             };
