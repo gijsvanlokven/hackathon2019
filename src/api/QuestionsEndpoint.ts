@@ -9,7 +9,7 @@ export default class QuestionsEndpoint implements APIEndpoint {
 			.get('/', this.GetList)
 			.get("/lastID", this.MaxID)
 			.get("/:id", this.GetItem)
-			.post("/", this.AddItem)
+			.post("/:id", this.AddItem)
 			.put("/:id", this.EditItem);
 	}
 
