@@ -465,7 +465,7 @@ function codeRemoveAnswer(button) {
     }
 }
 
-
+document.querySelector("#submit").addEventListener("click", () => SaveCourse());
 async function SaveCourse() {
 
     let response = await fetch("https://www.energylog.nl/api/questions/lastid");
@@ -539,7 +539,7 @@ async function SaveCourse() {
         Difficulty: 1
     }
 
-    let response = await fetch("https://www.energylog.nl/api/courses", {
+    response = await fetch("https://www.energylog.nl/api/courses", {
         method: "post",
         body: JSON.stringify(course),
         headers: {

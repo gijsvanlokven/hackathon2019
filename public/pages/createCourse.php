@@ -185,7 +185,9 @@ include "../partials/header.html";
                         <img class="buttonRemove" src="../img/minus.svg" alt=""> Remove last question
                     </div>
                 </div>
-            </div>
+</div>
+
+            <button id="submit">Save</button>
         </section>
         <?php
 include '../partials/footerP2.html';
