@@ -22,6 +22,7 @@ header
   position: absolute;
   width: 100%;
   top: 0;
+  z-index: 20;
 }
 h1 > img{
   width: 40%;
@@ -32,10 +33,14 @@ h1 > img{
 
 #parallax-overlay
 {
-  margin-top: 10%;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+}
+
+#parallax-overlay .text-center
+{
+  margin-top: 10%;
 }
 
 #parallax-overlay h1
