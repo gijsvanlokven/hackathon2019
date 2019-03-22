@@ -3,9 +3,7 @@ fetch("https://www.energylog.nl/api/user/me")
         return response.json();
     })
     .then(function(responseJson) {
-        responseJson.forEach((json) => {
-            updateVariables(json.UserID, json.Experience, json.UserName, user.ProfilePicture)
-        });
+        updateVariables(json.UserID, json.Experience, json.UserName, user.ProfilePicture)
     });
     
 function updateVariables(userID, Experience, UserName, ProfilePicture)
