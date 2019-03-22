@@ -22,15 +22,17 @@
         <div class="grid-x grid-margin-x small-up-3">
             <div class="cell">
                 <span class="question"></span>
-            </div>
-            <div class="multiple-choice">
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button class="next">Next</button>
+                <hr>
+                <span class="explanation"></span>
             </div>
             <div class="cell">
+                <div class="multiple-choice">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button class="next">Next</button>
+                </div>
                 <div class="code">
                     <div class="editor"></div>
                     <div class="output"></div>
