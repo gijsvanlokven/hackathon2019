@@ -319,8 +319,8 @@ function createQuestion() {
             </div>
             <div class="cell">
                 <select name="question${i}Type" class="questionType">
-                    <option selected value="multiple-choice">Multiple choice</option>
-                    <option value="code">Code</option>
+                    <option selected value="Question">Multiple choice</option>
+                    <option value="Code">Code</option>
                 </select>
             </div>
             <div class="cell">
@@ -468,7 +468,7 @@ function codeRemoveAnswer(button) {
 
 async function SaveCourse() {
 
-    let response = await fetch("http://energylog.nl/api/questions/lastid");
+    let response = await fetch("https://www.energylog.nl/api/questions/lastid");
     let lastID = (await response.json()).LastID;
     let data = [];
 
@@ -478,7 +478,7 @@ async function SaveCourse() {
             Type: "Question"
         }
 
-        question.Type = x.querySelector(".questionType");
+        question.Type = x.querySelector(".questionType>:checked").value;
         if (question.Type == "Question") {
             question.Question = x.querySelector(`[name=question${i}]`);
             question.Answers = [];
@@ -518,6 +518,8 @@ async function SaveCourse() {
             question.Template = CodeEditors[i];
 
         }
+
+        data.push(question);
     });
 
     console.log(data);

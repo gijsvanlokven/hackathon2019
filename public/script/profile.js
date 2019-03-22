@@ -1,26 +1,29 @@
-fetch("https://www.energylog.nl/api/user/me")
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(responseJson) {
-        responseJson.forEach((json) => {
-            updateVariables(json.UserID, json.Experience, json.UserName, user.ProfilePicture)
-        });
-    });
-    
-function updateVariables(userID, Experience, UserName, ProfilePicture)
-{
-    let userNames = document.querySelectorAll(".userName");
-    let userIDs = document.querySelectorAll(".userID");
-    let profilePictures = document.querySelectorAll(".profilePicture");
+const url = `${location.protocol}//${location.host.replace(3000,8080)}/api/`;
 
-    Array.from(userNames).forEach((name) => {
-        name.innerHTML = UserName;
-    });
-    Array.from(userIDs).forEach((user) => {
-        user.innerHTML = UserName;
-    });
-    Array.from(profilePictures).forEach((picture) => {
-        picture.src = ProfilePicture;
-    });
+
+async function FillCompleted() {
+
+  let res = await fetch(url + "usercourse");
+  let body = await res.json();
+  const wrapper = document.querySelector("#CompletedCourses");
+  body.forEach(x => {
+    let course = await fetch(url + "courses/" + x.CourseID);
+    let returned = await course.json();
+    wrapper.innerHTML += `<div class="cell">
+        <img src="../img/${returned["Language"]}_logo.png" class="completed-img float-center">
+        <h4 class="completed-text float-center">
+            ${returned["Language"]}
+        </h4>
+        <p class="text-center">
+            ${returned["Name"]}
+        </p>
+    </div>
+    `;
+  })
+
+  function fill(){
+    FillCompleted();
+  }
+
+  fill();
 }

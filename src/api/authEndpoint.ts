@@ -23,6 +23,7 @@ export default class authEndpoint implements APIEndpoint {
             prompt: "select_account"
           }))
         }
+        else res.send("Server does not exist");
       })
       .get('/github/redirect', async (req, res) => {
         // The req.query object has the query params that
@@ -85,7 +86,7 @@ export default class authEndpoint implements APIEndpoint {
         }
 
         res.cookie("UserID", existingUser.results[0].UserID);
-        res.redirect("/");
+        res.redirect("/pages/index.php");
       });
   }
 }

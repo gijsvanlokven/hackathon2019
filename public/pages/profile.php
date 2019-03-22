@@ -13,6 +13,7 @@
         <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
         <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
         <script src="../script/profile.js"></script>
+        <script src="../script/userdata.js"></script>
     </head>
     <body>
         <?php
@@ -53,15 +54,15 @@
                             Completed Courses
                         </h4>
                         <div class="grid-container">
-                            <div class="grid-x grid-margin-x large-up-3 medium-up-3 small-up-3">
-                                <div class="cell">
+                            <div class="grid-x grid-margin-x large-up-3 medium-up-3 small-up-3" id="CompletedCourses">
+                            <!--    <div class="cell">
                                     <img src="../img/anonymous.jpg" class="completed-img float-center">
                                     <h4 class="completed-text float-center">
                                         HTML
                                     </h4>
                                     <p class="text-center">
                                         FORM Basics
-                                    </p>    
+                                    </p>
                                 </div>
                                 <div class="cell">
                                     <img src="../img/anonymous.jpg" class="completed-img float-center">
@@ -108,8 +109,9 @@
                                         Selectors
                                     </p>
                                 </div>
+                              -->
                             </div>
-                        </div>  
+                        </div>
                     </div>
                 </div>
             </div>
