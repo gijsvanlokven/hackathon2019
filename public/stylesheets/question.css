@@ -6,6 +6,7 @@ body {
 
 .output {
     font-family: consolas, Courier, monospace;
+    color: black;
 }
 
 .output p {
@@ -107,9 +108,4 @@ button
     cursor: pointer;
     background-color: #1779ba;
     color: #fefefe;
-}
-
-.explanation
-{
-    color: black;
 }
