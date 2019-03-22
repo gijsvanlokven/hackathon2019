@@ -48,7 +48,7 @@ class QuestionsEndpoint {
                     Question: body["Question"],
                     DATA: body
                 };
-                query = query + `,(${question.CourseID}, '${question.Question}','${question.DATA}')`;
+                query = query + `,(${question.CourseID}, '${question.Question}','${JSON.stringify(question.DATA)}')`;
             }
             query = query + ";";
             try {
@@ -86,7 +86,7 @@ class QuestionsEndpoint {
         };
         if (!Object.values(question).includes(undefined)) {
             try {
-                await database_1.default.query(`UPDATE Question SET CourseID = ${question.CourseID}, Question = '${question.Question}', DATA = '${JSON.stringify(question.DATA)}' WHERE QuestionID = ${req.params["id"]};`);
+                await database_1.default.query(`UPDATE Question SET CourseID = ${question.CourseID}, Question = '${question.Question}', DATA = '${question.DATA}' WHERE QuestionID = ${req.params["id"]};`);
                 res.sendStatus(200);
             }
             catch (err) {
