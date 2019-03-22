@@ -27,8 +27,8 @@
 <body>
     <link rel="stylesheet" href="../stylesheets/footerStylePartials.css" />
     <header>
-        <div class="grid-x profile">
-            <div class="cell large-4">
+        <div class="grid-x">
+            <div class="cell large-4 profile">
                 <img src="../img/no-image.png" class="profilePicture headerProfilePic float-left">
                 <h4 class="float-left headerUserName userName">
                     USERNAME
