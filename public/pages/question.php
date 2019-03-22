@@ -35,10 +35,10 @@
 
                     </div>
                     <div class="code grid-y small-up-2">
-                        <div>
+                        <div class="cell">
                             <div class="editor"></div>
                         </div>
-                        <div>
+                        <div class="cell">
                             <div class="output"></div>
                         </div>
                     </div>
