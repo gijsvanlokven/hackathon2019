@@ -26,6 +26,8 @@ class authEndpoint {
                     prompt: "select_account"
                 }));
             }
+            else
+                res.send("Server does not exist");
         })
             .get('/github/redirect', async (req, res) => {
             // The req.query object has the query params that
