@@ -6,6 +6,7 @@ body {
 
 .output {
     font-family: consolas, Courier, monospace;
+    color: black;
 }
 
 .output p {
@@ -29,7 +30,7 @@ div.hidden {
 }
 
 .code {
-    opacity: 0;
+    height: 100%
 }
 .editor{
     width: 100%;
@@ -52,6 +53,12 @@ div.hidden {
     width: 100%;
     top: 0;
     left: 0;
+}
+
+.compile
+{
+    width: 50%;
+    height: 50%;
 }
 
 button
@@ -80,7 +87,12 @@ button:hover
 
 .content-container hr
 {
-    background-color: rgb(79, 79, 79)
+    background-color: rgb(79, 79, 79);
+}
+
+button[disabled]
+{
+    background-color: #3a3f54;
 }
 
 button
@@ -101,4 +113,16 @@ button
     cursor: pointer;
     background-color: #1779ba;
     color: #fefefe;
+}
+
+.buttonCombo button
+{
+    width: 75%;
+    height: 50%;
+}
+
+.multiplechoice::before
+{
+    content: "Select an awnser";
+    font-size: 31px;
 }
