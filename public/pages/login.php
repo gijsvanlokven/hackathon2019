@@ -11,6 +11,7 @@
         <link rel="shortcut icon" href="../img/favicon.ico" />
         <script src="../foundation6.5.1/js/vendor/jquery.js"></script>
         <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
+        <script src="../script/userdata.js" defer></script>
         <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
         <link rel="import" href="../partials/header.html">
         <script>

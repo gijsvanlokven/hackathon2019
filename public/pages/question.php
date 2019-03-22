@@ -10,7 +10,8 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Question</title>
 	<script src="../script/monaco.js"></script>
-	<script defer type="module" src="../script/questionRenderer.js"></script>
+    <script defer type="module" src="../script/questionRenderer.js"></script>
+    <script src="../script/userdata.js" defer></script>
 </head>
 <body>
     <?php

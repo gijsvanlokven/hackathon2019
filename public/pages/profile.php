@@ -12,8 +12,8 @@
         <script src="../foundation6.5.1/js/vendor/jquery.js"></script>
         <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
         <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
-        <script src="../script/profile.js"></script>
-        <script src="../script/userdata.js"></script>
+        <script src="../script/profile.js" defer></script>
+        <script src="../script/userdata.js" defer></script>
     </head>
     <body>
         <?php

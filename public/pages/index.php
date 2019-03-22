@@ -15,6 +15,7 @@
     <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
     <script src="../script/randomize.js" defer></script>
     <script src="../script/index.js" defer></script>
+    <script src="../script/userdata.js" defer></script>
     <script src="../script/parralax.js" defer></script>
     <script>
         $(document).foundation();
