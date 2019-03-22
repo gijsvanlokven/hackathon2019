@@ -20,8 +20,10 @@
     ?>
     <div class="grid-container">
         <div class="grid-x grid-margin-x">
-            <p class="question text-center large-6 large-offset-3"></p>
-            <em class="explanation text-center large-8 large-offset-2"></em>
+            <p class="text-center large-6 large-offset-3">
+                <span class="question"></span>
+                <span class="explenation"></span>
+            </p>
             <div class="code large-12 medium-12 small-12" style="opacity: 1;">
                 <div class="editor large-6" style="height: 100vh; flex: 1;"></div>
                 <div class="output large-6" style="min-width: 25vw;"></div>
