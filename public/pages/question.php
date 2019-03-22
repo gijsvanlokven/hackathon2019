@@ -21,28 +21,41 @@
                     <h1>
                         Question
                     </h1>
+                    <hr>
                     <span class="question"></span>
                     <hr>
                     <span class="explanation"></span>
                 </div>
                 <div class="cell">
                     <div class="multiplechoice">
+                        <h3>
+                            Select an awnser
+                        </h3>
                         <button></button>
                         <button></button>
                         <button></button>
                         <button></button>
-                        <button class="next">Next</button>
-
+                        <button disabled class="next">Next</button>
                     </div>
-                    <div class="code grid-y small-up-2">
-                        <div class="cell">
+                    <div class="code grid-y">
+                        <h3 class="cell small-1">
+                            Solve the code
+                        </h3>
+                        <div class="cell small-5">
                             <div class="editor"></div>
                         </div>
-                        <div class="cell">
+                        <div class="cell small-5">
                             <div class="output"></div>
                         </div>
+                        <div class="cell small-1 grid-x grid-marign-x small-up-2 buttonCombo">
+                            <div class="cell flex-center">
+                                <button class="compile">Compile</button>
+                            </div>
+                            <div class="cell flex-center">
+                                <button disabled class="next">Next</button>
+                            </div>
+                        </div>
                     </div>
-                    <button class="compile"></button>
                 </div>
             </div>
         </div>
