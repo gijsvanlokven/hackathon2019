@@ -27,7 +27,7 @@
 <body>
     <link rel="stylesheet" href="../stylesheets/footerStylePartials.css" />
     <header>
-        <div class="grid-x">
+        <div class="grid-x profile">
             <div class="cell large-4">
                 <img src="../img/no-image.png" class="profilePicture headerProfilePic float-left">
                 <h4 class="float-left headerUserName userName">
@@ -41,10 +41,10 @@
                     <ul class="menu float-center align-center">
                         <li class="menu-item"><a href="index.php">HOME</a></li>
                         <li class="menu-item"><a href="contact.php">CONTACT</a></li>
-                        <!--<li class="menu-item"><a href="login.php">LOGIN</a></li>-->
+                        <li class="menu-item login"><a href="login.php">LOGIN</a></li>
                         <li class="menu-item"><a href="courses.php">COURSES</a></li>
-                        <li class="menu-item"><a href="profile.php">PROFILE</a></li>
-                        <li class="menu-item"><img src="../img/no-image.png" class="profilePicture headerProfilePicMenu"></li>
+                        <li class="menu-item profile"><a href="profile.php">PROFILE</a></li>
+                        <li class="menu-item profile"><img src="../img/no-image.png" class="profilePicture headerProfilePicMenu"></li>
                     </ul>
                 </div>
             </div>
