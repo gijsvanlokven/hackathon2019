@@ -21,7 +21,7 @@ function updateVariables(userID, Experience, UserName, ProfilePicture) {
 
     document.querySelectorAll(".login").forEach(x => x.style.display = "none");
     profile.forEach(x => {
-        x.style.display = "initial";
+        x.style = "";
     })
     userNames.forEach((name) => {
         if (UserName != null) {
