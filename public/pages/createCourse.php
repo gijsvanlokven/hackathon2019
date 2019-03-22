@@ -39,13 +39,23 @@
                                 <label for="">Course name</label>
                             </div>
                             <div class="cell">
-                                <input type="text" placeholder="Fill here your course name in..">
+                                <input type="text" name="courseName" placeholder="Fill here your course name in..">
+                            </div>
+                            <div class="cell">
+                                <label for="">Course Langauge</label>
+                            </div>
+                            <div class="cell">
+                                <select name="courseLangauge" class="questionType">
+                                    <option value="html">HTML</option>
+                                    <option value="css">CSS</option>
+                                    <option value="Javascript">Javascript</option>
+                                </select>
                             </div>
                             <div class="cell">
                                 <label for="">Course description</label>
                             </div>
                             <div class="cell">
-                                <textarea name="" cols="10" rows="10" placeholder="Fill here your course description in.."></textarea>
+                                <textarea name="courseDescription" cols="10" rows="10" placeholder="Fill here your course description in.."></textarea>
                             </div>
                             <div class="cell">
                                 <label for="">Image</label>
@@ -55,7 +65,7 @@
                                     <div class="grid-x">
                                         <div class="cell small-6 flex-center-vertical">
                                             <label class="uploadButton">
-                                                <input type="file" accept=".png,.jpg,.jpeg">
+                                                <input name="courseImage" type="file" accept=".png,.jpg,.jpeg">
                                                 <div class="grid-container">
                                                     <div class="grid-x">
                                                         <div class="cell small-2">
