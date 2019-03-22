@@ -13,12 +13,33 @@ function updateVariables(userID, Experience, UserName, ProfilePicture)
     let profilePictures = document.querySelectorAll(".profilePicture");
 
     Array.from(userNames).forEach((name) => {
-        name.innerHTML = UserName;
+        if(UserName != null)
+        {
+            name.innerHTML = UserName;
+        }
+        else
+        {
+            name.innerHTML = "No username";
+        }
     });
     Array.from(userIDs).forEach((user) => {
-        user.innerHTML = UserName;
+        if(userIDs != null)
+        {
+            user.innerHTML = userID;
+        }
+        else
+        {
+            name.innerHTML = "No UserID";
+        }
     });
     Array.from(profilePictures).forEach((picture) => {
-        picture.src = ProfilePicture;
+        if(ProfilePicture != null)
+        {
+            picture.src = ProfilePicture;
+        }
+        else
+        {
+            picture.outerHTML = "No Picture";
+        }
     });
 }
