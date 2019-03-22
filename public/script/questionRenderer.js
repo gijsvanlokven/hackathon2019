@@ -36,8 +36,10 @@ async function NextQuestion() {
 		let json = await response.json();
 		let result = json.find(x => x.CourseID == urlParams.get('course')).QuestionID;
 		NextQuestionID = result;
+		console.log(NextQuestionID)
 	}
 	if (NextQuestionID == -1) {
+		console.log(NextQuestionID)
 		const urlParams = new URLSearchParams(window.location.search);
 		let response = await fetch("https://www.energylog.nl/api/courses/" + urlParams.get('course'));
 		
@@ -45,6 +47,7 @@ async function NextQuestion() {
 		NextQuestionID = body.FirstQuestion;
 	}
 	if (NextQuestionID != "END") {
+		console.log(NextQuestionID)
 		let body = await fetch(url + "questions/" + NextQuestionID);
 		let question = await body.json();
 		QuestionChange(question);
