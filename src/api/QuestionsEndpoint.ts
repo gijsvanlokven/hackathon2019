@@ -43,7 +43,7 @@ export default class QuestionsEndpoint implements APIEndpoint {
 				let question = {
 					CourseID: CourseID,
 					Question: body["Question"],
-					DATA: body["DATA"]
+					DATA: body
 				}
 				query = query + `,(${question.CourseID}, '${question.Question}','${question.DATA}')`
 			}
