@@ -2,6 +2,11 @@
     font-family: VCR_OSD_MONO;
     src: url("../fonts/VCR_OSD_MONO.ttf");
 }
+header
+{
+    flex: 0 0 auto;
+}
+
 .headerProfilePic{
     width: 3vw;
     border-radius: 50%;

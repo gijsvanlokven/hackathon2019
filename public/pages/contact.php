@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learn2Gether</title>
     <link rel="stylesheet" href="../foundation6.5.1/css/foundation.css" />
+    <link rel="stylesheet" href="../stylesheets/main.css" />
     <link rel="stylesheet" href="../stylesheets/contact.css" />
     <link rel="shortcut icon" href="../img/favicon.ico" />
     <script src="../foundation6.5.1/js/vendor/jquery.js"></script>
     <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
     <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
     <script src="../script/randomize.js" defer></script>
-    <link rel="import" href="../partials/header.html">
 </head>
 <body>
     <?php
-        include '../partials/footerP1.html';
         include '../partials/header.html';
+        include '../partials/footerP1.html';
     ?>
     <div class="grid-container">
         <div class="grid-x grid-margin-x">
