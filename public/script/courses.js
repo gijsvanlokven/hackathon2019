@@ -1,5 +1,5 @@
 
-fetch("http://www.energylog.nl/api/courses")
+fetch("https://www.energylog.nl/api/courses")
     .then(function(response) {
         return response.json();
     })

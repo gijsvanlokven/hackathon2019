@@ -8,11 +8,12 @@
         <link rel="stylesheet" href="../foundation6.5.1/css/foundation.css" />
         <link rel="stylesheet" href="../stylesheets/main.css" />
         <link rel="stylesheet" href="../stylesheets/profile.css" />
-        <link rel="stylesheet" href="../stylesheets/tabs.css" />
         <link rel="shortcut icon" href="../img/favicon.ico" />
         <script src="../foundation6.5.1/js/vendor/jquery.js"></script>
         <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
         <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
+        <script src="../script/profile.js" defer></script>
+        <script src="../script/userdata.js" defer></script>
     </head>
     <body>
         <?php
@@ -24,18 +25,10 @@
                 <div class="grid-x">
                     <div class="large-6 medium-12 small-12 profileBox">
                         <div class="cell marginBox">
-                            <h4 class="text">
+                            <h4 class="text userName">
                                 Username
                             </h4>
-                            <img src="../img/anonymous.jpg" class="profilePicture ">
-                        </div>
-                        <div class="cell marginBox">
-                            <h4 class="text">
-                                Description
-                            </h4>
-                            <p class="text">
-                                Right here you can find my profile description!
-                            </p>
+                            <img class="profilePicture" src="../img/anonymous.jpg" class="profilePicture ">
                         </div>
                         <div class="cell marginBox">
                             <h4 class="text">
@@ -61,15 +54,15 @@
                             Completed Courses
                         </h4>
                         <div class="grid-container">
-                            <div class="grid-x grid-margin-x large-up-3 medium-up-3 small-up-3">
-                                <div class="cell">
+                            <div class="grid-x grid-margin-x large-up-3 medium-up-3 small-up-3" id="CompletedCourses">
+                            <!--    <div class="cell">
                                     <img src="../img/anonymous.jpg" class="completed-img float-center">
                                     <h4 class="completed-text float-center">
                                         HTML
                                     </h4>
                                     <p class="text-center">
                                         FORM Basics
-                                    </p>    
+                                    </p>
                                 </div>
                                 <div class="cell">
                                     <img src="../img/anonymous.jpg" class="completed-img float-center">
@@ -116,8 +109,9 @@
                                         Selectors
                                     </p>
                                 </div>
+                              -->
                             </div>
-                        </div>  
+                        </div>
                     </div>
                 </div>
             </div>

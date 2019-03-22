@@ -86,7 +86,7 @@ class authEndpoint {
                 existingUser = await database_1.default.query(`SELECT UserID FROM UserAccount WHERE UserName = '${me.data.given_name}';`);
             }
             res.cookie("UserID", existingUser.results[0].UserID);
-            res.redirect("/");
+            res.redirect("/pages/index.php");
         });
     }
 }

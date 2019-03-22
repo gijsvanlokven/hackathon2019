@@ -19,6 +19,7 @@
     <script>
         $(document).foundation();
     </script>
+    <script src="../script/userdata.js" defer></script>
     <?php
         include '../partials/footerP1.html';
     ?>
@@ -28,8 +29,8 @@
     <header>
         <div class="grid-x">
             <div class="cell large-4">
-                <img src="../img/anonymous.jpg" class="headerProfilePic float-left">
-                <h4 class="float-left headerUserName">
+                <img src="../img/anonymous.jpg" class="profilePicture headerProfilePic float-left">
+                <h4 class="float-left headerUserName userName">
                     USERNAME
                 </h4>
             </div>
@@ -43,7 +44,7 @@
                         <!--<li class="menu-item"><a href="login.php">LOGIN</a></li>-->
                         <li class="menu-item"><a href="courses.php">COURSES</a></li>
                         <li class="menu-item"><a href="profile.php">PROFILE</a></li>
-                        <li class="menu-item"><img src="../img/anonymous.jpg" class="headerProfilePicMenu"></li>
+                        <li class="menu-item"><img src="../img/anonymous.jpg" class="profilePicture headerProfilePicMenu"></li>
                     </ul>
                 </div>
             </div>

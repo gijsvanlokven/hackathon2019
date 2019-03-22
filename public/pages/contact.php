@@ -13,6 +13,7 @@
     <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
     <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
     <script src="../script/randomize.js" defer></script>
+    <script src="../script/userdata.js" defer></script>
 </head>
 <body>
     <?php
@@ -26,12 +27,12 @@
                     Contacts
                 </h3>
                 <p>
-                    We from learn2gether are contactable by 
+                    About us : Club Pinguin
                 </p>
             </div>
             <div class="cell large-2 large-offset-2 medium-2 medium-offset-2 small-6 align-center">
-                <div>
-                    <img src="../img/anonymous.jpg" class="contactPicture">
+                <div class="contact-container">
+                    <img src="../img/lachende_pinguin.png" class="contactPicture">
                     <h6 class="contactName">
                         Roy
                     </h6>
@@ -39,8 +40,8 @@
             </div>
             <div class=""></div>
             <div class="cell large-2 medium-2 small-6 align-center contact-text">
-                <div>
-                    <img src="../img/anonymous.jpg" class="contactPicture">
+                <div class="contact-container">
+                    <img src="../img/Glitchy_pinguin.png" class="contactPicture">
                     <h6 class="contactName">
                         Frank
                     </h6>
@@ -48,16 +49,16 @@
                 <br>
             </div>
             <div class="cell large-2 medium-2 small-6 align-center">
-                <div>
-                    <img src="../img/anonymous.jpg" class="contactPicture">
+                <div class="contact-container">
+                    <img src="../img/typende_pinguin.png" class="contactPicture">
                     <h6 class="contactName">
                         Gijs
                     </h6>
                 </div>
             </div>
             <div class="cell large-2 medium-2 small-6 align-center">
-                <div>
-                    <img src="../img/anonymous.jpg" class="contactPicture">
+                <div class="contact-container">
+                    <img src="../img/normal_pinguin.png" class="contactPicture">
                     <h6 class="contactName">
                         Robin
                     </h6>

@@ -13,6 +13,7 @@
         <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
         <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
         <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
+        <script src="../script/userdata.js"></script>
         <script src="../script/courses.js"></script>
         <script>
             $(document).foundation();
