@@ -38,7 +38,7 @@ async function NextQuestion() {
 		let result = json.find(x => x.CourseID == urlParams.get('course')).GotoQuestion;
 		NextQuestionID = result;
 		console.log(NextQuestionID)
-	
+	}
 	if (NextQuestionID == -1) {
 		const urlParams = new URLSearchParams(window.location.search);
 		let response = await fetch("https://www.energylog.nl/api/courses/" + urlParams.get('course'));
