@@ -63,7 +63,7 @@ class QuestionsEndpoint {
             let question = {
                 CourseID: CourseID,
                 Question: req.body["Question"],
-                DATA: req.body["DATA"]
+                DATA: req.body
             };
             if (!Object.values(question).includes(undefined)) {
                 try {

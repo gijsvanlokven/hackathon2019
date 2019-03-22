@@ -61,7 +61,7 @@ export default class QuestionsEndpoint implements APIEndpoint {
 			let question = {
 				CourseID: CourseID,
 				Question: req.body["Question"],
-				DATA: req.body["DATA"]
+				DATA: req.body
 			}
 
 			if (!Object.values(question).includes(undefined)) {
