@@ -548,14 +548,13 @@ async function SaveCourse() {
     });
     let courseID = await response.json();
 
-    let response = await fetch("https://www.energylog.nl/api/questions/" + courseID, {
+    response = await fetch("https://www.energylog.nl/api/questions/" + courseID, {
         method: "post",
         body: JSON.stringify(data),
         headers: {
             "Content-Type": "Application/json"
         }
     });
-    let courseID = await response.json();
 
     console.log(data);
 }
