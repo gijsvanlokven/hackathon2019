@@ -103,6 +103,11 @@ h3
     color: white;
 }
 
+.course h6
+{
+    font-weight: bold;
+}
+
 @media print, screen and (max-width: 1023px)
 {
     #coursesConfigBar > div > div:nth-child(-n+2)
