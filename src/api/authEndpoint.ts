@@ -17,7 +17,7 @@ export default class authEndpoint implements APIEndpoint {
           res.redirect(`https://github.com/login/oauth/authorize?client_id=${config.github.ClientID}&redirect_uri=http://energylog.nl/api/auth/github/redirect&scope=read:user user:email`);
         if (req.params["provider"] == "google") {
 
-          auth = new google.auth.OAuth2(config.google.ClientID, config.google.ClientSecret, "https://eventlog.nl/api/auth/google/redirect")
+          auth = new google.auth.OAuth2(config.google.ClientID, config.google.ClientSecret, "https://energylog.nl/api/auth/google/redirect")
           res.redirect(auth.generateAuthUrl({
             scope: ["profile", "email"],
             prompt: "select_account"
