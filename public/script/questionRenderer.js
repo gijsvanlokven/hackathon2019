@@ -29,13 +29,12 @@ NextButtons.forEach(x => x.addEventListener("click", NextQuestion));
 
 
 async function NextQuestion() {
-	console.log("Next Question: " + NextQuestionID)
 	if(typeof NextQuestionID === 'undefined')
 	{
 		const urlParams = new URLSearchParams(window.location.search);
 		let response = await fetch("https://www.energylog.nl/api/questions/");
 		let json = await response.json();
-		let result = json.find(x => x.CourseID == urlParams.get('course')).DATA.Answers.find(y => y.GotoQuestion).GotoQuestion;
+		let result = json.find(x => x.CourseID == urlParams.get('course')).QuestionID;
 		NextQuestionID = result;
 	}
 	if (NextQuestionID == -1) {
