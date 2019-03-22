@@ -8,9 +8,12 @@
         <link rel="stylesheet" href="../foundation6.5.1/css/foundation.css" />
         <link rel="stylesheet" href="../stylesheets/main.css" />
         <link rel="stylesheet" href="../stylesheets/courses.css" />
+        <link rel="stylesheet" href="../stylesheets/headerStylePartials.css" />
         <script src="../foundation6.5.1/js/vendor/jquery.js"></script>
         <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
         <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
+        <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
+        <script src="../script/courses.js"></script>
         <script>
             $(document).foundation();
         </script>
@@ -20,7 +23,6 @@
             include '../partials/footerP1.html';
             include "../partials/header.html";
         ?>
-        <link rel="stylesheet" href="../stylesheets/headerStylePartials.css" />
         <section id='contentSection'>
             <section id="coursesContainer">
                 <div class="grid-container full" id="coursesConfigBar">
@@ -45,111 +47,8 @@
                     Courses
                 </h3>
                 <div id="coursesWrapper" class="grid-container full">
-                    <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-6" >
-                        <div class="cell">
-                            <div class="grid-y">
-                                <div class="cell large-12 medium-12 small-12">
-                                    <img src="../img/hackaton_logo.png" alt="">
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <h6>HTML</h6>
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <p>asdas</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cell">
-                            <div class="grid-y">
-                                <div class="cell large-12 medium-12 small-12">
-                                    <img src="../img/hackaton_logo.png" alt="">
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <h6>HTML</h6>
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <p>asdas</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cell">
-                            <div class="grid-y">
-                                <div class="cell large-12 medium-12 small-12">
-                                    <img src="../img/hackaton_logo.png" alt="">
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <h6>HTML</h6>
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <p>asdas</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cell">
-                            <div class="grid-y">
-                                <div class="cell large-12 medium-12 small-12">
-                                    <img src="../img/hackaton_logo.png" alt="">
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <h6>HTML</h6>
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <p>asdas</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cell">
-                            <div class="grid-y">
-                                <div class="cell large-12 medium-12 small-12">
-                                    <img src="../img/hackaton_logo.png" alt="">
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <h6>HTML</h6>
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <p>asdas</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cell">
-                            <div class="grid-y">
-                                <div class="cell large-12 medium-12 small-12">
-                                    <img src="../img/hackaton_logo.png" alt="">
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <h6>HTML</h6>
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <p>asdas</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cell">
-                            <div class="grid-y">
-                                <div class="cell large-12 medium-12 small-12">
-                                    <img src="../img/hackaton_logo.png" alt="">
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <h6>HTML</h6>
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <p>asdas</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cell">
-                            <div class="grid-y">
-                                <div class="cell large-12 medium-12 small-12">
-                                    <img src="../img/hackaton_logo.png" alt="">
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <h6>HTML</h6>
-                                </div>
-                                <div class="cell large-12 medium-12 small-12">
-                                    <p>asdas</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-4" >
+                        
                     </div>
                 </div>
             </section>
