@@ -56,7 +56,7 @@ class QuestionsEndpoint {
                 res.sendStatus(200);
             }
             catch (err) {
-                res.sendStatus(400);
+                res.status(400).send(err);
             }
         }
         else {
