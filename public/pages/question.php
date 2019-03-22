@@ -18,22 +18,27 @@
         include '../partials/footerP1.html';
         include '../partials/header.html';
     ?>
-    <div class="grid-container">
-        <div class="grid-x grid-margin-x">
-            <p class="text-center large-6 large-offset-3">
+    <div class="grid-container full">
+        <div class="grid-x grid-margin-x small-up-3">
+            <div class="cell">
                 <span class="question"></span>
-                <span class="explanation"></span>
-            </p>
-            <div class="code large-12 medium-12 small-12" style="opacity: 1;">
-                <div class="editor large-6" style="height: 100vh; flex: 1;"></div>
-                <div class="output large-6" style="min-width: 25vw;"></div>
-                <div class=" large-6 large-offset-3 medium-6">
-                    <button class="compile float-center button">Compile</button>
-                    <button class="next float-center button" disabled>next</button>
+            </div>
+            <div class="multiple-choice">
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button class="next">Next</button>
+            </div>
+            <div class="cell">
+                <div class="code">
+                    <div class="editor"></div>
+                    <div class="output"></div>
                 </div>
             </div>
-            <div class="multiplechoice">
-                <button class="next button" disabled>next</button>
+            <div class="cell">
+                <button class="compile"></button>
+                <button class="next"> Next</button>
             </div>
         </div>
     </div>
