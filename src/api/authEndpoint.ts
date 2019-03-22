@@ -86,7 +86,7 @@ export default class authEndpoint implements APIEndpoint {
         }
 
         res.cookie("UserID", existingUser.results[0].UserID);
-        res.redirect("/");
+        res.redirect("/pages/index.php");
       });
   }
 }
