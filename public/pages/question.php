@@ -34,12 +34,15 @@
                         <button class="next">Next</button>
 
                     </div>
-                    <div class="code">
-                        <div class="editor"></div>
-                        <div class="output"></div>
+                    <div class="code grid-y small-up-2">
+                        <div>
+                            <div class="editor"></div>
+                        </div>
+                        <div>
+                            <div class="output"></div>
+                        </div>
                     </div>
                     <button class="compile"></button>
-                    <button class="next"> Next</button>
                 </div>
             </div>
         </div>
