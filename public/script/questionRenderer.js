@@ -64,6 +64,7 @@ function QuestionChange(question) {
 	if (question.Type == "Question") {
 		MultipleChoiceScreen.classList.remove("hidden");
 		CodeScreen.classList.add("hidden");
+		MultipleChoiceScreen.querySelectorAll(":not(.next)").forEach(x => x.remove());
 		question.Answers.forEach(answer => {
 			let button = document.createElement("button");
 			button.classList.add("choice");

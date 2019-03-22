@@ -526,11 +526,22 @@ async function SaveCourse() {
                 });
             });
             question.ExpectedOutput = ExpectedOutput;
+            question.NextQuestion = lastID;
         }
-
         data.push(question);
     });
-
+    let lastQuestion = data[data.length - 1];
+    if (lastQuestion.Type == "Question") {
+        lastQuestion.Answers.map(x => {
+            if (x.NextQuestion) {
+                x.EndCourse = true;
+                x.NextQuestion = undefined;
+            }
+        })
+    } else {
+        lastQuestion.EndCourse = true;
+        lastQuestion.NextQuestion = undefined;
+    }
     let course = {
         Name: document.querySelector("[name=courseName]").value,
         Description: document.querySelector("[name=courseLangauge]").value,
