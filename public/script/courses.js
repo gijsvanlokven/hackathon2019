@@ -1,5 +1,5 @@
 
-fetch("http://localhost:8080/api/courses")
+fetch("http://energylog.nl/api/courses")
     .then(function(response) {
         return response.json();
     })
