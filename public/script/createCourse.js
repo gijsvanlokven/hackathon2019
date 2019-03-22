@@ -457,7 +457,7 @@ function codeRemoveAnswer(button) {
     let answerBoxes = parent.querySelectorAll(".answerContainer .answerBox");
     let answerContainer = parent.querySelector(".answerContainer");
     let answerBoxesAmount = Array.from(answerBoxes).length;
-
+    
     if (answerBoxesAmount > 1) {
         answerContainer.removeChild(answerContainer.querySelector(".answerBox:last-child"));
     } else {
@@ -468,7 +468,7 @@ function codeRemoveAnswer(button) {
 
 async function SaveCourse() {
 
-    let response = await fetch("https://energylog.nl/api/questions/lastid");
+    let response = await fetch("https://www.energylog.nl/api/questions/lastid");
     let lastID = (await response.json()).LastID;
     let data = [];
 
