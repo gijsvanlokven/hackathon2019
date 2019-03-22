@@ -3,7 +3,7 @@ fetch("https://www.energylog.nl/api/user/me")
         return response.json();
     })
     .then(function(responseJson) {
-        updateVariables(json.UserID, json.Experience, json.UserName, user.ProfilePicture)
+        updateVariables(responseJson.UserID, responseJson.Experience, responseJson.UserName, responseJson.ProfilePicture)
     });
     
 function updateVariables(userID, Experience, UserName, ProfilePicture)
