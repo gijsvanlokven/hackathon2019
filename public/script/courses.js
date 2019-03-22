@@ -13,7 +13,7 @@ fetch("https://www.energylog.nl/api/courses")
 function createCourse(courseId, name, description = "")
 {
     let courseHTML = `
-    <div class="cell clickContainer course" id="${courseId}" onclick='window.location.href="question.html?course=${courseId}"'">
+    <div class="cell clickContainer course" id="${courseId}" onclick='window.location.href="question.php?course=${courseId}"'">
         <div class="grid-y">
             <div class="cell large-12 medium-12 small-12">
                 <h6>${name}</h6>
