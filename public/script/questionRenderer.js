@@ -32,9 +32,11 @@ async function NextQuestion() {
 	console.log("Next Question: " + NextQuestionID)
 	if(NextQuestionID == null)
 	{
+		const urlParams = new URLSearchParams(window.location.search);
 		let response = await fetch("https://www.energylog.nl/api/questions/");
 		let json = await response.json();
-		const urlParams = new URLSearchParams(window.location.search);
+		console.log(urlParams)
+		
 		let result = json.filter(x => x.CourseID === urlParams.course);
 		console.log(result);
 	}
