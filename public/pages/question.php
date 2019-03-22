@@ -34,15 +34,17 @@
                         <button class="next">Next</button>
 
                     </div>
-                    <div class="code grid-y small-up-2">
-                        <div class="cell">
+                    <div class="code grid-y">
+                        <div class="cell small-5">
                             <div class="editor"></div>
                         </div>
-                        <div class="cell">
+                        <div class="cell small-5">
                             <div class="output"></div>
                         </div>
+                        <div class="cell small-2 flex-center">
+                            <button class="compile">Compile</button>
+                        </div>
                     </div>
-                    <button class="compile"></button>
                 </div>
             </div>
         </div>

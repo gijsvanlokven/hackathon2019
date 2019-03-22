@@ -30,6 +30,7 @@ div.hidden {
 
 .code {
     opacity: 0;
+    height: 100%
 }
 .editor{
     width: 100%;
@@ -52,6 +53,12 @@ div.hidden {
     width: 100%;
     top: 0;
     left: 0;
+}
+
+.compile
+{
+    width: 50%;
+    height: 50%;
 }
 
 button
