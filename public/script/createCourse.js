@@ -1,11 +1,13 @@
 var transitionEnd = whichTransitionEvent();
 let editorWindows = document.getElementsByClassName("editorWindow");
+let CodeEditors = {};
 
 Array.from(editorWindows).forEach((editorWindow) => {
     renderCodeBlock(editorWindow);
 });
 
 let ProgrammingLangauges = document.getElementsByClassName("programmingLangauge");
+
 
 Array.from(ProgrammingLangauges).forEach((element) => {
     let parent = element.closest("[question]");
@@ -15,17 +17,16 @@ Array.from(ProgrammingLangauges).forEach((element) => {
     });
 })
 
-function renderCodeBlock(editorWindow, programmingLangauge = "html")
-{
+function renderCodeBlock(editorWindow, programmingLangauge = "html") {
     let editor = monaco.editor.create(editorWindow, {
         theme: 'vs-dark',
-        value: "Type in here your code",
+        value: "Type your code here",
         language: programmingLangauge,
         minimap: true,
     });
     editor.layout();
 
-    
+    CodeEditors[editorWindow.closest("[question]").getAttribute("question")] = editor;
 }
 
 /*
@@ -34,9 +35,9 @@ function renderCodeBlock(editorWindow, programmingLangauge = "html")
 let uploadButtons = document.querySelectorAll(".uploadButton")
 
 Array.from(uploadButtons).forEach((button) => {
-    button.addEventListener("change", function(event){
+    button.addEventListener("change", function (event) {
         let file = button.querySelector("input").files[0];
-        
+
         var reader = new FileReader();
 
         reader.onload = function (e) {
@@ -44,34 +45,31 @@ Array.from(uploadButtons).forEach((button) => {
         }
 
         reader.readAsDataURL(file);
-        
-        if(file.name.length > 30)
-        {
+
+        if (file.name.length > 30) {
             button.parentElement.parentElement.querySelector('.filename').innerHTML = "File <span class='bold'>" + file.name.substr(0, 30) + "..." + file.name.split('.').pop() + "</span> is selected.";
-        }
-        else
-        {
+        } else {
             button.parentElement.parentElement.querySelector('.filename').innerHTML = "File <span class='bold'>" + file.name + "</span> is selected.";
         }
-        
+
     });
 });
 
 /*
     Listener for transitions
 */
-function whichTransitionEvent(){
+function whichTransitionEvent() {
     var t;
     var el = document.createElement('fakeelement');
     var transitions = {
-      'transition':'transitionend',
-      'OTransition':'oTransitionEnd',
-      'MozTransition':'transitionend',
-      'WebkitTransition':'webkitTransitionEnd'
+        'transition': 'transitionend',
+        'OTransition': 'oTransitionEnd',
+        'MozTransition': 'transitionend',
+        'WebkitTransition': 'webkitTransitionEnd'
     }
 
-    for(t in transitions){
-        if( el.style[t] !== undefined ){
+    for (t in transitions) {
+        if (el.style[t] !== undefined) {
             return transitions[t];
         }
     }
@@ -80,10 +78,8 @@ function whichTransitionEvent(){
 /*
     Listener for all questions
 */
-function questionChanger(question, i, type)
-{
-    if(type.value == "code")
-    {
+function questionChanger(question, i, type) {
+    if (type.value == "code") {
         let codeSection = `
         <!--
             Code Section
@@ -165,7 +161,7 @@ function questionChanger(question, i, type)
         </div>
         `;
         question.outerHTML = codeSection;
-        
+
         let programmingLangSelec = document.querySelector(".codeSection[question='" + i + "'] .programmingLangauge");
         let newCodeBlock = document.querySelector(".codeSection[question='" + i + "'] .editorWindow");
 
@@ -175,9 +171,7 @@ function questionChanger(question, i, type)
         });
 
         renderCodeBlock(newCodeBlock);
-    }
-    else if(type.value == "multiple-choice")
-    {
+    } else if (type.value == "multiple-choice") {
         let multipleChoiceSection = `
         <div question="${i}" class="cell multipleChoiceSection">
             <div class="cell">
@@ -262,14 +256,18 @@ function questionChanger(question, i, type)
     }
     let newType = document.querySelector("#createForm > div > div > div[question='" + i + "'] .questionType");
     let newQuestion = document.querySelector("#createForm > div > div > div[question='" + i + "']");
-    newType.addEventListener("change", () => { questionChanger(newQuestion, i, newType) }, false);
+    newType.addEventListener("change", () => {
+        questionChanger(newQuestion, i, newType)
+    }, false);
 }
 
 let questions = document.querySelectorAll(".multipleChoiceSection, .codeSection");
 
 Array.from(questions).forEach((question) => {
     let type = question.querySelector(".questionType");
-    type.addEventListener("change", () => { questionChanger(question, question.getAttribute("question"), type) }, false);
+    type.addEventListener("change", () => {
+        questionChanger(question, question.getAttribute("question"), type)
+    }, false);
 });
 
 
@@ -279,17 +277,14 @@ var errorTimeout = false;
 /*
     Show an error
 */
-function showErrorBox(message)
-{
-    if(errorTimeout == false)
-    {
+function showErrorBox(message) {
+    if (errorTimeout == false) {
         errorTimeout = true;
         let errorBox = document.getElementById('errorBox');
         errorBox.removeAttribute("style");
-        
+
         errorBox.innerHTML = "Error: " + message;
-        if(!errorBox.classList.contains("showErrorBox"))
-        {
+        if (!errorBox.classList.contains("showErrorBox")) {
             errorBox.classList.add("showErrorBox");
         }
 
@@ -309,8 +304,7 @@ function showErrorBox(message)
     Make a question
 */
 
-function createQuestion()
-{
+function createQuestion() {
     let questions = document.querySelectorAll(".multipleChoiceSection, .codeSection");
     let i = questions.length + 1;
     let multipleChoiceSection = `
@@ -393,28 +387,26 @@ function createQuestion()
                 </div>
             </div>
         </div>`;
-        
-        document.querySelector("#createForm > div > div").insertAdjacentHTML('beforeend', multipleChoiceSection);
 
-        let newQuestion = document.querySelector("#createForm > div > div > div[question='" + i + "']");
-        let newType = newQuestion.querySelector(".questionType");
-        newType.addEventListener("change", () => { questionChanger(newQuestion, i, newType) }, false);
+    document.querySelector("#createForm > div > div").insertAdjacentHTML('beforeend', multipleChoiceSection);
+
+    let newQuestion = document.querySelector("#createForm > div > div > div[question='" + i + "']");
+    let newType = newQuestion.querySelector(".questionType");
+    newType.addEventListener("change", () => {
+        questionChanger(newQuestion, i, newType)
+    }, false);
 }
 
 /*
     Remove a question
 */
-function removeQuestion()
-{
+function removeQuestion() {
     let questions = document.querySelectorAll("#createForm > div > div > div[question]");
     let question = document.querySelector("#createForm > div > div > div[question]:last-of-type");
-    
-    if(questions.length > 1)
-    {
+
+    if (questions.length > 1) {
         question.parentElement.removeChild(question);
-    }
-    else
-    {
+    } else {
         showErrorBox("You need to have atleast one question");
     }
 }
@@ -424,8 +416,7 @@ function removeQuestion()
 
     button = button that was clicked
 */
-function codeAddAnswer(button)
-{
+function codeAddAnswer(button) {
     let parent = button.closest(".codeSection");
     let answerBoxes = parent.querySelectorAll(".answerContainer .answerBox");
     let answerContainer = parent.querySelector(".answerContainer");
@@ -461,19 +452,73 @@ function codeAddAnswer(button)
 
     button = button that was clicked
 */
-function codeRemoveAnswer(button)
-{
+function codeRemoveAnswer(button) {
     let parent = button.closest(".codeSection");
     let answerBoxes = parent.querySelectorAll(".answerContainer .answerBox");
     let answerContainer = parent.querySelector(".answerContainer");
     let answerBoxesAmount = Array.from(answerBoxes).length;
 
-    if(answerBoxesAmount > 1)
-    {
+    if (answerBoxesAmount > 1) {
         answerContainer.removeChild(answerContainer.querySelector(".answerBox:last-child"));
-    }
-    else
-    {
+    } else {
         showErrorBox("You need to have atleast one answer");
     }
+}
+
+
+async function SaveCourse() {
+
+    let response = await fetch("http://energylog.nl/api/questions/lastid");
+    let lastID = (await response.json()).LastID;
+    let data = [];
+
+    questions.forEach((x, i) => {
+        lastID++;
+        let question = {
+            Type: "Question"
+        }
+
+        question.Type = x.querySelector(".questionType");
+        if (question.Type == "Question") {
+            question.Question = x.querySelector(`[name=question${i}]`);
+            question.Answers = [];
+
+            let a1 = {
+                value: x.querySelector(`[name=question${i}answer1]`).value,
+            }
+            if (x.querySelector(`#question${i}CheckboxAnswer1`))
+                a1.NextQuestion = lastID;
+            else a1.explanation = "This is the wrong answer.";
+
+            let a2 = {
+                value: x.querySelector(`[name=question${i}answer2]`).value,
+            }
+            if (x.querySelector(`#question${i}CheckboxAnswer2`))
+                a2.NextQuestion = lastID;
+            else a2.explanation = "This is the wrong answer.";
+
+            let a3 = {
+                value: x.querySelector(`[name=question${i}answer3]`).value,
+            }
+            if (x.querySelector(`#question${i}CheckboxAnswer3`))
+                a3.NextQuestion = lastID;
+            else a3.explanation = "This is the wrong answer.";
+
+
+            let a4 = {
+                value: x.querySelector(`[name=question${i}answer4]`).value,
+            }
+            if (x.querySelector(`#question${i}CheckboxAnswer4`))
+                a4.NextQuestion = lastID;
+            else a4.explanation = "This is the wrong answer.";
+
+            question.Answers.push(a1, a2, a3, a4);
+        } else if (question.Type == "Code") {
+            question.Question = x.querySelector(`[name=question${i}Article]`).value;
+            question.Template = CodeEditors[i];
+
+        }
+    });
+
+    console.log(data);
 }
