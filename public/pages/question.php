@@ -44,6 +44,7 @@
                         </div>
                         <div class="cell small-2 flex-center">
                             <button class="compile">Compile</button>
+                            <button class="next">Next</button>
                         </div>
                     </div>
                 </div>
