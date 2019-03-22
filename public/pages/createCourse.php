@@ -137,7 +137,7 @@ include "../partials/header.html";
                                     <div class="cell small-2 flex-center">
                                         <div>
                                             <label class="customCheckbox" >
-                                                <input type="checkbox" name="question1CheckboxAnswer1">
+                                                <input type="checkbox" name="question1CheckboxAnswer2">
                                                 <span></span>
                                             </label>
                                         </div>
@@ -150,7 +150,7 @@ include "../partials/header.html";
                                     <div class="cell small-2 flex-center">
                                         <div>
                                             <label class="customCheckbox" >
-                                                <input type="checkbox" name="question1CheckboxAnswer1">
+                                                <input type="checkbox" name="question1CheckboxAnswer3">
                                                 <span></span>
                                             </label>
                                         </div>
@@ -163,7 +163,7 @@ include "../partials/header.html";
                                     <div class="cell small-2 flex-center">
                                         <div>
                                             <label class="customCheckbox" >
-                                                <input type="checkbox" name="question1CheckboxAnswer1">
+                                                <input type="checkbox" name="question1CheckboxAnswer4">
                                                 <span></span>
                                             </label>
                                         </div>
@@ -185,7 +185,9 @@ include "../partials/header.html";
                         <img class="buttonRemove" src="../img/minus.svg" alt=""> Remove last question
                     </div>
                 </div>
-            </div>
+</div>
+
+            <button id="submit" class="button">Save</button>
         </section>
         <?php
 include '../partials/footerP2.html';
