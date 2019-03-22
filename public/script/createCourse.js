@@ -468,7 +468,7 @@ function codeRemoveAnswer(button) {
 
 async function SaveCourse() {
 
-    let response = await fetch("http://eventlog.nl/api/questions/lastid");
+    let response = await fetch("http://energylog.nl/api/questions/lastid");
     let lastID = (await response.json()).LastID;
     let data = [];
 

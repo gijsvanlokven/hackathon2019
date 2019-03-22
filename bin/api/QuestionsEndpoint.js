@@ -96,7 +96,8 @@ class QuestionsEndpoint {
             res.sendStatus(400);
     }
     async MaxID(req, res) {
-        res.send((await database_1.default.query("SELECT MAX(QuestionID) as LastID FROM Question")).results[0]);
+        let result = await database_1.default.query("SELECT MAX(QuestionID) as LastID FROM Question");
+        res.send(result.results[0]);
     }
 }
 exports.default = QuestionsEndpoint;
