@@ -47,7 +47,8 @@ div.hidden {
 }
 
 .content-container,
-.grid-container
+.grid-container,
+.grid-x 
 {
     height: 100%;
     position: fixed;
