@@ -531,5 +531,31 @@ async function SaveCourse() {
         data.push(question);
     });
 
+
+    let course = {
+        Name: document.querySelector("[name=courseName]").value,
+        language: document.querySelector("[name=courseLangauge]").value,
+        Description: document.querySelector("[name=courseDescription]").value,
+        Difficulty: 1
+    }
+
+    let response = await fetch("https://www.energylog.nl/api/courses", {
+        method: "post",
+        body: JSON.stringify(course),
+        headers: {
+            "Content-Type": "Application/json"
+        }
+    });
+    let courseID = await response.json();
+
+    let response = await fetch("https://www.energylog.nl/api/questions/" + courseID, {
+        method: "post",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "Application/json"
+        }
+    });
+    let courseID = await response.json();
+
     console.log(data);
 }
