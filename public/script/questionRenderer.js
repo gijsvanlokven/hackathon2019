@@ -34,7 +34,9 @@ async function NextQuestion() {
 	{
 		let response = await fetch("https://www.energylog.nl/api/questions/");
 		let json = await response.json();
-		console.log(json);
+		const urlParams = new URLSearchParams(window.location.search);
+		let result = json.filter(x => x.CourseID === urlParams.course);
+		console.log(result);
 	}
 	if (NextQuestionID == -1) {
 		const urlParams = new URLSearchParams(window.location.search);
