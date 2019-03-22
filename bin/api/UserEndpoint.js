@@ -16,11 +16,16 @@ class UserEndpoint {
             .get("/leaderboard", this.GetLeaderboard);
     }
     async GetItem(req, res) {
-        let result = await database_1.default.query(`SELECT UserID, Experience, UserName, ProfilePicture FROM UserAccount WHERE UserID = ${req.cookies["UserID"]};`);
-        if (result && result.count > 0)
-            res.send(result.results[0]);
-        else
-            res.status(404).send({ error: "Not found.", errorCode: 404 });
+        if (req.cookies["UserID"] >= 0) {
+            let result = await database_1.default.query(`SELECT UserID, Experience, UserName, ProfilePicture FROM UserAccount WHERE UserID = ${req.cookies["UserID"]};`);
+            if (result && result.count > 0)
+                res.send(result.results[0]);
+            else
+                res.status(404).send({ error: "Not found.", errorCode: 404 });
+        }
+        else {
+            res.sendStatus(404);
+        }
     }
     async GetSpecificUser(req, res) {
         let result = await database_1.default.query(`SELECT UserID, Experience, UserName, ProfilePicture FROM UserAccount WHERE UserID = ${req.params["id"]};`);
