@@ -1,9 +1,15 @@
+updateVariables();
+
 fetch("https://www.energylog.nl/api/user/me")
     .then(function(response) {
         return response.json();
     })
     .then(function(responseJson) {
         updateVariables(responseJson.UserID, responseJson.Experience, responseJson.UserName, responseJson.ProfilePicture)
+    })
+    .catch(function(){
+        updateVariables();
+        console.log("a")
     });
     
 function updateVariables(userID, Experience, UserName, ProfilePicture)
@@ -39,7 +45,7 @@ function updateVariables(userID, Experience, UserName, ProfilePicture)
         }
         else
         {
-            picture.outerHTML = "No Picture";
+            picture.src = "../img/no-image.png";
         }
     });
 }

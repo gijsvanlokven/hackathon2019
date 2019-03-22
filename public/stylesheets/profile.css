@@ -79,6 +79,11 @@ p
     text-align: center;
 }
 
+.profilePictureSection img
+{
+    width: 50%;
+}
+
 @media screen and (min-width: 600px)
 {
     .completed-img
@@ -107,5 +112,9 @@ p
         -webkit-box-pack: flex-start;
         -webkit-justify-content: flex-start;
         -ms-flex-pack: flex-start;
+    }
+    .profilePictureSection img
+    {
+        width: 75%;
     }
 }
