@@ -87,7 +87,12 @@ button:hover
 
 .content-container hr
 {
-    background-color: rgb(79, 79, 79)
+    background-color: rgb(79, 79, 79);
+}
+
+button[disabled]
+{
+    background-color: #3a3f54;
 }
 
 button

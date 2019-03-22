@@ -32,7 +32,7 @@
                         <button></button>
                         <button></button>
                         <button></button>
-                        <button class="next">Next</button>
+                        <button disabled class="next">Next</button>
 
                     </div>
                     <div class="code grid-y">
@@ -47,7 +47,7 @@
                                 <button class="compile">Compile</button>
                             </div>
                             <div class="cell flex-center">
-                                <button class="next">Next</button>
+                                <button disabled class="next">Next</button>
                             </div>
                         </div>
                     </div>
