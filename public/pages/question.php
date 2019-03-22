@@ -26,7 +26,7 @@
                 <span class="explanation"></span>
             </div>
             <div class="cell">
-                <div class="multiple-choice">
+                <div class="multiplechoice">
                     <button></button>
                     <button></button>
                     <button></button>
