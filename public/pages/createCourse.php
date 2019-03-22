@@ -187,7 +187,7 @@ include "../partials/header.html";
                 </div>
 </div>
 
-            <button id="submit">Save</button>
+            <button id="submit" class="button">Save</button>
         </section>
         <?php
 include '../partials/footerP2.html';

@@ -534,7 +534,7 @@ async function SaveCourse() {
 
     let course = {
         Name: document.querySelector("[name=courseName]").value,
-        language: document.querySelector("[name=courseLangauge]").value,
+        Language: document.querySelector("[name=courseLangauge]").value,
         Description: document.querySelector("[name=courseDescription]").value,
         Difficulty: 1
     }
