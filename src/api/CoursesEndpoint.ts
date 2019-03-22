@@ -43,11 +43,11 @@ export default class CoursesEndpoint implements APIEndpoint {
 
 		if (!Object.values(course).includes(undefined)) {
 			try {
-				let id = await database.query(`INSERT INTO Course (Name, Description, Language, Difficulty, OwnerID) VALUES ('${course.Name}', '${course.Description}','${course.Language}',${course.Difficulty},${req.cookies["UserID"] || 1}); SELECT CourseID FROM Course ORDER BY CourseID DESC LIMIT 1;`);
-				res.send({ id });
+				await database.query(`INSERT INTO Course (Name, Description, Language, Difficulty, OwnerID) VALUES ('${course.Name}', '${course.Description}','${course.Language}',${course.Difficulty},${req.cookies["UserID"] || 1});`);
+				res.send({ id: await database.query(`SELECT CourseID FROM Course ORDER BY CourseID DESC LIMIT 1;`) });
 			}
 			catch (err) {
-				res.sendStatus(400);
+				res.status(400).send(err);
 			}
 		}
 		else res.sendStatus(400);
