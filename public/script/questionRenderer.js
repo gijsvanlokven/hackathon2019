@@ -30,7 +30,7 @@ NextButtons.forEach(x => x.addEventListener("click", NextQuestion));
 
 async function NextQuestion() {
 	console.log("Next Question: " + NextQuestionID)
-	if(typeof NextQuestionID == null)
+	if(NextQuestionID == null)
 	{
 		let response = await fetch("https://www.energylog.nl/api/questions/");
 		let json = await response.json();
