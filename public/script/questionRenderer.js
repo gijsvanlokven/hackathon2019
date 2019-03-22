@@ -33,6 +33,7 @@ async function NextQuestion() {
 	if (NextQuestionID == -1) {
 		const urlParams = new URLSearchParams(window.location.search);
 		let response = await fetch("https://www.energylog.nl/api/courses/" + urlParams.get('course'));
+		console.log(response)
 		let body = await response.json();
 		NextQuestionID = body.FirstQuestion;
 	}
