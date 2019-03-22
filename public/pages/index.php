@@ -27,8 +27,8 @@
 <body>
     <link rel="stylesheet" href="../stylesheets/footerStylePartials.css" />
     <header>
-        <div class="grid-x profile">
-            <div class="cell large-4">
+        <div class="grid-x">
+            <div class="cell large-4 profile">
                 <img src="../img/no-image.png" class="profilePicture headerProfilePic float-left">
                 <h4 class="float-left headerUserName userName">
                     USERNAME
@@ -71,7 +71,7 @@
                 </h1>
                 <p>
                     Learn2gether is an website where you can learn programming by making excercises that everyone can publish on the website.
-                    We as Learn2gether want everyone to be able to learn programming withouth a problem.
+                    We as Learn2gether want everyone to be able to learn programming without a problem.
                 </p>
             </section>
             <section id="suggestedCoursesContainer">
