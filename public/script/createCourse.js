@@ -549,7 +549,7 @@ async function SaveCourse() {
         Difficulty: 1
     }
 
-    if (!Object.values().includes(undefined) && data.length > 0) {
+    if (!Object.values(course).includes(undefined) && data.length > 0) {
         response = await fetch("https://www.energylog.nl/api/courses", {
             method: "post",
             body: JSON.stringify(course),
