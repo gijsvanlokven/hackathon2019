@@ -548,22 +548,25 @@ async function SaveCourse() {
         Language: document.querySelector("[name=courseDescription]").value,
         Difficulty: 1
     }
-    response = await fetch("https://www.energylog.nl/api/courses", {
-        method: "post",
-        body: JSON.stringify(course),
-        headers: {
-            "Content-Type": "Application/json"
-        }
-    });
-    let courseID = await response.json();
 
-    response = await fetch("https://www.energylog.nl/api/questions/" + courseID.id, {
-        method: "post",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "Application/json"
-        }
-    });
+    if (!Object.values().includes(undefined) && data.length > 0) {
+        response = await fetch("https://www.energylog.nl/api/courses", {
+            method: "post",
+            body: JSON.stringify(course),
+            headers: {
+                "Content-Type": "Application/json"
+            }
+        });
+        let courseID = await response.json();
 
-    console.log(data);
+        response = await fetch("https://www.energylog.nl/api/questions/" + courseID.id, {
+            method: "post",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "Application/json"
+            }
+        });
+
+        location.href = "/index.php";
+    } else showErrorBox("Form is incomplete.")
 }

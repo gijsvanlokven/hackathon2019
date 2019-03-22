@@ -1,11 +1,9 @@
-updateVariables();
-
 fetch("https://www.energylog.nl/api/user/me")
     .then(function (response) {
         if (response.ok)
             return response.json();
         else updateVariables();
-    })
+    }).catch(() => updateVariables())
     .then(function (responseJson) {
         updateVariables(responseJson.UserID, responseJson.Experience, responseJson.UserName, responseJson.ProfilePicture)
     })
