@@ -23,17 +23,17 @@
         <div class="grid-x grid-margin-x">
             <div class="cell large-8 large-offset-2 medium-10 medium-offset-1 small-12  contact-text">
                 <h3>
-                    iets over onzelf
+                    Contacts
                 </h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    We from learn2gether are contactable by 
                 </p>
             </div>
             <div class="cell large-2 large-offset-2 medium-2 medium-offset-2 small-6 align-center">
                 <div>
                     <img src="../img/anonymous.jpg" class="contactPicture">
                     <h6 class="contactName">
-                        Anonymous
+                        Roy
                     </h6>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                 <div>
                     <img src="../img/anonymous.jpg" class="contactPicture">
                     <h6 class="contactName">
-                        Anonymous
+                        Frank
                     </h6>
                 </div>
                 <br>
@@ -51,7 +51,7 @@
                 <div>
                     <img src="../img/anonymous.jpg" class="contactPicture">
                     <h6 class="contactName">
-                        Anonymous
+                        Gijs
                     </h6>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                 <div>
                     <img src="../img/anonymous.jpg" class="contactPicture">
                     <h6 class="contactName">
-                        Anonymous
+                        Robin
                     </h6>
                 </div>
                 <br>

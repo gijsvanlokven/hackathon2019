@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Learn2Gether</title>
         <link rel="stylesheet" href="../foundation6.5.1/css/foundation.css" />
+        <link rel="stylesheet" href="../stylesheets/main.css" />
         <link rel="stylesheet" href="../stylesheets/login.css" />
         <link rel="shortcut icon" href="../img/favicon.ico" />
         <script src="../foundation6.5.1/js/vendor/jquery.js"></script>
@@ -18,8 +19,8 @@
     </head>
     <body>
         <?php
-                include '../partials/footerP1.html';
                 include '../partials/header.html';
+                include '../partials/footerP1.html';
         ?>
         <div class="grid-container">
             <form class="grid-x grid-margin-x align-center login-container">
