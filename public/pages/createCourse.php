@@ -22,9 +22,9 @@
         <section id="errorBox">
         </section>
         <?php
-            include '../partials/footerP1.html';
-            include "../partials/header.html";
-        ?>
+include '../partials/footerP1.html';
+include "../partials/header.html";
+?>
         <section id='contentSection'>
             <form id="createForm">
                 <div class="grid-container full">
@@ -102,8 +102,8 @@
                             </div>
                             <div class="cell">
                                 <select name="question1Type" class="questionType">
-                                    <option value="multiple-choice">Multiple choice</option>
-                                    <option value="code">Code</option>
+                                    <option value="Question">Multiple choice</option>
+                                    <option value="Code">Code</option>
                                 </select>
                             </div>
                             <div class="cell">
@@ -170,86 +170,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!--
-                            Code Section
-                        -->
-                        <div question="2" class="cell codeSection">
-                            <div class="cell">
-                                <h3>
-                                    Question 2:
-                                </h3>
-                            </div>
-                            <div class="cell">
-                                <label for="">Question type</label>
-                            </div>
-                            <div class="cell">
-                                <select name="question2Type" class="questionType">
-                                    <option value="multiple-choice">Multiple choice</option>
-                                    <option selected value="code">Code</option>
-                                </select>
-                            </div>
-                            <div class="cell">
-                                <label for="">Programming Langauge</label>
-                            </div>
-                            <div class="cell">
-                                <select name="question2Type" class="programmingLangauge">
-                                    <option selected value="html">HTML</option>
-                                    <option value="css">CSS</option>
-                                    <option value="javascript">Javascript</option>
-                                </select>
-                            </div>
-                            <div class="cell">
-                                <label for="">Code editor</label>
-                            </div>
-                            <div class="cell grid-x medium-up-2 small-up-1 codeQuestion">
-                                <div class="cell">
-                                    <textarea name="question2Article">In here you can write your article</textarea>
-                                </div>
-                                <div class="cell editorWindow" name="question2Editor">
-
-                                </div>
-                            </div>
-                            <div class="cell">
-                                <label for="">Answer</label>
-                            </div>
-                            <div class="cell answerContainer">
-                                <div class="cell answerBox">
-                                    <div class="cell">
-                                        <label for="" class="mediumLabel">Answer 1</label>
-                                    </div>
-                                    <div class="cell">
-                                        <label for="" class="lowerLabel">Answer Type</label>
-                                    </div>
-                                    <div class="cell">
-                                        <select name="question2typeError1">
-                                            <option value="error">Error</option>
-                                            <option value="log">Log</option>
-                                            <option value="warning">Warning</option>
-                                        </select>
-                                    </div>
-                                    <div class="cell">
-                                        <label for="" class="lowerLabel">Expected Answer</label>
-                                    </div>
-                                    <div class="cell">
-                                        <input type="text" name="question2expectedAnswer1" placeholder="Fill here the answer that you expect to see in the console..">
-                                    </div>
-                                </div>
-                            </div>   
-                            <div class="cell grid-x small-up-1 addOrRemoveBox">
-                                <div class="cell">
-                                    <div class="clickContainer" onclick="codeAddAnswer(this)">
-                                        <img class="buttonAdd" src="../img/plus.svg" alt=""> Add a new answer
-                                    </div>
-                                </div>
-                                <div class="cell">
-                                    <div class="clickContainer" onclick="codeRemoveAnswer(this)">
-                                        <img class="buttonRemove" src="../img/minus.svg" alt=""> Remove an answer
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
+                 </div>
             </form>
             <div class="cell grid-x small-up-2 addOrRemoveBox addOrRemoveBox-margin">
                 <div class="cell">
@@ -265,7 +187,7 @@
             </div>
         </section>
         <?php
-            include '../partials/footerP2.html';
-        ?>
+include '../partials/footerP2.html';
+?>
     </body>
 </html>
