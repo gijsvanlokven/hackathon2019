@@ -12,7 +12,7 @@ const url = `${location.protocol}//${location.host}/api/`;
 
 
 let expectedOutput = [];
-let NextQuestionID = 1;
+let NextQuestionID;
 let Language = "javascript";
 let explanationText = "";
 let editor = monaco.editor.create(CodeEditor, {
@@ -30,10 +30,16 @@ NextButtons.forEach(x => x.addEventListener("click", NextQuestion));
 
 async function NextQuestion() {
 	console.log("Next Question: " + NextQuestionID)
+	if(typeof NextQuestionID == undefined)
+	{
+		let response = await fetch("https://www.energylog.nl/api/questions/");
+		let json = await response.json();
+		console.log(json);
+	}
 	if (NextQuestionID == -1) {
 		const urlParams = new URLSearchParams(window.location.search);
 		let response = await fetch("https://www.energylog.nl/api/courses/" + urlParams.get('course'));
-		console.log(response)
+		
 		let body = await response.json();
 		NextQuestionID = body.FirstQuestion;
 	}
