@@ -96,6 +96,6 @@ export default class QuestionsEndpoint implements APIEndpoint {
 	}
 	async MaxID(req, res) {
 		let result = await database.query("SELECT MAX(QuestionID) as LastID FROM Question");
-		res.send(result.results[0] + "aaaa");
+		res.send(result.results[0]);
 	}
 }
