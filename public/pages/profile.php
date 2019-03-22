@@ -13,7 +13,7 @@
         <script src="../foundation6.5.1/js/vendor/jquery.js"></script>
         <script src="../foundation6.5.1/js/vendor/what-input.js"></script>
         <script src="../foundation6.5.1/js/vendor/foundation.min.js"></script>
-        <script src=-"../script/profile.js"></script>
+        <script src='../script/profile.js'></script>
     </head>
     <body>
         <?php
