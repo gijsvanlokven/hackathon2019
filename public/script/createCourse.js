@@ -515,7 +515,7 @@ async function SaveCourse() {
             question.Answers.push(a1, a2, a3, a4);
         } else if (question.Type == "Code") {
             question.Question = x.querySelector(`[name=question${i+1}Article]`).value;
-            question.Template = CodeEditors[i + 1].getModel().getValue();
+            question.Template = CodeEditors[i + 1].getModel().getValue().split("\n");
 
             let ExpectedOutput = [];
 
