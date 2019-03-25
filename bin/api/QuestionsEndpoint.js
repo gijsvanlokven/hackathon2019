@@ -97,7 +97,7 @@ class QuestionsEndpoint {
             res.sendStatus(400);
     }
     async MaxID(req, res) {
-        let result = await database_1.default.query("SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Hackathon' AND TABLE_NAME  = 'Question'");
+        let result = await database_1.default.query("SELECT AUTO_INCREMENT AS LastID FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Hackathon' AND TABLE_NAME  = 'Question'");
         res.send(result.results[0]);
     }
 }
